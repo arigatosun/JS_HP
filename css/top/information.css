@@ -1,0 +1,673 @@
+/* ====================
+   ベーススタイル
+   ==================== */
+   .information {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: #F2F2F2;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.information-container {
+    width: 100%;
+    padding-top: 90px;
+}
+
+.information-content {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* タイポグラフィー */
+.information-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    white-space: nowrap;
+}
+
+.information-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* レイアウト要素 */
+.information-grid-line {
+    margin: 0 28px;
+    flex-shrink: 0;
+    width: 4px;
+    height: 100px;
+}
+
+.information-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* メイン記事スタイル */
+.information-main {
+    max-width: 1440px;
+    margin: 60px auto 0;
+    padding: 0 90px;
+}
+
+.main-article {
+    display: flex;
+    gap: 60px;
+}
+
+.article-image {
+    flex-shrink: 0;
+    width: 605px;
+    height: 272px;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.article-date {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    opacity: 0.5;
+}
+
+.article-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 3.6px;
+}
+
+.article-divider {
+    height: 2px;
+    background: #D9D9D9;
+    margin: 0px 0;
+}
+
+.article-excerpt {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2.1px;
+    opacity: 0.5;
+}
+
+.category-labels {
+    display: flex;
+    gap: 10px;  /* ラベル間の間隔 */
+    flex-wrap: wrap;  /* 必要に応じて折り返し */
+}
+
+.information .category-label {
+    display: flex;
+    width: 191px;
+    height: 25px;
+    padding: 0 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    background: #FFF;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2.1px;
+    opacity: 0.5;
+}
+
+/* サブ記事グリッド */
+.sub-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1440px;
+    margin: 60px auto 0;
+    padding: 0 90px;
+}
+
+.sub-article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 背景色と余白を削除 */
+}
+
+/* サブ記事の区切り線を追加 */
+.sub-article {
+    padding-bottom: 20px; /* 区切り線との間隔を確保 */
+    border-bottom: 2px solid #D9D9D9; /* メイン記事と同じ区切り線のスタイル */
+}
+
+.sub-article-date {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    opacity: 0.5;
+}
+
+.sub-article-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 2.7px;
+}
+
+/* 一覧を見るボタン */
+.information .view-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+    padding-bottom: 100px;
+}
+
+.information .view-all-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 51px;
+    background: #333;
+    text-decoration: none;
+    height: 50px;
+    min-width: 295px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.information .view-all-button span {
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.9px;
+    letter-spacing: 3.2px;
+}
+
+.information .arrow-icon {
+    width: 20.4px;
+    height: 20.4px;
+}
+
+.information .link-buttons {
+    margin-top: 100px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.information .link-buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.information .link-button {
+    width: 50%;
+    display: block;
+    height: 450px; /* この値は必要な高さに応じて調整できます */
+    overflow: hidden; /* 画像がはみ出ないようにする */
+}
+
+.information .link-button img {
+    width: 100%;
+    height: 100%; /* 親要素の高さに合わせる */
+    display: block;
+    object-fit: cover; /* 画像の縦横比を保ちながら領域を埋める */
+}
+
+/* リンクボタンのコンテンツスタイル */
+.information .link-button {
+    position: relative;
+}
+
+.information .link-button-content {
+    position: absolute;
+    top: 80px;  /* 上からの余白 */
+    left: 90px; /* 左からの余白 */
+    transform: none; /* 中央配置を解除 */
+    text-align: left; /* テキストを左詰めに */
+    z-index: 1;
+}
+
+.information .link-button-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.8px;
+    margin-bottom: 10px;
+}
+
+.information .link-button-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.4px;
+}
+
+/* お問い合わせボタンの文字色を白に */
+.information .contact-button .link-button-title,
+.information .contact-button .link-button-subtitle {
+    color: #FFF;
+}
+
+/* ====================
+   メディアクエリ
+   ==================== */
+
+
+
+
+/* メイン記事のレスポンシブ対応 */
+@media screen and (max-width: 1440px) {
+    .information-main {
+        padding: 0 65px;
+    }
+
+    .main-article {
+        gap: 30px;
+    }
+
+    .article-image {
+        width: 45%;
+        height: auto;
+        min-width: 300px;
+    }
+
+    .article-content {
+        flex: 1;
+    }
+
+    .sub-articles-grid {
+        padding: 0 65px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .information-main {
+        padding: 0 40px;
+    }
+
+    .main-article {
+        gap: 25px;
+    }
+
+    .article-image {
+        width: 40%;
+        min-width: 250px;
+        height: 250px;
+    }
+
+    .article-content {
+        flex: 1;
+        min-width: 0; /* flexアイテムが親要素を超えないように */
+    }
+
+    .article-title {
+        font-size: 22px;
+        line-height: 36px;
+    }
+
+    .article-excerpt {
+        font-size: 13px;
+        line-height: 23px;
+    }
+
+    .category-labels {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .information .category-label {
+        width: auto;
+        min-width: 120px;
+        padding: 0 15px;
+    }
+    .information .link-button-content {
+        top: 60px;
+        left: 60px;
+    }
+}
+
+/* タブレット (1004px以下) */
+@media screen and (max-width: 1004px) {
+    .information-main {
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    .main-article {
+        gap: 20px;
+    }
+
+    .article-image {
+        width: 35%;
+        min-width: 200px;
+        height: 220px;
+    }
+
+    .article-title {
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 2.4px;
+    }
+
+    .article-excerpt {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 1.8px;
+    }
+
+    .sub-articles-grid {
+        margin-top: 40px;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .sub-article-title {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 2.4px;
+    }
+
+    .information-container {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    .information-content {
+        position: relative;
+        padding: 82px 20px 0 90px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .information-grid-line {
+        position: absolute;
+        left: 60px;
+        top: 40px;
+        margin: 0;
+        height: 100%;
+    }
+
+    .information-title {
+        font-size: 16px;
+        letter-spacing: 6px;
+        white-space: normal;
+        margin: 0 0 13px 0;
+    }
+
+    .information-text-container {
+        width: 100%;
+        gap: 0;
+    }
+
+    .information-subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+    }
+}
+
+/* レスポンシブ対応を追加 */
+@media screen and (max-width: 768px) {
+    .information .link-button-content {
+        top: 40px;
+        left: 40px;
+    }
+    
+    .information .link-button-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .information .link-button-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    .information .link-button {
+        width: 50%;
+        display: block;
+        height: 300px; /* この値は必要な高さに応じて調整できます */
+        overflow: hidden; /* 画像がはみ出ないようにする */
+    }
+    
+    .information .link-button img {
+        width: 100%;
+        height: 100%; /* 親要素の高さに合わせる */
+        display: block;
+        object-fit: cover; /* 画像の縦横比を保ちながら領域を埋める */
+    }
+    
+    .sub-articles-grid {
+        margin-top: 40px;
+        padding: 0 60px;
+        gap: 20px;
+    }
+    .information-main {
+        margin-top: 80px;
+        padding: 0 60px;
+    }
+    .information .link-buttons {
+        margin-top: 60px;
+    }
+
+    .information .link-buttons-container {
+        flex-direction: column;
+    }
+
+    .information .link-button {
+        width: 100%;
+    }
+    .sub-articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-article {
+        padding-bottom: 15px;
+    }
+
+    .information .category-label {
+        padding: 0 15px;
+        font-size: 12px;
+        height: 22px;
+    }
+    .information .view-all-button span {
+        font-size: 12px;
+        line-height: 21.675px;
+        letter-spacing: 2.4px;
+    }
+
+    .information .view-all-button {
+        min-width: 230px;
+    }
+
+    .information .view-all-button-container {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+}
+
+/* 小型モバイル (490px以下) */
+@media screen and (max-width: 550px) {
+    .information .link-button-content {
+        top: 30px;
+        left: 30px;
+    }
+    
+    .information .link-button-title {
+        font-size: 24px;
+        letter-spacing: 3.6px;
+    }
+
+    .information .link-button-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+    }
+    .information .link-button {
+       
+        height: 200px; /* この値は必要な高さに応じて調整できます */
+        overflow: hidden; /* 画像がはみ出ないようにする */
+    }
+    
+    .information .link-button img {
+        width: 100%;
+        height: 100%; /* 親要素の高さに合わせる */
+        display: block;
+        object-fit: cover; /* 画像の縦横比を保ちながら領域を埋める */
+    }
+    .information-main {
+        margin-top: 30px;
+        padding: 0 45px;
+    }
+
+    .main-article {
+        flex-direction: column; /* 追加：垂直方向のレイアウトに変更 */
+        gap: 15px;
+    }
+
+    .article-content {
+        width: 100%; /* 追加：コンテンツを全幅に */
+    }
+
+    .article-image {
+        width: 100%; /* 追加：画像を全幅に */
+        min-width: auto; /* 追加：最小幅の制限を解除 */
+        height: 180px;
+    }
+
+    .article-date {
+        color: #333;
+
+font-family: "BIZ UDGothic";
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.8px;
+    }
+
+    .article-title {
+        color: #333;
+font-family: "BIZ UDGothic";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 23px; /* 164.286% */
+letter-spacing: 2.1px;
+    }
+
+    .article-excerpt {
+        color: #333;
+font-family: "BIZ UDGothic";
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 200% */
+letter-spacing: 1.5px;
+    }
+
+    .sub-articles-grid {
+        margin-top: 30px;
+        padding: 0 45px;
+        gap: 15px;
+    }
+
+    .sub-article-date {
+        font-size: 14px;
+    }
+
+    .sub-article-title {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .information-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .information-content {
+        padding: 70px 56px 20px 70px;
+    }
+
+    .information-grid-line {
+        left: 45px;
+        top: 20px;
+        height: 165px;
+        width: 3.2px;
+    }
+
+    .information-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+        margin-bottom: 14px;
+    }
+
+    .information-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .information-text-container {
+        gap: 10px;
+    }
+
+    .information .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+    }
+
+    .information .view-all-button-container {
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .information .view-all-button {
+        min-width: 230px;
+        height: 38px;
+    }
+
+}

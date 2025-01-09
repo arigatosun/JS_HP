@@ -1,0 +1,749 @@
+/* リセット用のスタイルを追加 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ 
+ .business {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-image: url('../../images/business_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 960px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+ 
+ .business-container {
+    width: 100%;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ /* 白コンテナのスタイル */
+ .business-white-container {
+    margin-top: 52px;
+    margin-left: 232px;
+    height: 630px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 50px 0px 0px 50px;
+    background: rgba(255, 255, 255, 0.8);
+ }
+ 
+ .business-content {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+ }
+ 
+ .business-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 8px;
+    white-space: nowrap;
+ }
+ 
+ .business-grid-line {
+    margin: 0 28px;
+    flex-shrink: 0;
+    width: 4px;
+    height: 100px;
+ }
+ 
+ .business-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+ }
+ 
+ .business-subtitle {
+    align-self: stretch;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3px;
+ }
+ 
+ .business-description {
+    align-self: stretch;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.0px;
+ }
+ 
+ .business-menu {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(360px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 65px 93px 0 93px;
+    max-width: 1400px;
+ }
+ 
+ /* メニューカードのベーススタイル */
+ .menu-card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+ }
+ 
+ /* 画像のホバーエフェクト */
+ .menu-card img:not(.arrow-icon) {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+ }
+ 
+ /* ホバー時のエフェクト */
+ .menu-card:hover img:not(.arrow-icon) {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+ }
+ 
+ .menu-card:hover::before {
+    opacity: 1;
+ }
+ 
+ .menu-title {
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    line-height: 27px;
+    letter-spacing: 1.2px;
+    z-index: 1;
+ }
+ 
+ .menu-card-2, .menu-card-4 {
+    margin-top: 50px;
+ }
+ 
+ .menu-card-5, .menu-card-7 {
+    margin-top: -50px;
+ }
+ 
+ /* 画像のスタイル */
+/* 画像のスタイル */
+.menu-card img.desktop-image,
+.menu-card img.mobile-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+ 
+ /* デジタルマーケティング領域のタイトル位置調整 */
+ .menu-card-1 .menu-title {
+    bottom: 60px;
+ }
+ 
+ /* テクノロジー領域のタイトル位置調整 */
+ .menu-card-3 .menu-title {
+    bottom: 60px;
+ }
+ 
+ /* クリエイティブ領域のタイトル位置調整 */
+ .menu-card-5 .menu-title {
+    bottom: 60px;
+ }
+ 
+ /* EC支援領域のタイトル位置調整 */
+ .menu-card-7 .menu-title {
+    bottom: 60px;
+ }
+ 
+ /* 右矢印アイコンのスタイル */
+ .business .arrow-icon {
+    position: absolute !important;
+    bottom: 14px ;
+    right: 14px !important;
+    width: 29px !important;
+    height: auto !important;
+    z-index: 2;
+ }
+ 
+ /* デジタルマーケティング領域の矢印位置調整 */
+ .menu-card-1 .arrow-icon {
+    bottom: 60px !important;
+ }
+ 
+ /* テクノロジー領域の矢印位置調整 */
+ .menu-card-3 .arrow-icon {
+    bottom: 60px ;
+ }
+ 
+ /* クリエイティブ領域の矢印位置調整 */
+ .menu-card-5 .arrow-icon {
+    bottom: 60px ;
+ }
+ 
+ /* EC支援領域の矢印位置調整 */
+ .menu-card-7 .arrow-icon {
+    bottom: 60px ;
+ }
+ 
+ /* menu-card-8には矢印を表示しない */
+ .menu-card-8 .arrow-icon {
+    display: none;
+ }
+
+ .mobile-image {
+    display: none;
+}
+
+.desktop-image {
+    display: block;
+}
+
+.menu-card-3 .menu-title br {
+    display: none; /* デフォルトでは改行を非表示 */
+}
+
+.tablet-image {
+   display: none;
+}
+.mobile-special-image{
+   display: none;
+}
+ 
+ /* レスポンシブ対応 */
+ @media screen and (max-width: 1919px) {
+   .mobile-special-image{
+      display: none;
+}
+    .business-white-container {
+        margin-left: calc(12vw);
+    }
+ 
+    .business-menu {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+        padding: 65px calc(4.8vw) 0 calc(4.8vw);
+    }
+ 
+    .menu-title {
+        bottom: calc(0.73vw);
+        left: calc(1.04vw);
+        font-size: calc(1.04vw);
+        line-height: 1.35;
+        letter-spacing: calc(0.063vw);
+    }
+ 
+    .menu-card-2, .menu-card-4 {
+        margin-top: calc(2.6vw);
+    }
+ 
+    .menu-card-5, .menu-card-7 {
+        margin-top: calc(-2.6vw);
+    }
+ 
+    .menu-card-1 .menu-title,
+    .menu-card-3 .menu-title,
+    .menu-card-5 .menu-title,
+    .menu-card-7 .menu-title {
+        bottom: calc(3.125vw);
+    }
+ 
+    .business .arrow-icon {
+        bottom: calc(0.73vw) ;
+        right: calc(0.73vw) !important;
+        width: calc(1.51vw) !important;
+    }
+ 
+    .menu-card-1 .arrow-icon,
+    .menu-card-3 .arrow-icon,
+    .menu-card-5 .arrow-icon,
+    .menu-card-7 .arrow-icon {
+        bottom: calc(3.125vw) ;
+    }
+ }
+ 
+ @media screen and (max-width: 1350px) {
+    .business-container {
+        width: 100%;
+        margin: 0;
+    }
+ 
+    .business-content {
+        max-width: none;
+        margin: 0;
+        padding: 0 61px 0 150px;
+    }
+ }
+ 
+ @media screen and (max-width: 1005px) {
+    .menu-card img.mobile-image {
+        display: block;
+        width: 100%; /* 90%から100%に変更 */
+        height: auto;
+        margin: 0; /* 中央寄せを削除 */
+    }
+    
+    .desktop-image {
+        display: none;
+    }
+
+    .business-menu {
+        grid-template-columns: repeat(4, 1fr); /* minmaxを削除してシンプルに */
+        gap: 12px; /* 小さめのギャップを設定 */
+        padding: 65px 20px 0 20px; /* パディングを調整 */
+    }
+    
+    /* カードの位置調整を維持しつつ、マージンを小さく */
+    .menu-card-2, .menu-card-4 {
+        margin-top: 30px;
+    }
+    
+    .menu-card-5, .menu-card-7 {
+        margin-top: -30px;
+    }
+    
+    .menu-title {
+        font-size:16px; /* フォントサイズをさらに小さく */
+        margin-bottom: 15px;
+        left: 10px;
+        width: calc(100% - 40px); /* 右側の余白を確保 */
+    }
+    
+    .business .arrow-icon {
+        width: 26px !important; /* アイコンサイズを小さく */
+        bottom: 10px ;
+        right: 16px !important;
+    }
+
+    /* 2行タイトルの位置調整 */
+    .menu-card-1 .menu-title,
+    .menu-card-3 .menu-title,
+    .menu-card-5 .menu-title,
+    .menu-card-7 .menu-title {
+        bottom: 30px;
+       
+    }
+
+    .menu-card-1 .arrow-icon,
+    .menu-card-3 .arrow-icon,
+    .menu-card-5 .arrow-icon,
+    .menu-card-7 .arrow-icon {
+        bottom: 45px ;
+    }
+
+    .menu-card-2 .arrow-icon{
+
+        bottom: 18px ;
+
+    }
+
+    .menu-card-3 .menu-title {
+        bottom: 30px;
+        line-height: 27px; /* 行間を調整 */
+    }
+
+    .menu-card-3 .menu-title span {
+        display: inline-block; /* spanを改行可能なブロック要素として扱う */
+    }
+    
+}
+
+@media screen and (max-width: 1004px) and (min-width: 491px) {
+   .business {
+       min-height: auto;
+   }
+
+   .mobile-special-image{
+         display: none;
+   }
+
+   .menu-card-3 .menu-title {
+      bottom: 4px;
+      line-height: 27px;
+  }
+
+  .menu-card-5 .arrow-icon{
+   bottom: 20px;
+
+  }
+
+  .menu-card-3 .arrow-icon {
+   bottom: 20px;
+}
+
+.menu-card-7 .arrow-icon {
+   bottom: 20px;
+}
+
+.menu-card-2 .arrow-icon{
+
+   bottom: 20px ;
+
+}
+.menu-card-4 .arrow-icon{
+
+   bottom: 20px ;
+
+}
+.menu-card-6 .arrow-icon{
+
+   bottom: 20px ;
+
+}
+
+  .menu-card-5 .menu-title {
+   bottom: 4px;
+   line-height: 27px;
+}
+
+.menu-card-7 .menu-title {
+   bottom: 4px;
+   line-height: 27px;
+}
+
+   .business-container {
+       width: 100%;
+       padding-top: 40px;
+       padding-bottom:70px;
+   }
+
+   .business-content {
+       position: relative;
+       max-width: none;
+       width: 100%;
+       padding: 82px 20px 0 106px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+   }
+
+   /* グリッドライン（縦線）の配置 */
+   .business-grid-line {
+       position: absolute;
+       left: 80px;
+       top: 40px;
+       margin: 0;
+       height: 100%;
+       width: 4px;
+   }
+
+   /* タイトルのスタイル調整 */
+   .business-title {
+       font-size: 16px;
+       letter-spacing: 6px;
+       white-space: normal;
+       margin: 0 0 13px 0;
+       padding: 0;
+   }
+
+   /* テキストコンテナの調整 */
+   .business-text-container {
+       width: 100%;
+       gap: 0px;
+       margin: 0;
+   }
+
+   /* サブタイトルのスタイル調整 */
+   .business-subtitle {
+       font-size: 12px;
+       letter-spacing: 2px;
+       line-height: 1.5;
+       margin-bottom: 4px;
+   }
+
+   /* 説明文のスタイル調整 */
+   .business-description {
+       font-size: 10px;
+       line-height: 24px;
+       letter-spacing: 2px;
+   }
+
+   /* 白背景コンテナの調整 */
+   .business-white-container {
+       margin-left: 54px; /* 左側の余白を54pxに設定 */
+       margin-top: 40px;
+       border-radius: 30px 0 0 30px; /* 左上と左下のみ角丸に設定 */
+       height: auto;
+       padding-bottom: 40px;
+       width: calc(100% - 54px); /* 全体幅から左余白を引いた幅に設定 */
+   }
+
+   /* メニューグリッドの調整 */
+   .business-menu {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+      gap: 12px;
+      padding: 60px 56px 0 56px;
+  }
+
+   /* EC支援領域（最後のカード）を2列分の幅に設定 */
+   .menu-card-7 {
+      grid-column: span 2; /* 2列分の幅を占める */
+   }
+
+   .menu-card-7 .menu-title {
+      font-size: 20px; /* タイトルサイズは他のカードと同じに */
+   }
+
+  /* タブレット用画像の表示切り替え */
+  .menu-card .desktop-image,
+  .menu-card .mobile-image {
+      display: none !important; /* !important を追加して確実に上書き */
+  }
+
+  .tablet-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+  }
+
+   /* カードのマージン調整をリセット */
+   .menu-card-2,
+   .menu-card-4,
+   .menu-card-5,
+   .menu-card-7 {
+       margin-top: 0;
+   }
+
+   .menu-card-1 .menu-title {
+      bottom: 8px; /* 通常のbottom位置に戻す */
+      white-space: nowrap; /* テキストを1行に */
+      left:10px;
+   }
+
+   .menu-card-1 .menu-title br {
+      display: none; /* 改行を削除 */
+   }
+
+   .menu-card-1 .menu-title span {
+      display: inline; /* spanをインライン要素として表示 */
+   }
+
+   /* 矢印位置の調整 */
+   .menu-card-1 .arrow-icon {
+      bottom: 18px !important; /* 通常の位置に戻す */
+   }
+
+   /* フォントサイズと行間の調整 */
+   .menu-card-1 .menu-title {
+      font-size: calc(12px + 0.5vw); /* 855pxで16px、431pxで14px相当 */
+      line-height: 27px; /* 168.75% */
+letter-spacing: 0.96px;
+   }
+ /* 2行タイトルの位置調整 */
+ .menu-card-1 .menu-title,
+ .menu-card-3 .menu-title,
+ .menu-card-5 .menu-title,
+ .menu-card-7 .menu-title {
+    bottom: calc(4px + 0.5vw);
+ }
+
+ /* 矢印アイコンのレスポンシブ対応 */
+ .business .arrow-icon {
+    width: calc(20px + 1vw) !important; /* 855pxで26px、431pxで22px相当 */
+    height: auto !important;
+    bottom: calc(16px + 0.5vw) !important;
+    right: calc(12px + 0.5vw) !important;
+ }
+
+ /* 2行タイトルの矢印位置調整 */
+ .menu-card-1 .arrow-icon,
+ .menu-card-3 .arrow-icon,
+ .menu-card-5 .arrow-icon,
+ .menu-card-7 .arrow-icon {
+    bottom: calc(20px + 0.5vw) !important;
+ }
+
+ /* タブレット用画像の表示設定 */
+ .menu-card .desktop-image,
+ .menu-card .mobile-image {
+    display: none !important;
+ }
+
+ .tablet-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+ }
+
+ /* EC支援領域の幅設定 */
+ .menu-card-7 {
+    grid-column: span 2;
+ }
+
+ /* カードのマージン調整リセット */
+ .menu-card-2,
+ .menu-card-4,
+ .menu-card-5,
+ .menu-card-7 {
+    margin-top: 0;
+ }
+}
+
+/* モバイル向けスタイル（490px以下） */
+@media screen and (max-width: 490px) {
+   .business {
+       min-height: auto;
+       background-size: cover;
+   }
+
+   .business-container {
+       padding-top: 20px;
+       padding-bottom: 40px;
+   }
+
+   /* コンテンツのパディングも調整して、grid-lineが見やすくなるようにする */
+   .business-content {
+      position: relative;
+      max-width: none;
+      width: 100%;
+      /* 上部のパディングを調整して、grid-lineが適切に表示されるようにする */
+      padding: 62px 38px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+   .business-grid-line {
+      position: absolute;
+      left: 35px;
+      /* 上部の位置を調整 */
+      top: 20px;
+      margin: 0;
+      /* 高さを増加 */
+      height: 195px;
+      width: 5px;
+  }
+
+   .business-title {
+       font-size: 20px;
+       letter-spacing: 4px;
+       margin-bottom: 14px;
+   }
+
+   .business-subtitle {
+       font-size: 12px;
+       letter-spacing: 1.5px;
+   }
+
+   .business-description {
+       font-size: 10px;
+       line-height: 20px;
+       letter-spacing: 1.3px;
+   }
+
+   .business-white-container {
+       margin-left: 0px;
+       margin-top: 30px;
+       border-radius: 20px 0 0 20px;
+       width: 100%;
+       height: auto;
+       min-height: 630px;
+       padding-bottom: 0px;
+   }
+
+   .business-menu {
+       grid-template-columns: 1fr;
+       gap: 12px;
+       padding: 50px 40px;
+   }
+
+   .menu-card {
+       margin-top: 0 !important;
+   }
+
+   .menu-card-7 {
+       grid-column: 1;
+   }
+
+   .menu-title {
+      color: #FFF;
+      font-family: "BIZ UDGothic";
+      font-size: 16px;
+      font-style: normal;
+      line-height: 27px; /* 168.75% */
+      letter-spacing: 1.96px;
+      bottom: 4px;
+      left: 16px;
+      
+   }
+
+   .business .arrow-icon {
+      width: 25px !important;
+      bottom: 16px !important;
+      right: 20px !important;
+   }
+
+   .menu-card-1 .menu-title {
+      white-space: nowrap;
+      bottom: 4px;
+   }
+
+   .menu-card-1 .menu-title br {
+      display: none;
+   }
+
+   .menu-card-1 .menu-title span {
+      display: inline;
+   }
+
+   .menu-card-7 .tablet-image {
+      display: none !important;
+   }
+
+   .menu-card-1 .menu-title,
+   .menu-card-3 .menu-title,
+   .menu-card-5 .menu-title,
+   .menu-card-7 .menu-title {
+      bottom: 0px;
+   }
+
+   .menu-card-1 .arrow-icon,
+   .menu-card-3 .arrow-icon,
+   .menu-card-5 .arrow-icon,
+   .menu-card-7 .arrow-icon {
+      bottom: 16px !important;
+   }
+
+   .desktop-image,
+   .mobile-image {
+       display: none !important;
+   }
+
+   .tablet-image {
+       display: block !important;
+       width: 100%;
+       height: auto;
+       border-radius: 6px;
+   }
+
+   .business-text-container{
+       gap: 10px;
+   }
+}

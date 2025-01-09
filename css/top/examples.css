@@ -1,0 +1,495 @@
+/* ====================
+   ベーススタイル
+   ==================== */
+   .examples {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: #F2F2F2;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.examples-container {
+    width: 100%;
+    padding-top: 90px;
+}
+
+.examples-content {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* タイポグラフィー */
+.examples-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    white-space: nowrap;
+}
+
+.examples-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.examples-description {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3px;
+}
+
+/* レイアウト要素 */
+.examples-grid-line {
+    margin: 0 28px;
+    flex-shrink: 0;
+    width: 4px;
+    height: 100px;
+}
+
+.examples-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ロゴグリッド */
+.examples-logo-grid {
+    display: grid;
+    margin: 55px auto 0;
+    width: calc(100% - 40px);
+    max-width: 1300px;
+    gap: clamp(20px, 3vw, 55px) clamp(20px, 2vw, 37px);
+    justify-content: center;
+}
+
+.logo-item {
+    width: 100%;
+    aspect-ratio: 223/89;
+    background: #D9D9D9;
+}
+
+/* カードグリッド */
+.examples-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 60px 90px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* カードコンポーネント */
+.example-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: #FFF;
+    border-radius: 28px;
+    min-width: 250px;
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.card-divider {
+    display: flex;
+    padding-bottom: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 2px solid #333;
+}
+
+.example-card-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.tag-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.example-card-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 4px;
+}
+
+/* カテゴリー */
+.example-card-categories,
+.example-card-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-label {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.category-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.category-tag {
+    display: inline-flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: #28A7E1;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2.4px;
+}
+
+/* すべてを見るボタン */
+.examples .view-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+    padding-bottom: 100px;
+   
+}
+
+.examples .view-all-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 51px;
+    background: #333;
+    text-decoration: none;
+    height: 50px;
+    min-width: 295px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.view-all-button span {
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.9px;
+    letter-spacing: 3.2px;
+}
+
+.examples .arrow-icon {
+    width: 20.4px;
+    height: 20.4px;
+}
+
+/* 4枚目のカードはデフォルトでは非表示にする */
+.example-card.extra-card {
+    display: none;
+}
+
+/* ====================
+   メディアクエリ
+   ==================== */
+
+/* 大画面デスクトップ (1401px以上) */
+@media screen and (min-width: 1401px) {
+    .examples-logo-grid {
+        grid-template-columns: repeat(5, minmax(180px, 223px));
+    }
+}
+
+/* デスクトップ (1400px以下) */
+@media screen and (max-width: 1400px) {
+    .examples-logo-grid {
+        grid-template-columns: repeat(4, minmax(180px, 223px));
+    }
+
+    .example-card.extra-card {
+        display: flex;
+    }
+    
+    .examples-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-tag {
+        padding: 4px 7px;
+    }
+}
+
+/* 小型デスクトップ (1200px以下) */
+@media screen and (max-width: 1200px) {
+    .examples-logo-grid {
+        grid-template-columns: repeat(3, minmax(180px, 223px));
+    }
+
+    .examples-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 40px 60px;
+    }
+}
+
+/* タブレット (1004px以下) */
+@media screen and (max-width: 1004px) {
+    .examples-container {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    .examples-content {
+        position: relative;
+        padding: 82px 20px 0 106px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .examples-grid-line {
+        position: absolute;
+        left: 80px;
+        top: 40px;
+        margin: 0;
+        height: 100%;
+    }
+
+    .examples-title {
+        font-size: 16px;
+        letter-spacing: 6px;
+        white-space: normal;
+        margin: 0 0 13px 0;
+    }
+
+    .examples-text-container {
+        width: 100%;
+        gap: 0;
+    }
+
+    .examples-subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+
+    .examples-description {
+        font-size: 10px;
+        line-height: 24px;
+        letter-spacing: 2px;
+    }
+}
+
+/* 小型タブレット (900px以下) */
+@media screen and (max-width: 900px) {
+    .examples-logo-grid {
+        grid-template-columns: repeat(2, minmax(160px, 180px));
+    }
+}
+
+/* 大型モバイル (768px以下) */
+@media screen and (max-width: 768px) {
+    .category-tag {
+        display: inline-flex
+    ;
+        padding: 0px 22px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        background: #28A7E1;
+        color: #FFF;
+text-align: center;
+font-family: "BIZ UDGothic";
+font-size: 8px;
+font-style: normal;
+font-weight: 700;
+line-height: 19px; /* 350% */
+letter-spacing: 1.6px;
+    }
+    .category-label {
+        color: #333;
+
+        font-family: "BIZ UDGothic";
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px; /* 280% */
+        letter-spacing: 2px;
+    }
+    .tag-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .example-card-tag {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #333;
+font-family: "BIZ UDGothic";
+font-size: 10px;
+font-style: normal;
+font-weight: 700;
+line-height: 21px; /* 210% */
+letter-spacing: 2px;
+    }
+    .example-card-title br {
+        display: none;
+    }
+    .example-card-title {
+        color: #333;
+        font-family: "BIZ UDGothic";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px; /* 183.333% */
+        letter-spacing: 2.4px;
+    }
+    .view-all-button span {
+        color: #FFF;
+        text-align: center;
+        font-family: "BIZ UDGothic";
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 21.675px;
+        letter-spacing: 2.4px;
+    }
+    .examples-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 30px 35px;
+    }
+    
+    .example-card {
+        padding: 27px;
+    }
+    
+    .card-divider {
+        padding-bottom: 15px;
+    }
+
+    .view-all-button-container {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .view-all-button {
+        min-width: 230px;
+    }
+
+    .arrow-icon {
+        margin-right: 32px;
+    }
+}
+
+/* モバイル (600px以下) */
+@media screen and (max-width: 600px) {
+    .examples-logo-grid {
+        grid-template-columns: repeat(2, minmax(140px, 160px));
+        gap: 20px 15px;
+    }
+}
+
+/* 小型モバイル (490px以下) */
+@media screen and (max-width: 490px) {
+    .category-tags {
+        display: flex
+    ;
+        gap: 12px;
+    }
+    .example-card-categories, .example-card-services {
+       
+        gap: 0px;
+    }
+    .examples-cards-grid {
+      
+        gap: 10px;
+       
+    }
+    .examples .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+    }
+    .arrow-icon {
+        margin-right: 2px;
+    }
+    .examples {
+        min-height: auto;
+    }
+
+    .examples-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .examples-content {
+        padding: 70px 56px 20px 70px;
+    }
+
+    .examples-grid-line {
+        left: 35px;
+        top: 20px;
+        height: 195px;
+        width: 5px;
+    }
+
+    .examples-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+        margin-bottom: 14px;
+    }
+
+    .examples-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .examples-description {
+        font-size: 10px;
+        line-height: 20px;
+        letter-spacing: 1.3px;
+    }
+
+    .examples-text-container {
+        gap: 10px;
+    }
+
+    .view-all-button-container {
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .view-all-button {
+        min-width: 230px;
+        height: 38px;
+    }
+}

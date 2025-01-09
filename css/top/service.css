@@ -1,0 +1,659 @@
+.service {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-image: url('../../images/service_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 960px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.service-js-logo {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    z-index: 1;
+}
+
+.service-container {
+    width: 100%;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 124px;
+    width: 100%;
+    max-width: 1400px;
+    padding-left: 305px;
+}
+
+.service-content {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 210px;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-title {
+    color: #787878;
+    font-family: "BIZ UDGothic";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 9px;
+    margin: 0;
+}
+
+.service-subtitle {
+    color: #787878;
+    font-family: "BIZ UDGothic";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.service-concept {
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 27px;
+}
+
+.grid-line {
+    display: flex;
+    flex-direction: column;
+    width: 3px;
+    height: 126px;
+}
+
+.blue-line {
+    width: 3px;
+    height: 63px;
+    background: #2CA7DC;
+}
+
+.red-line {
+    width: 3px;
+    height: 63px;
+    background: #E60012;
+}
+
+.concept-primary {
+    color: #2CA7DC;
+    font-family: "BIZ UDGothic";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 9.6px;
+    margin: 0;
+}
+
+.concept-secondary {
+    color: #E60012;
+    font-family: "BIZ UDGothic";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 9.6px;
+    margin: 0;
+}
+
+.service-description {
+    color: #787878;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 4px;
+    margin: 30px 0 0 0;
+}
+
+.service-items {
+    margin-top: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 210px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.service-heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    color: #787878;
+    font-family: "BIZ UDGothic";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 7px;
+}
+
+.square {
+    color: #D90214;
+    font-family: "BIZ UDGothic";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 7px;
+}
+
+.service-labels {
+    display: grid;
+    grid-template-columns: repeat(2, 399px);
+    gap: 30px 32px;
+    margin-top: 40px;
+}
+
+.service-labels.three-items {
+    display: grid;
+    grid-template-columns: repeat(2, 399px);
+    grid-template-rows: auto auto;
+    gap: 30px 32px;
+}
+
+.service-labels.three-items .service-label:last-child {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.service-label {
+    display: flex;
+    width: 399px;
+    height: 80px;
+    padding: 18px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    line-height: 27px;
+    letter-spacing: 3.5px;
+}
+
+/* 2行テキスト用の調整 */
+.service-label br + * {
+    margin-top: -4px; /* 2行テキストの行間を少し詰める */
+}
+
+.service-label.red {
+    background: #D8394D;
+}
+
+.service-label.blue {
+    background: #28A7E1;
+}
+
+.concept-secondary br {
+    display: none;
+}
+
+@media screen and (min-width: 1005px) {
+    .concept-secondary br {
+        display: block;
+    }
+}
+
+/* 1920px以下での段階的な調整 */
+@media screen and (max-width: 1919px) {
+    .service-js-logo {
+        display: none;
+    }
+
+    .content-wrapper {
+        padding-left: calc(325px * 0.8);
+        gap: calc(124px * 0.8);
+    }
+
+    .service-label {
+        width: calc(399px * 0.9);
+    }
+
+    .service-labels {
+        grid-template-columns: repeat(2, calc(399px * 0.9));
+    }
+
+    .service-labels.three-items {
+        grid-template-columns: repeat(2, calc(399px * 0.9));
+    }
+}
+
+/* 1600px以下での更なる調整 */
+@media screen and (max-width: 1600px) {
+    .content-wrapper {
+        padding-left: calc(325px * 0.6);
+        gap: calc(124px * 0.6);
+    }
+
+    .service-label {
+        width: calc(399px * 0.8);
+    }
+
+    .service-labels {
+        grid-template-columns: repeat(2, calc(399px * 0.8));
+    }
+
+    .service-labels.three-items {
+        grid-template-columns: repeat(2, calc(399px * 0.8));
+    }
+}
+
+/* 1300px以下での更なる調整 */
+@media screen and (max-width: 1300px) {
+    .content-wrapper {
+        padding-left: calc(325px * 0.15);
+        gap: calc(124px * 0.05);
+    }
+
+    .service-label {
+        width: calc(399px * 0.7);
+        font-size: 18px;
+    }
+
+    .service-labels {
+        grid-template-columns: repeat(2, calc(399px * 0.7));
+        gap: 20px 24px;
+    }
+
+    .service-labels.three-items {
+        grid-template-columns: repeat(2, calc(399px * 0.7));
+        gap: 20px 24px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .grid-line {
+        display: flex;
+        flex-direction: column;
+        width: 3px;
+        height: 90px;
+    }
+    .service {
+        min-height: 800px;
+    }
+
+    .content-wrapper {
+        padding-left: calc(325px * 0.1);
+        padding-bottom:80px;
+        gap: calc(124px * 0.1);
+        margin: 0 auto;
+    }
+
+    .service-content {
+        margin-top: 120px;
+        flex: 0 0 290px;
+    }
+
+    .service-title {
+        font-size: 32px;
+        letter-spacing: 8px;
+    }
+
+    .service-subtitle {
+        font-size: 11px;
+    }
+
+    .service-concept {
+        gap: 20px;
+    }
+
+    .concept-primary, .concept-secondary {
+        font-size: 22px;
+        line-height: 38px;
+        letter-spacing: 8px;
+    }
+
+    .service-description {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .service-items {
+        margin-top: 120px;
+        margin-bottom: 120px;
+        gap: 50px;
+    }
+
+    .service-heading {
+        font-size: 24px;
+        letter-spacing: 6px;
+    }
+
+    .square {
+        font-size: 24px;
+    }
+
+    .service-label {
+        width: calc(399px * 0.75);
+        height: 70px;
+        font-size: 16px;
+    }
+
+    .service-labels {
+        grid-template-columns: repeat(2, calc(399px * 0.75));
+        gap: 20px 20px;
+    }
+
+    .service-labels.three-items {
+        grid-template-columns: repeat(2, calc(399px * 0.75));
+        gap: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 1004px) {
+
+    .concept-secondary {
+        white-space: nowrap;  /* 改行を防ぐ */
+    }
+    
+    .concept-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;  /* テキスト間の適切な間隔を確保 */
+    }
+    .service {
+        min-height: auto;
+    }
+
+    .service-container {
+        padding-top: 40px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 60px;
+        padding-left: 84px;
+        padding-right: 20px;
+        margin-bottom:56px;
+    }
+
+    .service-content {
+        margin-top: 80px;
+        flex: none;
+    }
+
+    /* タイトルグループの調整 */
+    .service-title {
+        font-size: 28px;
+        letter-spacing: 7px;
+    }
+
+    .service-subtitle {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+    }
+
+    /* コンセプト部分の調整 */
+    .service-concept {
+        margin-top: 30px;
+    }
+
+    .concept-primary,
+    .concept-secondary {
+        font-size: 20px;
+        line-height: 36px;
+        letter-spacing: 8px;
+    }
+
+    /* サービスアイテム部分の調整 */
+    .service-items {
+        margin-top: 0;
+        margin-bottom: 80px;
+        gap: 40px;
+    }
+
+    .service-heading {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    .square {
+        font-size: 20px;
+    }
+
+    /* サービスラベルのグリッドレイアウト調整 */
+    .service-labels,
+    .service-labels.three-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-top: 0px;
+        margin-right:100px;
+        margin-top:20px;
+    }
+
+    .service-label {
+        width: 90%;
+        height: 56px;
+        font-size: 14px;
+        padding: 15px 20px;
+        letter-spacing: 2.5px;
+        border-radius:10px;
+    }
+
+    /* JSロゴの非表示 */
+    .service-js-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .service {
+        min-height: auto;
+        overflow-x: hidden;
+    }
+
+    .service-container {
+        padding-top: 24px;
+    }
+
+    .content-wrapper {
+        padding: 0 20px 0 46px;
+        gap: 40px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .service-content {
+        margin-top: 40px;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    /* タイトル */
+    .service-title {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 5px;
+    }
+
+    .service-subtitle {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    /* コンセプト */
+    .service-concept {
+        margin-top: 24px;
+        gap: 27px;
+    }
+
+    .grid-line {
+        height: 96px;
+    }
+
+    .blue-line,
+    .red-line {
+        height: 48px;
+    }
+
+    .concept-primary,
+    .concept-secondary {
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 6.4px;
+    }
+
+    .service-description {
+        font-size: 10px;
+        line-height: 23px;
+        letter-spacing: 2px;
+        margin-top: 24px;
+        width: calc(100% - 20px); /* パディングを考慮した幅設定 */
+        max-width: none; /* max-widthの制限を解除 */
+        padding-right: 15px; /* パディングを左に追加 */
+    }
+
+    /* サービス項目 */
+    .service-items {
+        margin: 0;
+        gap: 32px;
+    }
+
+    .service-heading {
+        font-size: 14px;
+        letter-spacing: 3.22px;
+    }
+
+    .square {
+        font-size: 14px;
+        letter-spacing: 3.22px;
+        color: #D90214;
+    }
+
+    /*
+     * ------------------------------------------
+     * 横スクロール + 2行表示ベース設定
+     * ------------------------------------------
+     */
+    .service-labels,
+    .service-labels.three-items {
+        display: grid;
+        /* 横方向に伸ばしつつ2行(2段) */
+        grid-auto-flow: column;
+        grid-template-rows: repeat(2, auto);
+        gap: 12px;
+        padding: 20px 0;
+        margin-right: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .service-labels::-webkit-scrollbar,
+    .service-labels.three-items::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .service-label {
+        width: 280px;
+        min-width: 280px;
+        height: 48px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        padding: 12px 16px;
+        margin: 0;
+        border-radius: 8px;
+        scroll-snap-align: start;
+    }
+
+    /*
+     * odd/even で1行目/2行目を振り分け
+     * ただし three-items だけは後述で上書き
+     */
+    .service-labels .service-label:nth-child(odd) {
+        grid-row: 1;
+    }
+    .service-labels .service-label:nth-child(even) {
+        grid-row: 2;
+    }
+
+    /*
+     * ------------------------------------------
+     * 「three-items」用のレイアウト上書き
+     * 事業戦略全般に関する課題に対して、ラベルを任意配置
+     * ------------------------------------------
+     */
+    .service-labels.three-items {
+        /* 2列 × 2行を確保 (実際には3つのラベル) */
+        grid-template-columns: repeat(2, 280px);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    /* nth-child(1)～(3)に一旦autoを指定してから、再配置 */
+    .service-labels.three-items .service-label:nth-child(1),
+    .service-labels.three-items .service-label:nth-child(2),
+    .service-labels.three-items .service-label:nth-child(3) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    /* 3番目 (製品企画提案) を左上 (row1, col1) */
+    .service-labels.three-items .service-label:nth-child(3) {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    /* 2番目 (マーケティングリサーチ) を左下 (row2, col1) */
+    .service-labels.three-items .service-label:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    /* 1番目 (マーケティングコンサルティング) を右上 (row1, col2) */
+    .service-labels.three-items .service-label:nth-child(1) {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    /*
+     * タイトルや説明文等の細かい調整
+     */
+    .title-group {
+        gap: 12px;
+    }
+
+    .service-description br {
+        display: none;
+    }
+
+    /* スクロールスナップの有効化 */
+    .service-labels,
+    .service-labels.three-items {
+        scroll-snap-type: x mandatory;
+    }
+}

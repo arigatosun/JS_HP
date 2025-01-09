@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
+
+/* Hero Section */
+.hero {
+    margin-top: 50px;
+}
+
+.hero-container {
+    width: 100%;
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
