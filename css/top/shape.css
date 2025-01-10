@@ -1,3 +1,17 @@
+/* Rellax対応のための追加スタイル */
+.shapes .rellax {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* パフォーマンス最適化 */
+.hero-shape {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
 /* shapes */
 .shapes {
     position: absolute;
@@ -67,6 +81,7 @@
 .hero {
     position: relative;
     margin-top: 50px;
+    
 }
 
 .hero-container {
@@ -109,3 +124,509 @@
     height: 337px;
 }
 
+.service .shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Service specific shape positioning */
+.service .service-shape {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.service .service-shape.big-blue {
+    top: 10%;
+    right: 2%;
+    width: 487px;
+    height: 355px;
+    z-index: -1;
+}
+
+
+
+
+/* Rellaxアニメーション用のスタイル */
+.service .shapes .rellax {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* パフォーマンス最適化 */
+.service .service-shape {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.examples .shapes {
+    position: absolute;
+    top: 0;
+    left: -15%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* コンテンツより背面に配置 */
+}
+
+/* Examples specific shape positioning */
+.examples .examples-shape {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+/* 新しく追加したsmall-redシェイプのスタイル */
+.examples .examples-shape.small-red {
+    top: -400%;
+    left: 10%;
+    width: 144px;
+    height: 144px;
+    z-index: 3;
+}
+
+.examples .examples-shape.big-blue {
+    top: -200%;
+    left: -8%;
+    width: 400px;
+    height: 400px;
+}
+
+/* Rellaxアニメーション用のスタイル */
+.examples .shapes .rellax {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.examples .examples-shape.small-pink {
+    top: 770%;
+    left: 15%;
+    width: 140px;
+    height: 140px;
+    z-index: 2; /* small-redより小さく、big-blueより大きい値 */
+}
+
+/* パフォーマンス最適化 */
+.examples .examples-shape {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    will-change: transform;
+}
+
+
+.column-section .shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* z-indexを背面に設定 */
+}
+
+
+.column-section .column-shape {
+    position: absolute;
+    width: auto;
+    height: auto;
+    transform-origin: center center;
+    transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* セレクタを修正 */
+.information .shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.information .shapes .big-red {
+    position: absolute;
+    bottom: 75%;
+    left: 0;
+    width: 300px;
+    height: 600px;
+    z-index: 0;
+}
+
+/* medium-blueの設定 */
+.column-section .column-shape.medium-blue {
+    top: -30%;
+    right: -3%;
+    width: 389px;
+    height: 380px;
+    z-index: 3; /* コンテンツの手前 */
+}
+
+/* small-redの設定 */
+.column-section .column-shape.small-red {
+    top: 0%;
+    right: 6%;
+    width: 200px;
+    height: 200px;
+    z-index: 2; /* medium-blueより背面 */
+}
+
+/* グローバルなRellaxスタイル */
+.rellax {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* columnセクション特有のRellaxスタイル */
+.column-section .rellax {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    pointer-events: none;
+}
+
+/* パフォーマンス最適化 */
+.column-section .column-shape.rellax {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+/* 新しく追加したmedium-red-shapeの設定 */
+.information .shapes .medium-red {
+    position: absolute;
+    top: 58%;
+    right: 0%;
+    width: 403px;
+    height: 359px;
+    z-index: 1;
+}
+
+/* 新しく追加したsmall-blue-shapeの設定 */
+.information .shapes .small-blue {
+    position: absolute;
+    top: 55%;
+    right: 0%;
+    width: 207px;
+    height: 207px;
+    z-index: 2;
+}
+
+
+
+
+/* レスポンシブ対応 - Large devices (デスクトップ) */
+@media screen and (max-width: 1200px) {
+    /* Hero section shapes */
+    .hero-shape.small-blue {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-shape.small-red {
+        width: 220px;
+        height: 262px;
+    }
+
+    .hero-shape.big-blue {
+        width: 600px;
+        height: 600px;
+    }
+
+    .hero-shape.medium-red {
+        width: 230px;
+        height: 243px;
+    }
+
+    .hero-shape.big-red {
+        width: 220px;
+        height: 276px;
+    }
+
+    /* Business section shapes */
+    .business .hero-shape.big-blue {
+        top: -400px;
+        width: 400px;
+        height: auto;
+    }
+
+    .business .hero-shape.medium-red {
+        bottom: 400px;
+        width: 300px;
+        height: auto;
+    }
+
+    /* Service section shapes */
+    .service .service-shape.big-blue {
+        width: 387px;
+        height: 282px;
+    }
+}
+
+/* Medium devices (タブレット) */
+@media screen and (max-width: 992px) {
+    /* Hero section shapes */
+    .hero-shape.small-blue {
+        width: 120px;
+        height: 120px;
+        top: -2%;
+        left: 5%;
+    }
+
+    .hero-shape.small-red {
+        width: 180px;
+        height: 214px;
+        top: -12%;
+        right: 10%;
+    }
+
+    .hero-shape.big-blue {
+        width: 450px;
+        height: 450px;
+        bottom: -40%;
+    }
+
+    .hero-shape.medium-red {
+        width: 200px;
+        height: 211px;
+        bottom: -40%;
+    }
+
+    .hero-shape.big-red {
+        width: 180px;
+        height: 226px;
+        bottom: -20%;
+    }
+
+    /* Business section shapes */
+    .business .hero-shape.big-blue {
+        top: -300px;
+        width: 300px;
+    }
+
+    .business .hero-shape.medium-red {
+        bottom: 300px;
+        width: 250px;
+    }
+
+    /* Examples section shapes */
+    .examples .examples-shape.small-red {
+        width: 120px;
+        height: 120px;
+    }
+
+    .examples .examples-shape.big-blue {
+        width: 300px;
+        height: 300px;
+    }
+
+    .examples .examples-shape.small-pink {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Column section shapes */
+    .column-section .column-shape.medium-blue {
+        width: 289px;
+        height: 280px;
+    }
+
+    .column-section .column-shape.small-red {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Small devices (スマートフォン - ランドスケープ) */
+@media screen and (max-width: 768px) {
+    /* Hero section shapes */
+    .hero-shape.small-blue {
+        width: 90px;
+        height: 90px;
+        top: -1%;
+    }
+
+    .hero-shape.small-red {
+        width: 140px;
+        height: 167px;
+        top: -8%;
+    }
+
+    .hero-shape.big-blue {
+        width: 300px;
+        height: 300px;
+        bottom: -30%;
+    }
+
+    .hero-shape.medium-red {
+        width: 150px;
+        height: 158px;
+        bottom: -30%;
+    }
+
+    .hero-shape.big-red {
+        width: 140px;
+        height: 175px;
+        bottom: -15%;
+    }
+
+    /* Business section shapes */
+    .business .hero-shape.big-blue {
+        top: -200px;
+        width: 200px;
+    }
+
+    .business .hero-shape.medium-red {
+        bottom: 200px;
+        width: 180px;
+    }
+
+    .business .hero-shape.big-red {
+        width: 180px;
+        height: 226px;
+    }
+
+    /* Service section shapes */
+    .service .service-shape.big-blue {
+        width: 287px;
+        height: 209px;
+        right: -150;
+    }
+
+    /* Information section shapes */
+    .information .shapes .big-red {
+        width: 200px;
+        height: 400px;
+    }
+
+    .information .shapes .medium-red {
+        width: 303px;
+        height: 270px;
+    }
+
+    .information .shapes .small-blue {
+        width: 157px;
+        height: 157px;
+    }
+}
+
+/* Extra small devices (スマートフォン - ポートレート) */
+@media screen and (max-width: 576px) {
+    /* Hero section shapes */
+    .hero-shape.small-blue {
+        width: 70px;
+        height: 70px;
+        top: 0;
+        left: 2%;
+    }
+
+    .hero-shape.small-red {
+        width: 100px;
+        height: 119px;
+        top: -50%;
+        right: 5%;
+    }
+
+    .hero-shape.big-blue {
+        width: 200px;
+        height: 200px;
+        bottom: -20%;
+        left: -10%;
+    }
+
+    .hero-shape.medium-red {
+        width: 100px;
+        height: 105px;
+        bottom: -20%;
+        left: -2%;
+    }
+
+    .hero-shape.big-red {
+        width: 100px;
+        height: 125px;
+        bottom: -10%;
+        right: -1%;
+    }
+
+    /* Business section shapes */
+    .business .hero-shape.big-blue {
+        top: -150px;
+        width: 150px;
+    }
+
+    .business .hero-shape.medium-red {
+        bottom: -44px;
+        width: 38px;
+    }
+
+    .business .hero-shape.big-red {
+        width: 130px;
+        height: 163px;
+        top: 8%;
+    right: -2%;
+    }
+
+    /* Examples section shapes */
+    .examples .examples-shape.small-red {
+        width: 55px;
+        height: 80px;
+        top: -190%;
+    }
+
+    .examples .examples-shape.big-blue {
+        width: 200px;
+        height: 200px;
+        top: -119%;
+    }
+
+    .examples .examples-shape.small-pink {
+        width: 80px;
+        height: 80px;
+        top: 600%;
+    }
+
+    /* Column section shapes */
+    .column-section .column-shape.medium-blue {
+        width: 189px;
+        height: 180px;
+        right: -12%;
+        top: -38%;
+    }
+
+    .column-section .column-shape.small-red {
+        width: 100px;
+        height: 100px;
+        right: 91%;
+    }
+
+    /* Information section shapes */
+    .information .shapes .big-red {
+        width: 150px;
+        height: 300px;
+    }
+
+    .information .shapes .medium-red {
+        width: 203px;
+        height: 181px;
+    }
+
+    .information .shapes .small-blue {
+        width: 107px;
+        height: 107px;
+    }
+}

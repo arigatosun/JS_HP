@@ -4,6 +4,9 @@
     height: 872px; /* 固定の高さを設定 */
     position: relative;
     overflow: hidden;
+    position: relative;
+    z-index: 0; /* 基準となるz-index */
+    overflow: visible;
 }
 
 .column-section::before {
@@ -31,6 +34,13 @@
 padding-left: 0px;
     position: relative;
     z-index: 2;
+}
+
+/* 各コンテンツのz-index調整 */
+.column-content,
+.column-cards-container {
+    position: relative;
+    z-index: 4; /* medium-blueより前面 */
 }
 
 /* コンテンツレイアウト */

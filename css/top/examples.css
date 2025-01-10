@@ -9,6 +9,17 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    position: relative;
+    z-index: 0; /* 基準となるz-indexを設定 */
+}
+
+/* コンテンツを前面に配置 */
+.examples-content,
+.examples-logo-grid,
+.examples-cards-grid,
+.view-all-button-container {
+    position: relative;
+    z-index: 2; /* shapesより前面に配置 */
 }
 
 .examples-container {

@@ -10,13 +10,15 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    position: relative;
+    z-index: 0; /* 基準となるz-indexを設定 */
 }
 
 .service-js-logo {
     position: absolute;
     top: -35px;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .service-container {
@@ -24,6 +26,8 @@
     padding-top: 8px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2; /* shapesのz-index: 1より大きい値を設定 */
 }
 
 .content-wrapper {
@@ -32,6 +36,8 @@
     width: 100%;
     max-width: 1400px;
     padding-left: 305px;
+    position: relative;
+    z-index: 2; /* shapesのz-index: 1より大きい値を設定 */
 }
 
 .service-content {

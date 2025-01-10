@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/top/footer.css">
     <link rel="stylesheet" href="css/top/shape.css">
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 
 </head>
 <body>
@@ -33,5 +33,17 @@
 
 
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Rellaxが存在するか確認
+            if (typeof Rellax === 'function') {
+                console.log('Rellax is loaded successfully');
+                console.log('Rellax version:', Rellax.version);
+            } else {
+                console.error('Rellax is not loaded');
+            }
+        });
+        </script>
 </body>
 </html>

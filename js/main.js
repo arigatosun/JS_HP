@@ -10,28 +10,81 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ▼ 各セクションを読み込み（上から順に読み込むように配置） -- 既存コード
-    loadSection('hero');
-    loadSection('header').then(() => {
-        initializeHamburgerMenu();  // ヘッダー読み込み後にハンバーガーメニューを初期化
+    // Rellaxの初期化
+    function initializeRellax() {
+        console.log('Initializing Rellax...');
+        
+        try {
+            // コラムセクションのRellax要素を確認
+            const columnRellaxElements = document.querySelectorAll('.column-section .rellax');
+            console.log('Column Rellax elements found:', columnRellaxElements.length);
+    
+            // Rellaxインスタンスを作成
+            const rellax = new Rellax('.rellax', {
+                center: true,  // センターベースの視差効果に変更
+                wrapper: null, // デフォルトのラッパーを使用
+                round: true,
+                vertical: true,
+                horizontal: false,
+                speed: -2,
+                // セクションごとに異なる速度を設定
+                callback: function(positions) {
+                    // デバッグ用
+                    console.log('Rellax positions:', positions);
+                }
+            });
+            
+            console.log('Rellax initialized successfully');
+    
+            // リサイズ時にRellaxを更新
+            window.addEventListener('resize', () => {
+                if (rellax) {
+                    rellax.refresh();
+                }
+            });
+    
+            // スクロール時のデバッグ情報
+            window.addEventListener('scroll', () => {
+                const rellaxElements = document.querySelectorAll('.rellax');
+                console.log('Active Rellax elements:', rellaxElements.length);
+            });
+            
+        } catch (error) {
+            console.error('Error initializing Rellax:', error);
+        }
+    }
+    
+    // セクション読み込み後の処理を修正
+    Promise.all([
+        loadSection('hero'),
+        loadSection('business'),
+        loadSection('service'),
+        loadSection('examples'),
+        loadSection('column')
+    ]).then(() => {
+        // DOMが完全に読み込まれたことを確認
+        requestAnimationFrame(() => {
+            initializeRellax();
+        });
     });
-    loadSection('business');
-    loadSection('service');
-    loadSection('examples');
-
+    
+    loadSection('header').then(() => {
+        initializeHamburgerMenu();
+    });
+    
     // ▼ コラムセクション読み込み後にスクロール関連の制御を初期化
     loadSection('column').then(() => {
         initializeColumnScroll();       // 横スクロール(ホイール/ドラッグ)の制御
         initializeCustomScrollbar();    // カスタムスクロールバーの制御
     });
-
     // ▼ 追加で読み込んでいるセクションがあるならそのまま
     loadSection('information');
      // ▼ フッターを読み込み後にフッターの開閉メニューを初期化
      loadSection('footer').then(() => {
         initializeFooterToggle();
     });
-    // ▼ ハンバーガーメニューの制御を追加 -- 既存コード
+
+    // ▼ ハンバーガーメニューの制御を追加
     function initializeHamburgerMenu() {
         const hamburgerBtn = document.querySelector('.hamburger-menu');
         const nav = document.querySelector('.header-nav');
@@ -149,14 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const scrollWidth = columnCards.scrollWidth;
             const clientWidth = columnCards.clientWidth;
 
-            // trackWidth は画面サイズに応じて変化するため計算が必要
-            // ただし 768px 未満で display: none の場合は 0 になる
             if (window.innerWidth < 768) {
-                // 非表示なのでとりあえず何もしない
                 return;
             }
 
-            // スクロール可能領域がない場合
             if (scrollWidth <= clientWidth) {
                 handleWidth = trackWidth; 
                 handle.style.width = handleWidth + 'px';
@@ -164,12 +213,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // ハンドル幅を計算
-            const ratio = clientWidth / scrollWidth; // 表示領域/全体幅
+            const ratio = clientWidth / scrollWidth;
             handleWidth = trackWidth * ratio;
             handle.style.width = handleWidth + 'px';
 
-            // ハンドル位置を更新
             maxScrollLeft = scrollWidth - clientWidth;
             const currentLeft = columnCards.scrollLeft;
             const posRatio = currentLeft / maxScrollLeft;
@@ -179,12 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // (2) track, handle のドラッグ操作
         let isDraggingHandle = false;
-        let dragStartX = 0;  // ハンドル掴んだマウス位置
-        let startLeft = 0;   // ハンドルの left 初期値
+        let dragStartX = 0;
+        let startLeft = 0;
 
-        // ハンドルをマウスダウン → ドラッグ開始
         handle.addEventListener('mousedown', (e) => {
-            if (window.innerWidth < 768) return; // 小さい画面ではバー非表示なのでドラッグ不要
+            if (window.innerWidth < 768) return;
 
             isDraggingHandle = true;
             handle.style.cursor = 'grabbing';
@@ -193,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
         });
 
-        // マウス移動
         window.addEventListener('mousemove', (e) => {
             if (!isDraggingHandle) return;
             e.preventDefault();
@@ -201,20 +246,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const deltaX = e.clientX - dragStartX;
             let newLeft = startLeft + deltaX;
 
-            // はみ出し防止
             const maxHandleLeft = trackWidth - handleWidth;
             if (newLeft < 0) newLeft = 0;
             if (newLeft > maxHandleLeft) newLeft = maxHandleLeft;
 
-            // ハンドルの位置を更新
             handle.style.left = newLeft + 'px';
 
-            // ハンドル位置に応じて columnCards のスクロール位置も更新
             const posRatio = newLeft / maxHandleLeft;
             columnCards.scrollLeft = maxScrollLeft * posRatio;
         });
 
-        // マウスアップでドラッグ終了
         window.addEventListener('mouseup', () => {
             if (isDraggingHandle) {
                 isDraggingHandle = false;
@@ -222,24 +263,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // (3) columnCards のスクロールイベントでハンドル更新
         columnCards.addEventListener('scroll', updateHandle);
 
-        // (4) リサイズ時にトラック幅を再取得してハンドル更新
         window.addEventListener('resize', onResize);
 
         function onResize() {
             if (window.innerWidth >= 768) {
-                // トラックの実際の幅を再取得
                 trackWidth = track.getBoundingClientRect().width;
             } else {
-                trackWidth = 0; // 非表示扱い
+                trackWidth = 0;
             }
             updateHandle();
         }
 
-        // 初期化
         onResize();
     }
-    
 });
