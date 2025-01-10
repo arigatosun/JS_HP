@@ -1,21 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* 横スクロールを防止 */
+    overflow-x: hidden;
+    
 }
-
 
 /* Hero Section */
 .hero {
     margin-top: 50px;
+    position: relative; /* z-indexを機能させるために必要 */
+    z-index: 0; /* bodyより上のレイヤーに配置 */
 }
 
 .hero-container {
     width: 100%;
     text-align: center;
+    position: relative; /* z-indexを機能させるために必要 */
+    z-index: 1; /* .hero内での重なり順を制御 */
 }
 
 .hero-image {
     max-width: 100%;
     height: auto;
+    position: relative; /* z-indexを機能させるために必要 */
+    z-index: 1; /* .hero-container内での重なり順を制御 */
 }

@@ -1,0 +1,111 @@
+/* shapes */
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* より大きな値に設定 */
+}
+
+.hero-shape {
+    position: absolute;
+}
+
+/* Small blue shape */
+.hero-shape.small-blue {
+    top: -4%;
+    left: 10%;
+    width: 180px;
+    height: 180px;
+}
+
+/* Small red shape */
+.hero-shape.small-red {
+    top: -16%;
+    right: 15%;
+    width: 280px;
+    height: 333px;
+}
+
+/* Big blue shape */
+.hero-shape.big-blue {
+    bottom: -53%;
+    left: 0%;
+    width: 740px;
+    height: 740px;
+}
+
+/* Medium red shape */
+.hero-shape.medium-red {
+    bottom: -50%;
+    left: -4%;
+    width: 290px;
+    height: 306px;
+}
+
+/* Big red shape */
+.hero-shape.big-red {
+    bottom: -26%;
+    right: -2%;
+    width: 269px;
+    height: 337px;
+}
+
+/* Base shape styles */
+.hero-shape {
+    pointer-events: none;
+}
+
+/* Hero section base styles */
+#hero-section {
+    position: relative;
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    margin-top: 50px;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.business .shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* .business-contentと.business-menuより背面、.business-white-containerより前面 */
+    pointer-events: none; /* 下層のクリックイベントを妨げないように */
+}
+
+.business .hero-shape {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.business .hero-shape.big-blue {
+    top: -483px;
+    right: 0;
+}
+
+.business .hero-shape.medium-red {
+    bottom: 483px;
+    left: 0;
+}
+
+.business .hero-shape.big-red {
+    top: -30%;
+    right: -2%;
+    width: 269px;
+    height: 337px;
+}
+
