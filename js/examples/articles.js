@@ -47,34 +47,36 @@ function createArticleCard(article) {
 
 // ページネーション用のHTMLを生成する関数
 function createPagination(currentPage, totalPages) {
-    let paginationHtml = '<div class="pagination">';
+    const progressPercentage = (currentPage / totalPages) * 100;
     
-    // 前のページへのリンク
-    if (currentPage > 1) {
-        paginationHtml += `<button class="page-btn" data-page="${currentPage - 1}">前へ</button>`;
-    }
-    
-    // ページ番号
-    for (let i = 1; i <= totalPages; i++) {
-        paginationHtml += `
-            <button class="page-btn ${currentPage === i ? 'active' : ''}" 
-                    data-page="${i}">${i}</button>
-        `;
-    }
-    
-    // 次のページへのリンク
-    if (currentPage < totalPages) {
-        paginationHtml += `<button class="page-btn" data-page="${currentPage + 1}">次へ</button>`;
-    }
-    
-    paginationHtml += '</div>';
-    return paginationHtml;
+    return `
+        <div class="pagination">
+            <div class="pagination-controls">
+                <button class="nav-button" data-page="${currentPage - 1}" ${currentPage <= 1 ? 'disabled' : ''}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 19L8 12L15 5" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-indicator" style="width: ${progressPercentage}%"></div>
+                    </div>
+                    <div class="page-indicator">${currentPage} / ${totalPages}</div>
+                </div>
+                <button class="nav-button" data-page="${currentPage + 1}" ${currentPage >= totalPages ? 'disabled' : ''}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 5L16 12L9 19" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 // メインの処理
 document.addEventListener('DOMContentLoaded', function() {
     const articlesPerPage = 9; // 1ページあたりの記事数
-    const totalArticles = 15; // 合計記事数
+    const totalArticles = 30; // 合計記事数
     const articles = generateArticleData(totalArticles);
     let currentPage = 1;
     
@@ -86,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const end = start + articlesPerPage;
         const displayedArticles = articles.slice(start, end);
         
+        // 記事カードの更新
         gridContainer.innerHTML = displayedArticles.map(article => 
             createArticleCard(article)
         ).join('');
@@ -102,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
         containerDiv.insertAdjacentHTML('beforeend', paginationHtml);
         
         // ページネーションボタンのイベントリスナーを設定
-        const pageButtons = containerDiv.querySelectorAll('.page-btn');
-        pageButtons.forEach(button => {
+        const navButtons = containerDiv.querySelectorAll('.nav-button:not([disabled])');
+        navButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const newPage = parseInt(this.dataset.page);
                 currentPage = newPage;

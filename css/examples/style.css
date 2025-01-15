@@ -71,16 +71,17 @@ body {
     background: #FFFFFF;
     /* opacity: 0.60; */
     border-radius: 9.996px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 最小幅を調整 */
-    gap: 10px; /* ボタン間の間隔 */
+    display: flex;
     padding: 30px 35px;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 30px;
 }
 
 .category-btn {
-    display: flex; 
-    width: 100%; /* ボタンの幅を100%に設定 */
+    display: inline-flex;
+    min-width: fit-content;
     padding: 8px 50px;
     justify-content: center;
     align-items: center;
@@ -99,8 +100,7 @@ body {
     font-weight: 700;
     line-height: 28px;
     letter-spacing: 3.2px;
-    white-space: normal; /* nowrapから変更 */
-    text-align: center; /* テキストを中央寄せ */
+    white-space: nowrap;
 }
 
 .category-btn:hover {

@@ -1,63 +1,158 @@
 .pagination {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     margin: 40px 0 60px;
 }
 
-.page-btn {
-    display: inline-flex;
-    justify-content: center;
+.pagination-controls {
+    display: flex;
     align-items: center;
-    min-width: 40px;
-    height: 40px;
-    padding: 0 15px;
+    gap: 40px; /* 間隔を広げる */
+    width: 100%;
+    max-width: 502px;
+    justify-content: center;
+}
+
+.nav-button {
+    width: 76px;  /* 48pxから64pxに拡大 */
+    height: 76px; /* 48pxから64pxに拡大 */
+    background: none;
     border: none;
-    border-radius: 20px;
-    background: #B9B9B9;
-    color: #FFF;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    border-radius: 50%; /* 円形のホバーエフェクト用 */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* ホバー時の背景 */
+    transform: translateY(-2px); /* ホバー時に少し浮き上がる */
+}
+
+.nav-button:active {
+    transform: translateY(0); /* クリック時のアニメーション */
+}
+
+.nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+    background: none;
+}
+
+.nav-button svg {
+    width: 50px;  /* 32pxから48pxに拡大 */
+    height: 50px; /* 32pxから48pxに拡大 */
+    transition: transform 0.3s ease;
+}
+
+.nav-button:hover svg {
+    transform: scale(1.1); /* ホバー時にSVGを少し大きく */
+}
+
+.nav-button:active svg {
+    transform: scale(0.95); /* クリック時のアニメーション */
+}
+
+.progress-container {
+    width: 402px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #D9D9D9;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.progress-bar:hover {
+    background: #CCCCCC; /* ホバー時に背景をわずかに暗く */
+}
+
+.progress-indicator {
+    height: 100%;
+    background: #FFFFFF;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* イージング調整 */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 微かな影を追加 */
+}
+
+.page-indicator {
+    color: #333;
+    text-align: center;
     font-family: "BIZ UDGothic";
     font-size: 16px;
+    font-style: normal;
     font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    transition: opacity 0.3s ease;
 }
 
-.page-btn:hover {
-    background: #999;
-    transform: translateY(-2px);
-}
-
-.page-btn.active {
-    background: #E61221;
+.page-indicator:hover {
+    opacity: 0.7; /* ホバー時の視覚的フィードバック */
 }
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 767px) {
-    .pagination {
-        gap: 8px;
-        margin: 30px 0 40px;
+    .pagination-controls {
+        padding: 0 20px;
+        gap: 30px; /* モバイルでは間隔を少し狭める */
     }
-    
-    .page-btn {
-        min-width: 36px;
-        height: 36px;
-        font-size: 14px;
-        padding: 0 12px;
+
+    .progress-container {
+        width: 100%;
+        max-width: 402px;
+    }
+
+    .nav-button {
+        width: 40px; /* モバイルではボタンを少し小さく */
+        height: 40px;
+    }
+
+    .nav-button svg {
+        width: 28px;
+        height: 28px;
     }
 }
 
 @media screen and (max-width: 575px) {
     .pagination {
-        gap: 6px;
-        margin: 20px 0 30px;
+        margin: 30px 0 40px;
+        gap: 15px;
     }
-    
-    .page-btn {
-        min-width: 32px;
-        height: 32px;
-        font-size: 12px;
-        padding: 0 10px;
+
+    .pagination-controls {
+        gap: 20px;
+    }
+
+    .page-indicator {
+        font-size: 14px;
+        letter-spacing: 2.8px;
+    }
+
+    .nav-button {
+        width: 36px; /* さらに小さく */
+        height: 36px;
+    }
+
+    .nav-button svg {
+        width: 24px;
+        height: 24px;
     }
 }
