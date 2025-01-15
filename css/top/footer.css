@@ -15,6 +15,7 @@
     width: 100%;
     min-height: 80vh;
     position: relative;
+    overflow-x: hidden; /* はみ出しを防ぐ */
 }
 
 .footer-content {
@@ -23,7 +24,8 @@
     padding: 100px 0px;
     height: 100%;
     min-height: inherit;
-    position: relative; /* 追加 */
+    position: relative;
+    box-sizing: border-box; /* パディングを幅に含める */
     
 }
 
@@ -34,15 +36,15 @@
     top: 53%;
     left: 85%;
     transform: translate(-50%, -50%);
-    width: 77.5vw;  /* 985pxを相対値に変換 */
+    width: 77.5vw;
     max-width: 985px;
-    aspect-ratio: 985 / 745; /* 元の画像の比率を維持 */
+    aspect-ratio: 985 / 745;
     background-image: url('../../images/footer_js_logo.png');
     background-size: cover;
     background-position: center;
     opacity: 0.3;
     mix-blend-mode: luminosity;
-    z-index: 1;  /* テキストより後ろに配置 */
+    z-index: 1;
 }
 
 
@@ -50,9 +52,10 @@
     max-width: 1270px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 80px; /* 上部に適度な余白を設定 */
+    padding-top: 80px;
     position: relative;
-    z-index: 2;  /* 背景画像より前面に配置 */
+    z-index: 2;
+    box-sizing: border-box; /* パディングを幅に含める */
 }
 
 .footer-title {
@@ -239,6 +242,7 @@
         height: 100%;
         min-height: inherit;
         position: relative;
+        box-sizing: border-box;
     }
     .footer-content::before {
         content: '';
@@ -256,13 +260,20 @@
         mix-blend-mode: luminosity;
         z-index: 1;  /* テキストより後ろに配置 */
     }
+    .footer-service-container {
+        padding: 80px 0; /* 左右のパディングを削除 */
+    }
 }
 
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 1024px) {
+    .footer-content {
+        padding: 100px 20px; /* パディングを調整 */
+    }
     .footer-banner-content {
-        padding: 0 73px;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     .menu-header {
         padding: 10px 0;
@@ -292,6 +303,7 @@
     /* アニメーション時のスムーズな動き */
     .menu-list {
         transition: all 0.3s ease-in-out;
+        margin-bottom: 30px;
     }
     .phone-number {
         font-size: 16px;
@@ -301,9 +313,7 @@
         max-width: 1270px;
         width: 100%;
         margin: 0 auto;
-        padding-top: 80px;
-        padding-left: 73px; /* 左側の余白を調整 */
-        padding-right: 73px; /* 右側の余白を調整 */
+        padding: 80px 0; /* 左右のパディングを0に */
         position: relative;
         z-index: 2;
     }
@@ -314,7 +324,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: 20px;
-        letter-spacing: 2.4px;
+        letter-spacing: 2px;
         text-decoration-line: underline;
         text-decoration-style: solid;
     }    
@@ -325,12 +335,13 @@
         font-style: normal;
         font-weight: 700;
         line-height: 25px; /* 156.25% */
-        letter-spacing: 4px;
+        letter-spacing: 3px;
         margin: 0 0 16px 0;
     }
     .footer-menu-grid {
-        /* タブレットサイズでは2列にし、1列目を広めに */
-        grid-template-columns: 1.3fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        width: 100%;
     }
     .footer-content::before {
         width: 85vw;  /* タブレットサイズでは少し大きめに */
@@ -339,8 +350,11 @@
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 767px) {
+    .footer-content {
+        padding: 60px 15px; /* モバイル用にパディングを調整 */
+    }
     .footer-banner-content {
-        padding: 0 55px;
+        padding: 0 15px;
     }
     
     .footer-banner-logo {
@@ -389,7 +403,7 @@
     }
     .footer-menu-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
     }
 
     .footer-menu-column {
@@ -415,7 +429,7 @@
     }
     
     .footer-service-container {
-        padding: 40px 55px 0;
+        padding: 40px 0;
     }
 
     .footer-title {

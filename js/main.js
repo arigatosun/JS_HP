@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ▼ セクションを読み込む関数（既存コード）
-    async function loadSection(sectionName) {
+    // ▼ セクションを読み込む関数を修正（パスを指定可能に）
+    async function loadSection(sectionName, basePath = 'sections/top/') {
         try {
-            const response = await fetch(`sections/top/${sectionName}.html`);
+            const response = await fetch(`${basePath}${sectionName}.html`);
             const html = await response.text();
             document.getElementById(`${sectionName}-section`).innerHTML = html;
         } catch (error) {
@@ -53,38 +53,91 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error initializing Rellax:', error);
         }
     }
-    
-    // セクション読み込み後の処理を修正
-    Promise.all([
-        loadSection('hero'),
-        loadSection('business'),
-        loadSection('service'),
-        loadSection('examples'),
-        loadSection('column')
-    ]).then(() => {
-        // DOMが完全に読み込まれたことを確認
-        requestAnimationFrame(() => {
-            initializeRellax();
-        });
-    });
-    
-    loadSection('header').then(() => {
-        initializeHamburgerMenu();
-    });
-    
-    // ▼ コラムセクション読み込み後にスクロール関連の制御を初期化
-    loadSection('column').then(() => {
-        initializeColumnScroll();       // 横スクロール(ホイール/ドラッグ)の制御
-        initializeCustomScrollbar();    // カスタムスクロールバーの制御
-    });
-    // ▼ 追加で読み込んでいるセクションがあるならそのまま
-    loadSection('information');
-     // ▼ フッターを読み込み後にフッターの開閉メニューを初期化
-     loadSection('footer').then(() => {
-        initializeFooterToggle();
-    });
 
-    // ▼ ハンバーガーメニューの制御を追加
+    // ▼ 事業領域詳細の初期化処理を追加
+    function initializeBusinessDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedArea = urlParams.get('area');
+    
+        if (selectedArea) {
+            // すべての領域を非表示
+            const allDetails = document.querySelectorAll('.detail-content');
+            allDetails.forEach(detail => detail.classList.remove('active'));
+    
+            // 選択された領域を表示
+            const selectedDetail = document.querySelector(`.detail-content[data-area="${selectedArea}"]`);
+            if (selectedDetail) {
+                selectedDetail.classList.add('active');
+                updatePageTitle(selectedArea);
+            }
+        }
+    }
+
+    // ▼ ページタイトル更新処理
+    function updatePageTitle(area) {
+        const titleMap = {
+            'digital': 'デジタルマーケティング領域',
+            'strategy': '戦略支援領域',
+            'technology': 'テクノロジー領域',
+            'maker': 'メーカー領域',
+            'creative': 'クリエイティブ領域',
+            'hr': '人材領域',
+            'ec': 'EC支援領域'
+        };
+
+        const pageTitle = document.querySelector('.main-title');
+        if (pageTitle && titleMap[area]) {
+            pageTitle.textContent = titleMap[area];
+        }
+    }
+
+    // ページタイプを判定（事業領域ページかどうか）
+    const isBusinessPage = document.querySelector('.business-main') !== null;
+
+    if (isBusinessPage) {
+        // 事業領域ページの場合の処理
+        Promise.all([
+            loadSection('header'),
+            loadSection('footer'),
+            loadSection('business-details', 'sections/business/'),
+            loadSection('business-other-areas', 'sections/business/'),
+            loadSection('business-works', 'sections/business/') // 新しいセクションを追加
+        ]).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+            initializeBusinessDetails();
+        });
+    } else {
+        // トップページの場合の処理（既存の実装を維持）
+        Promise.all([
+            loadSection('hero'),
+            loadSection('business'),
+            loadSection('service'),
+            loadSection('examples'),
+            loadSection('column')
+        ]).then(() => {
+            requestAnimationFrame(() => {
+                initializeRellax();
+            });
+        });
+        
+        loadSection('header').then(() => {
+            initializeHamburgerMenu();
+        });
+        
+        loadSection('column').then(() => {
+            initializeColumnScroll();
+            initializeCustomScrollbar();
+        });
+        
+        loadSection('information');
+        
+        loadSection('footer').then(() => {
+            initializeFooterToggle();
+        });
+    }
+
+    // ▼ ハンバーガーメニューの制御
     function initializeHamburgerMenu() {
         const hamburgerBtn = document.querySelector('.hamburger-menu');
         const nav = document.querySelector('.header-nav');
@@ -131,11 +184,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ▼ コラムセクションの横スクロールを制御する関数
     function initializeColumnScroll() {
         const columnCards = document.querySelector('.column-cards');
-        if (!columnCards) return; // まだDOMに無い場合は何もしない
+        if (!columnCards) return;
 
         // --- (A) マウスホイールで横スクロール ---
         columnCards.addEventListener('wheel', function(e) {
-            // 方向量を取得 (deltaYが0なら処理しない)
             if (e.deltaY === 0) return;
 
             const scrollLeft = columnCards.scrollLeft;
@@ -143,22 +195,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const atStart = (scrollLeft <= 0 && e.deltaY < 0);
             const atEnd = (scrollLeft >= maxScrollLeft && e.deltaY > 0);
 
-            // 先頭 or 末尾であれば通常の縦スクロールを有効にする
             if (atStart || atEnd) {
                 return;
             }
 
-            // それ以外の場合は横スクロールを行う
             e.preventDefault();
             columnCards.scrollLeft += e.deltaY;
         }, { passive: false });
 
         // --- (B) ドラッグ操作で横スクロール ---
         let isDragging = false;
-        let startX = 0;         // マウス押し始めた位置
-        let scrollLeftStart = 0; // 押し始めたときの scrollLeft
+        let startX = 0;
+        let scrollLeftStart = 0;
 
-        // カーソルを「grab」にする
         columnCards.style.cursor = 'grab';
 
         columnCards.addEventListener('mousedown', (e) => {
@@ -181,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isDragging) return;
             e.preventDefault();
             const x = e.pageX - columnCards.offsetLeft;
-            const walk = (x - startX) * 2; // ドラッグ距離×係数
+            const walk = (x - startX) * 2;
             columnCards.scrollLeft = scrollLeftStart - walk;
         });
     }
@@ -193,11 +242,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const handle = document.querySelector('.custom-scrollbar-handle');
         if (!columnCards || !track || !handle) return;
 
-        let trackWidth = 0;    // トラックの幅
-        let handleWidth = 0;   // ハンドルの幅
-        let maxScrollLeft = 0; // columnCardsの最大スクロール量
+        let trackWidth = 0;
+        let handleWidth = 0;
+        let maxScrollLeft = 0;
 
-        // (1) スクロールやリサイズのたびにハンドルを更新
         function updateHandle() {
             const scrollWidth = columnCards.scrollWidth;
             const clientWidth = columnCards.clientWidth;
@@ -224,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function() {
             handle.style.left = (maxHandleLeft * posRatio) + 'px';
         }
 
-        // (2) track, handle のドラッグ操作
         let isDraggingHandle = false;
         let dragStartX = 0;
         let startLeft = 0;

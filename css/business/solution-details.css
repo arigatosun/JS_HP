@@ -1,0 +1,166 @@
+/**************************************************************
+ * solution-details.css
+ * 「詳細表示エリア」および「ラベル」のアクティブ／非アクティブ状態に関するスタイル
+ **************************************************************/
+
+/*-------------------------------
+  1) ラベルのアクティブ／非アクティブ
+--------------------------------*/
+.no-scroll {
+    overflow: hidden; /* 縦横のスクロールを封じる */
+    height: 100vh;    /* 必要に応じてさらに固定 */
+  }
+/* 非アクティブ状態（共通） */
+.service-label,
+.solution-label {
+  background-color: #333;
+  color: #FFF;
+  cursor: pointer;
+  opacity: 0.3; /* うすく表示 */
+  transition: opacity 0.3s ease;
+}
+
+/* ホバー時に少しだけ強調 */
+.service-label:hover,
+.solution-label:hover {
+  opacity: 0.6;
+}
+
+/* アクティブ状態（クリックされて選択中） */
+.service-label.active,
+.solution-label.active {
+  opacity: 1;
+}
+
+/*-------------------------------
+  2) ソリューションカード詳細エリア
+--------------------------------*/
+
+/* 詳細全体のラッパ */
+.solution-card-detail .solution-detail {
+  padding: 0px 40px;
+  /* 背景色や枠線などは必要に応じて追記 */
+}
+
+/* 見出し（大項目） */
+.detail-heading {
+  color: #333;
+  font-family: "BIZ UDGothic";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 160% */
+  letter-spacing: 5px;
+  margin-bottom: 16px;
+}
+
+/* 小見出し（サブタイトル） */
+.detail-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+    display: inline-block; /* インラインブロック要素に変更 */
+    padding: 0 8px; /* 左右のパディングを追加してテキストと背景色の間に空間を作る */
+    background: #8DCDE9;
+  }
+
+/* 通常テキスト */
+.detail-text {
+  color: #333;
+  font-family: "BIZ UDGothic";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 175% */
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* 画像 + 白背景ボックスを横に並べる親コンテナ */
+.detail-flex {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* 左側の画像 */
+.detail-image {
+  width: auto!important;
+  height: 352px!important;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 右側の白背景コンテナ */
+.detail-whitebox {
+  display: flex;
+  width: 342px;
+    height: 330px;
+    padding: 0px 25px;
+    padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  background: #FFF;
+  border-radius: 8px;
+}
+
+/* 白背景コンテナ内のテキスト */
+.detail-whitebox-text {
+  color: #333;
+  font-family: "BIZ UDGothic";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  text-align: left;
+  margin: 0;
+}
+
+.marketing-detail-whitebox-text {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 3.2px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .sns-detail-whitebox-text {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 3.2px;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* 右側の白背景コンテナ */
+.sns-detail-whitebox {
+    display: flex;
+    width: 342px;
+      height: 390px;
+      padding: 0px 25px;
+      padding-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: #FFF;
+    border-radius: 8px;
+  }

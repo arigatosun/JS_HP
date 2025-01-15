@@ -1,0 +1,173 @@
+
+
+.business-main {
+    padding-top: 60px;
+    width: 100%;
+    overflow-x: hidden; /* 横スクロール防止 */
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 40px;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0; /* flexアイテムの最小幅を0に設定 */
+}
+
+.main-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 8px;
+    margin: 0;
+    white-space: nowrap; /* タイトルを1行に保つ */
+}
+
+.sub-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    margin: 0;
+    white-space: nowrap; /* サブタイトルを1行に保つ */
+}
+
+.decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 800px;
+    min-width: 0; /* flexアイテムの最小幅を0に設定 */
+}
+
+.line {
+    display: block;
+    height: 2px;
+    width: 100%;
+}
+
+.blue-line {
+    background: #00A0E9;
+}
+
+.red-line {
+    background: #DE021E;
+}
+
+.business-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.business-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1240px) {
+    .page-header {
+        padding: 0 30px;
+    }
+
+    .decorative-lines {
+        max-width: 50%; /* 画面幅に応じて相対的に調整 */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .business-main {
+        padding-top: 100px;
+    }
+
+    .main-title {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .sub-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .title-group {
+        gap: 15px;
+    }
+
+    .decorative-lines {
+        max-width: 45%; /* 画面幅に応じて相対的に調整 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .title-group {
+        width: 100%;
+    }
+
+    .decorative-lines {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    .business-main {
+        padding-top: 80px;
+    }
+
+    .business-image {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-header {
+        padding: 0 15px;
+    }
+
+    .main-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .sub-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .title-group {
+        gap: 10px;
+    }
+
+    .decorative-lines {
+        gap: 8px;
+    }
+}

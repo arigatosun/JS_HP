@@ -1,0 +1,56 @@
+.examples-main {
+    padding-top: 60px;
+    width: 100%;
+    overflow-x: hidden; /* 横スクロール防止 */
+}
+
+.examples-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.examples-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.service-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 760px;
+    min-width: 0; /* flexアイテムの最小幅を0に設定 */
+}
+
+.news-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 840px;
+    min-width: 0; /* flexアイテムの最小幅を0に設定 */
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}

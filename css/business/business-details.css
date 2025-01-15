@@ -1,0 +1,516 @@
+/* ベースレイアウト */
+.business-details {
+    padding: 5rem 0;
+    background-color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.details-container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    min-height: 25rem;
+    box-sizing: border-box;
+}
+
+/* 共通のセクションスタイル */
+.section-title {
+    font-size: clamp(1.5rem, 2vw, 1.75rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 1.875rem;
+}
+
+.detail-item {
+    padding: 1.25rem;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+}
+
+.detail-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.9375rem;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* デジタルマーケティング領域のベースレイアウト */
+.detail-content[data-area="digital"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+}
+
+/* コンテンツラッパー */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 120px;
+    width: 100%;
+}
+
+.content-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.content-right {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-top: 30px;
+}
+
+/* タイトルスタイル */
+.detail-content[data-area="digital"] .section-title {
+    color: #333;
+    font-family: "BIZ UDGothic", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 55px;
+    letter-spacing: 5.76px;
+    text-align: left;
+    margin-bottom: 40px;
+    word-break: break-word;
+}
+
+/* ディスクリプションスタイル */
+.detail-content[data-area="digital"] .description {
+    color: #333;
+    font-family: "BIZ UDGothic", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2.72px;
+    margin-bottom: 40px;
+    word-wrap: break-word;
+}
+
+/* 画像スタイル */
+.content-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+/* サービスラベル */
+.service-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.service-label {
+    display: inline-flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    background: #333;
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    flex: 0 1 auto;
+}
+
+/* ソリューションセクションの追加 */
+.solution-section {
+    margin-top: 155px;
+    width: 100%;
+}
+
+.solution-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.solution-title-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.solution-main-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.solution-sub-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.solution-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 800px;
+    min-width: 0;
+}
+
+/* ソリューションラベル */
+.solution-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.solution-label {
+    display: inline-flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    background: #333;
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+/* 新しいソリューションカードのスタイル */
+.solution-card {
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 28px;
+    background: #F2F2F2;
+    margin-left: 180px;
+    overflow: hidden;
+    margin-bottom: 40px; /* カード下部の余白を追加 */
+}
+
+.solution-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.solution-card-title {
+    margin: 8px 41px 0px;
+}
+
+.solution-card-title .highlight {
+    color: #DE021E;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 6.4px;
+}
+
+.solution-card-title .normal {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 6.4px;
+}
+
+.solution-card-description {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 4px;
+    margin: 0 41px 20px;
+}
+
+.solution-card-button-wrapper {
+    width: 89%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 41px 0px;
+}
+
+.solution-card-button {
+    display: flex;
+    width: 324px;
+    padding: 10px 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin: 0 auto 40px; /* 中央配置と下部余白を追加 */
+}
+/* 既存のソリューションエリアの修正 */
+.solution-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .solution-content-wrapper {
+        flex-direction: column;
+    }
+    
+    .solution-card {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+    .solution-main-title {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .solution-sub-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .solution-title-group {
+        gap: 15px;
+    }
+
+    .solution-decorative-lines {
+        max-width: 45%;
+    }
+}
+
+
+/* デスクトップ～タブレット */
+@media (min-width: 1024px) {
+    .details-container {
+        padding: 0 6rem;
+    }
+    
+    .content-right {
+        height: 100%;
+    }
+    
+    .content-right img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .service-label {
+        width: calc(33.33% - 14px);
+        font-size: 14px;
+    }
+}
+
+/* タブレット */
+@media (max-width: 1023px) {
+    .details-container {
+        padding: 0 3rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+    
+    .content-left, .content-right {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .service-labels {
+        justify-content: flex-start;
+    }
+}
+
+/* タブレット～モバイル */
+@media (max-width: 768px) {
+    .solution-card-title .highlight,
+    .solution-card-title .normal {
+        font-size: 24px;
+        letter-spacing: 4.8px;
+    }
+    
+    .solution-card-description {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    
+    .solution-card-button {
+        width: 100%;
+        font-size: 14px;
+    }
+    .solution-section {
+        margin-top: 100px;
+    }
+
+    .solution-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .solution-title-group {
+        width: 100%;
+    }
+
+    .solution-decorative-lines {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .solution-main-title {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+    .solution-section {
+        margin-top: 100px;
+    }
+    .business-details {
+        padding: 3rem 0;
+    }
+
+    .details-container {
+        padding: 0 1.5rem;
+    }
+    
+    .detail-content[data-area="digital"] .section-title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 1.5;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+    
+    .detail-content[data-area="digital"] .description {
+        font-size: 14px;
+        line-height: 1.8;
+        letter-spacing: 1.5px;
+    }
+    
+    .service-label {
+        flex: 1 1 100%;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+
+/* モバイル */
+@media (max-width: 480px) {
+    .solution-card {
+        padding: 20px;
+    }
+    
+    .solution-card-title .highlight,
+    .solution-card-title .normal {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+    .solution-section {
+        margin-top: 80px;
+    }
+
+    .solution-main-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .solution-sub-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .solution-title-group {
+        gap: 10px;
+    }
+
+    .solution-decorative-lines {
+        gap: 8px;
+    }
+   
+
+    .business-details {
+        padding: 2rem 0;
+    }
+
+    .details-container {
+        padding: 0 1rem;
+    }
+    
+    .detail-content[data-area="digital"] .section-title {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    
+    .detail-content[data-area="digital"] .description {
+        font-size: 12px;
+        line-height: 1.6;
+        letter-spacing: 1px;
+    }
+    
+    .service-label {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

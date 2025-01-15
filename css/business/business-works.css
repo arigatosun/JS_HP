@@ -1,0 +1,707 @@
+/* business-works.css */
+/* ベーススタイル */
+.business-works {
+    background: #F2F2F2;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.works-card.extra-card {
+    display: none;
+}
+
+.support-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 500px;
+    min-width: 0;
+}
+
+/* Works セクションのスタイル */
+.works-section {
+    margin-top: 55px;
+    width: 100%;
+}
+
+.works-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.works-title-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.works-main-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.works-sub-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.works-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 925px;
+    min-width: 0;
+}
+
+.line {
+    height: 2px;
+    flex-grow: 1;
+}
+
+.blue-line {
+    background-color: #007AFF;
+}
+
+.red-line {
+    background-color: #DE021E;
+}
+
+/* カードセクション */
+.works-container {
+    width: 100%;
+    padding-top: 0px;
+}
+
+.works-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* カードグリッド */
+.works-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 0px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* カードコンポーネント */
+.works-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: #FFF;
+    border-radius: 28px;
+    min-width: 250px;
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.works-card-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.works-card-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.card-divider {
+    display: flex;
+    padding-bottom: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 2px solid #333;
+}
+
+/* カテゴリー */
+.works-card-categories,
+.works-card-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-label {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.category-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.category-tag {
+    display: inline-flex;
+    padding: 2px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: #28A7E1;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2.4px;
+}
+
+/* すべてを見るボタン */
+.business-works .view-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+    padding-bottom: 100px;
+}
+
+.business-works .view-all-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 51px;
+    background: #333;
+    text-decoration: none;
+    height: 50px;
+    min-width: 295px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.business-works .view-all-button span {
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.9px;
+    letter-spacing: 3.2px;
+    padding-right: 40px;
+}
+
+.business-works .arrow-icon {
+    width: 24px;
+    height: 24px;
+    bottom: 13px;
+    right: 103px;
+}
+
+/* ロゴグリッド */
+.works-logo-grid {
+    display: grid;
+    margin: 55px auto 0;
+    width: calc(100% - 40px);
+    max-width: 1300px;
+    gap: clamp(20px, 3vw, 55px) clamp(20px, 2vw, 37px);
+    justify-content: center;
+}
+
+.logo-item {
+    width: 100%;
+    aspect-ratio: 223/89;
+    background: #D9D9D9;
+}
+
+/* リンクボタンのスタイル */
+.business-works .link-buttons {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 0;
+    margin-top: 100px;
+}
+.business-works .link-buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.business-works .link-button {
+    width: 50%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 共通のベーススタイル */
+.business-works .link-button .move-icon {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+/* recruit-move 専用のスタイル */
+.business-works .recruit-button .move-icon {
+    bottom: 80px;
+    right: 80px;
+    width: 270px;
+    height: 32px;
+}
+
+/* contact-move 専用のスタイル */
+.business-works .contact-button .move-icon {
+    bottom: 85px;
+    right: 80px;
+    width: 400px;
+    height: 32px;
+}
+
+/* ホバー時のアニメーション - recruit */
+.business-works .recruit-button:hover .move-icon {
+    transform: translateX(20px);
+}
+
+/* ホバー時のアニメーション - contact */
+.business-works .contact-button:hover .move-icon {
+    transform: translateX(20px);
+}
+
+
+.business-works .link-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* リンクボタンのコンテンツスタイル */
+.business-works .link-button-content {
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    z-index: 1;
+}
+
+.business-works .link-button-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.8px;
+    margin-bottom: 10px;
+}
+
+.business-works .link-button-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.4px;
+}
+
+/* お問い合わせボタンの文字色を白に */
+.business-works .contact-button .link-button-title,
+.business-works .contact-button .link-button-subtitle {
+    color: #FFF;
+}
+
+/* レスポンシブ対応 */
+
+@media screen and (min-width: 1401px) {
+    .works-logo-grid {
+        grid-template-columns: repeat(5, minmax(180px, 223px));
+    }
+   
+    
+}
+
+@media screen and (max-width: 1400px) {
+   
+    .works-logo-grid {
+        grid-template-columns: repeat(4, minmax(180px, 223px));
+    }
+    
+    .works-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-tag {
+        padding: 4px 7px;
+    }
+
+    .example-card.extra-card {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .business-works .link-button-content {
+        top: 60px;
+        left: 60px;
+    }
+    .works-logo-grid {
+        grid-template-columns: repeat(3, minmax(180px, 223px));
+    }
+    .works-cards-grid {
+        padding: 40px 60px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .works-main-title {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .works-sub-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .works-title-group {
+        gap: 15px;
+    }
+
+    .works-decorative-lines {
+        max-width: 45%;
+    }
+
+    /* カードグリッドの調整 */
+    .works-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 0px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* カードの最小幅を削除し、サイズを調整 */
+    .works-card {
+        min-width: 0;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* コンテンツエリアのパディング調整 */
+    .works-content {
+        padding: 0 15px;
+    }
+
+    /* カード内のパディング調整 */
+    .works-card {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .works-logo-grid {
+        grid-template-columns: repeat(2, minmax(160px, 180px));
+    }
+}
+
+/* モバイル (600px以下) */
+@media screen and (max-width: 600px) {
+    .works-logo-grid {
+        grid-template-columns: repeat(2, minmax(140px, 160px));
+        gap: 20px 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .business-works .link-button-content {
+        top: 40px;
+        left: 40px;
+    }
+    
+    .business-works .link-button-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .business-works .link-button-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .business-works .link-button {
+        height: 300px;
+    }
+
+    
+
+    .business-works .link-buttons-container {
+        flex-direction: column;
+    }
+
+    .business-works .link-button {
+        width: 100%;
+    }
+    .works-section {
+        margin-top: 100px;
+    }
+
+    .works-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .works-title-group {
+        width: 100%;
+    }
+
+    .works-decorative-lines {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .works-main-title {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    .works-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0px 0px;
+    }
+
+    .works-card {
+        padding: 27px;
+    }
+
+    .works-card-tag {
+        font-size: 10px;
+        line-height: 21px;
+        letter-spacing: 2px;
+    }
+
+    .tag-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .works-card-title {
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 2.4px;
+    }
+
+    .works-card-title br {
+        display: none;
+    }
+
+    .category-label {
+        font-size: 10px;
+        line-height: 28px;
+        letter-spacing: 2px;
+    }
+
+    .category-tag {
+        padding: 0px 22px;
+        font-size: 8px;
+        line-height: 19px;
+        letter-spacing: 1.6px;
+    }
+
+    .view-all-button-container {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .business-works .view-all-button {
+        min-width: 230px;
+    }
+
+    .business-works .view-all-button span {
+        font-size: 12px;
+        line-height: 21.675px;
+        letter-spacing: 2.4px;
+    }
+
+    .business-works .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+        right: 92px;
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .business-works .link-button-content {
+        top: 30px;
+        left: 30px;
+    }
+    
+    .business-works .link-button-title {
+        font-size: 24px;
+        letter-spacing: 3.6px;
+    }
+
+    .business-works .link-button-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+    }
+
+    .business-works .link-button {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .business-works .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+        right: 75px;
+        bottom: 16px;
+    }
+    /* カードのパディングを調整 */
+    .works-card {
+        padding: 15px;
+        width: calc(100% - 30px); /* パディングを考慮した幅調整 */
+        margin: 0 auto;
+        max-width: none;
+    }
+
+    /* グリッドのパディングを調整 */
+    .works-cards-grid {
+        padding: 0 0px;
+        gap: 15px;
+    }
+
+    /* カテゴリータグの調整 */
+    .category-tags {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .category-tag {
+        padding: 0 15px;
+        font-size: 8px;
+    }
+
+    /* カードコンテンツの余白調整 */
+    .works-card-categories,
+    .works-card-services {
+        gap: 8px;
+    }
+
+    /* タイトルのフォントサイズ調整 */
+    .works-card-title {
+        font-size: 11px;
+        line-height: 20px;
+        letter-spacing: 2px;
+    }
+
+    /* コンテンツエリアの余白調整 */
+    .works-content {
+        padding: 0 10px;
+    }
+
+    /* 「一覧を見る」ボタンの調整 */
+    .business-works .view-all-button {
+        min-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .works-section {
+        margin-top: 80px;
+    }
+
+    .works-main-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .works-sub-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .works-title-group {
+        gap: 10px;
+    }
+
+    .works-decorative-lines {
+        gap: 8px;
+    }
+
+    .works-cards-grid {
+        gap: 10px;
+    }
+
+    .works-card-categories,
+    .works-card-services {
+        gap: 0px;
+    }
+
+    .category-tags {
+        gap: 12px;
+    }
+
+    .business-works .view-all-button-container {
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .business-works .view-all-button {
+        min-width: 230px;
+        height: 38px;
+    }
+
+    .works-card-tag {
+        gap: 8px;
+    }
+
+    .card-divider {
+        padding-bottom: 15px;
+    }
+
+    .business-works .arrow-icon {
+        margin-right: 2px;
+    }
+}

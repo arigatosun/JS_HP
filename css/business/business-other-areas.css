@@ -1,0 +1,414 @@
+.other-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-left: 250px;
+    padding-top:80px;
+}
+
+.other-title-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.other-main-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.other-sub-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.other-decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 800px;
+    min-width: 0;
+}
+
+
+/* その他の事業領域セクションの基本スタイル */
+.other-business-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-image: url('../../images/business_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 960px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* 白コンテナのスタイル */
+.business-white-container {
+    margin-top: 52px;
+    margin-left: 232px;
+    height: 630px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 50px 0px 0px 50px;
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 0;
+}
+
+/* ビジネスメニューのグリッドレイアウト */
+.business-menu {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(360px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 65px 93px 0 93px;
+    max-width: 1400px;
+    position: relative;
+    z-index: 2;
+}
+
+/* メニューカードの基本スタイル */
+.menu-card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/* 画像のホバーエフェクト */
+.menu-card img:not(.arrow-icon) {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.menu-card:hover img:not(.arrow-icon) {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+/* メニュータイトルのスタイル */
+.menu-title {
+    position: absolute;
+    bottom: 14px;
+    left: 20px;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    line-height: 27px;
+    letter-spacing: 1.2px;
+    z-index: 1;
+}
+
+/* カードの位置調整 */
+.menu-card-2, .menu-card-4 {
+    margin-top: 50px;
+}
+
+.menu-card-5, .menu-card-7 {
+    margin-top: -50px;
+}
+
+/* 画像の表示制御 */
+.menu-card img.desktop-image,
+.menu-card img.mobile-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mobile-image {
+    display: none;
+}
+
+.desktop-image {
+    display: block;
+}
+
+.tablet-image {
+    display: none;
+}
+
+.mobile-special-image {
+    display: none;
+}
+
+/* 2行タイトルの位置調整 */
+.menu-card-1 .menu-title,
+.menu-card-3 .menu-title,
+.menu-card-5 .menu-title,
+.menu-card-7 .menu-title {
+    bottom: 60px;
+}
+
+/* 右矢印アイコンのスタイル */
+.arrow-icon {
+    position: absolute ;
+    bottom: 14px;
+    right: 14px ;
+    width: 29px ;
+    height: auto ;
+    z-index: 2;
+}
+
+/* 2行タイトルの矢印位置調整 */
+.menu-card-1 .arrow-icon,
+.menu-card-3 .arrow-icon,
+.menu-card-5 .arrow-icon,
+.menu-card-7 .arrow-icon {
+    bottom: 60px;
+}
+
+/* レスポンシブ対応 - 1919px以下 */
+@media screen and (max-width: 1919px) {
+    .business-white-container {
+        margin-left: calc(12vw);
+    }
+
+    .business-menu {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0px;
+        padding: 65px calc(4.8vw) 0 calc(4.8vw);
+    }
+
+    .menu-title {
+        bottom: calc(0.73vw);
+        left: calc(1.04vw);
+        font-size: calc(1.04vw);
+        line-height: 1.35;
+        letter-spacing: calc(0.063vw);
+       
+    }
+
+    .menu-card-2, .menu-card-4 {
+        margin-top: calc(2.6vw);
+    }
+
+    .menu-card-5, .menu-card-7 {
+        margin-top: calc(-2.6vw);
+    }
+
+    .menu-card-1 .menu-title,
+    .menu-card-3 .menu-title,
+    .menu-card-5 .menu-title,
+    .menu-card-7 .menu-title {
+        bottom: calc(3.125vw);
+    }
+
+    .arrow-icon {
+        bottom: calc(0.73vw);
+        right: calc(0.73vw) ;
+        width: calc(1.51vw) ;
+    }
+
+    .menu-card-1 .arrow-icon,
+    .menu-card-3 .arrow-icon,
+    .menu-card-5 .arrow-icon,
+    .menu-card-7 .arrow-icon {
+        bottom: calc(3.125vw);
+    }
+}
+
+
+/* レスポンシブ対応 - 1005px以下 */
+@media screen and (max-width: 1005px) {
+    .menu-card img.mobile-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    
+    .desktop-image {
+        display: none;
+    }
+
+    .business-menu {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 65px 20px 0 20px;
+    }
+    
+    .menu-card-2, .menu-card-4 {
+        margin-top: 30px;
+    }
+    
+    .menu-card-5, .menu-card-7 {
+        margin-top: -30px;
+    }
+    
+    .menu-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+        left: 10px;
+        width: calc(100% - 40px);
+    }
+    
+    .arrow-icon {
+        width: 26px ;
+        bottom: 10px;
+        right: 16px ;
+    }
+
+    .menu-card-1 .menu-title,
+    .menu-card-3 .menu-title,
+    .menu-card-5 .menu-title,
+    .menu-card-7 .menu-title {
+        bottom: 30px;
+    }
+
+    .menu-card-1 .arrow-icon,
+    .menu-card-3 .arrow-icon,
+    .menu-card-5 .arrow-icon,
+    .menu-card-7 .arrow-icon {
+        bottom: 45px;
+    }
+}
+
+/* タブレット対応 - 1004px以下491px以上 */
+@media screen and (max-width: 1004px) and (min-width: 491px) {
+    .other-business-section {
+        min-height: auto;
+    }
+
+    .business-white-container {
+        margin-left: 54px;
+        margin-top: 40px;
+        border-radius: 30px 0 0 30px;
+        height: auto;
+        padding-bottom: 40px;
+        width: calc(100% - 54px);
+    }
+
+    .business-menu {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 12px;
+        padding: 60px 56px 0 56px;
+    }
+
+    .menu-card-7 {
+        grid-column: span 2;
+    }
+
+    .menu-card .desktop-image,
+    .menu-card .mobile-image {
+        display: none !important;
+    }
+
+    .tablet-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .menu-card-2,
+    .menu-card-4,
+    .menu-card-5,
+    .menu-card-7 {
+        margin-top: 0;
+    }
+
+    .menu-title {
+        font-size: calc(12px + 0.5vw);
+        line-height: 27px;
+        letter-spacing: 0.96px;
+        bottom: calc(4px + 0.5vw);
+        left: 10px;
+    }
+
+    .arrow-icon {
+        width: calc(20px + 1vw) ;
+        height: auto ;
+        bottom: 20px ;
+        right: calc(12px + 0.5vw) ;
+    }
+}
+
+/* モバイル対応 - 490px以下 */
+@media screen and (max-width: 490px) {
+    .other-business-section {
+        min-height: auto;
+        background-size: cover;
+    }
+
+    .business-white-container {
+        margin-left: 0px;
+        margin-top: 30px;
+        border-radius: 20px 0 0 20px;
+        width: 100%;
+        height: auto;
+        min-height: 630px;
+        padding-bottom: 0px;
+    }
+
+    .business-menu {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 50px 40px;
+    }
+
+    .menu-card {
+        margin-top: 0 !important;
+    }
+
+    .menu-card-7 {
+        grid-column: 1;
+    }
+
+    .menu-title {
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 1.96px;
+        bottom: 4px;
+        left: 16px;
+    }
+
+    .arrow-icon {
+        width: 25px;
+        bottom: 16px ;
+        right: 20px ;
+    }
+
+    .desktop-image,
+    .mobile-image {
+        display: none !important;
+    }
+
+    .tablet-image {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+    }
+}
