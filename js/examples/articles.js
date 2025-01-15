@@ -16,33 +16,44 @@ function generateArticleData(count) {
 // 記事カードのHTMLを生成する関数
 function createArticleCard(article) {
     return `
-        <div class="example-card">
-            <div class="example-card-tag">
-                <img src="images/tag-icon.png" alt="タグ" class="tag-icon">
-                <span>${article.tag}</span>
-            </div>
-            <h4 class="example-card-title">
-                ${article.title}
-            </h4>
-            <div class="card-divider"></div>
-            <div class="example-card-categories">
-                <span class="category-label">支援領域</span>
-                <div class="category-tags">
-                    ${article.supportCategories.map(category => 
-                        `<span class="category-tag">${category}</span>`
-                    ).join('')}
+        <a href="sections/examples/example-detail.html?id=${article.id}" 
+           class="example-card-link" 
+           onclick="handleArticleClick(event, ${article.id})">
+            <div class="example-card">
+                <div class="example-card-tag">
+                    <img src="images/tag-icon.png" alt="タグ" class="tag-icon">
+                    <span>${article.tag}</span>
+                </div>
+                <h4 class="example-card-title">
+                    ${article.title}
+                </h4>
+                <div class="card-divider"></div>
+                <div class="example-card-categories">
+                    <span class="category-label">支援領域</span>
+                    <div class="category-tags">
+                        ${article.supportCategories.map(category => 
+                            `<span class="category-tag">${category}</span>`
+                        ).join('')}
+                    </div>
+                </div>
+                <div class="example-card-services">
+                    <span class="category-label">提供サービス</span>
+                    <div class="category-tags">
+                        ${article.serviceCategories.map(category => 
+                            `<span class="category-tag">${category}</span>`
+                        ).join('')}
+                    </div>
                 </div>
             </div>
-            <div class="example-card-services">
-                <span class="category-label">提供サービス</span>
-                <div class="category-tags">
-                    ${article.serviceCategories.map(category => 
-                        `<span class="category-tag">${category}</span>`
-                    ).join('')}
-                </div>
-            </div>
-        </div>
+        </a>
     `;
+}
+
+// 記事クリック時の処理
+function handleArticleClick(event, id) {
+    event.preventDefault();
+    const baseUrl = window.location.origin;
+    window.location.href = `${baseUrl}/sections/examples/example-detail.html?id=${id}`;
 }
 
 // ページネーション用のHTMLを生成する関数
@@ -73,11 +84,14 @@ function createPagination(currentPage, totalPages) {
     `;
 }
 
+// グローバルスコープで記事データを保持
+let articlesData = [];
+
 // メインの処理
 document.addEventListener('DOMContentLoaded', function() {
     const articlesPerPage = 9; // 1ページあたりの記事数
     const totalArticles = 30; // 合計記事数
-    const articles = generateArticleData(totalArticles);
+    articlesData = generateArticleData(totalArticles);
     let currentPage = 1;
     
     const gridContainer = document.querySelector('.news-articles-grid');
@@ -86,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayArticles(page) {
         const start = (page - 1) * articlesPerPage;
         const end = start + articlesPerPage;
-        const displayedArticles = articles.slice(start, end);
+        const displayedArticles = articlesData.slice(start, end);
         
         // 記事カードの更新
         gridContainer.innerHTML = displayedArticles.map(article => 
@@ -111,11 +125,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const newPage = parseInt(this.dataset.page);
                 currentPage = newPage;
                 displayArticles(currentPage);
-                window.scrollTo(0, containerDiv.offsetTop - 100);
+                const scrollOffset = window.innerWidth <= 767 ? 80 : 100; // モバイルではオフセットを小さく
+window.scrollTo({
+    top: containerDiv.offsetTop - scrollOffset,
+    behavior: 'smooth'
+});
             });
         });
     }
     
     // 初期表示
-    displayArticles(currentPage);
+    if (gridContainer && containerDiv) {
+        displayArticles(currentPage);
+    }
 });

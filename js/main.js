@@ -1,49 +1,79 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ▼ セクションを読み込む関数を修正（パスを指定可能に）
+    // パス調整用のヘルパー関数
+    function adjustPath(basePath) {
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('/sections/examples/')) {
+            return '../../' + basePath;
+        } else if (currentPath.includes('/sections/')) {
+            return '../' + basePath;
+        }
+        return basePath;
+    }
+
+    // ヘッダーリンクを調整する関数
+    function adjustHeaderLinks() {
+        const headerLinks = document.querySelectorAll('.header-nav a');
+        headerLinks.forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href.startsWith('http') && !href.startsWith('//')) {
+                if (href.startsWith('/')) {
+                    href = href.substring(1);
+                }
+                link.setAttribute('href', adjustPath(href));
+            }
+        });
+    }
+
     async function loadSection(sectionName, basePath = 'sections/top/') {
         try {
             const response = await fetch(`${basePath}${sectionName}.html`);
             const html = await response.text();
-            document.getElementById(`${sectionName}-section`).innerHTML = html;
+            
+            // 現在のパスに基づいてコンテンツを調整
+            let adjustedHtml = html;
+            adjustedHtml = adjustedHtml.replace(/src="images\//g, `src="${adjustPath('images/')}`);
+            adjustedHtml = adjustedHtml.replace(/href="(?!http|\/\/|#)([^"]*)"/g, (match, p1) => {
+                return `href="${adjustPath(p1)}"`;
+            });
+            
+            document.getElementById(`${sectionName}-section`).innerHTML = adjustedHtml;
+            
+            // ヘッダーセクションの場合、追加の調整を行う
+            if (sectionName === 'header') {
+                adjustHeaderLinks();
+            }
         } catch (error) {
             console.error(`Error loading ${sectionName} section:`, error);
         }
     }
 
-    // Rellaxの初期化
     function initializeRellax() {
         console.log('Initializing Rellax...');
         
         try {
-            // コラムセクションのRellax要素を確認
             const columnRellaxElements = document.querySelectorAll('.column-section .rellax');
             console.log('Column Rellax elements found:', columnRellaxElements.length);
     
-            // Rellaxインスタンスを作成
             const rellax = new Rellax('.rellax', {
-                center: true,  // センターベースの視差効果に変更
-                wrapper: null, // デフォルトのラッパーを使用
+                center: true,
+                wrapper: null,
                 round: true,
                 vertical: true,
                 horizontal: false,
                 speed: -2,
-                // セクションごとに異なる速度を設定
                 callback: function(positions) {
-                    // デバッグ用
                     console.log('Rellax positions:', positions);
                 }
             });
             
             console.log('Rellax initialized successfully');
     
-            // リサイズ時にRellaxを更新
             window.addEventListener('resize', () => {
                 if (rellax) {
                     rellax.refresh();
                 }
             });
     
-            // スクロール時のデバッグ情報
             window.addEventListener('scroll', () => {
                 const rellaxElements = document.querySelectorAll('.rellax');
                 console.log('Active Rellax elements:', rellaxElements.length);
@@ -54,17 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ▼ 事業領域詳細の初期化処理を追加
     function initializeBusinessDetails() {
         const urlParams = new URLSearchParams(window.location.search);
         const selectedArea = urlParams.get('area');
     
         if (selectedArea) {
-            // すべての領域を非表示
             const allDetails = document.querySelectorAll('.detail-content');
             allDetails.forEach(detail => detail.classList.remove('active'));
     
-            // 選択された領域を表示
             const selectedDetail = document.querySelector(`.detail-content[data-area="${selectedArea}"]`);
             if (selectedDetail) {
                 selectedDetail.classList.add('active');
@@ -73,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ▼ ページタイトル更新処理
     function updatePageTitle(area) {
         const titleMap = {
             'digital': 'デジタルマーケティング領域',
@@ -91,24 +117,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ページタイプを判定（事業領域ページかどうか）
+    // ページタイプを判定
     const isBusinessPage = document.querySelector('.business-main') !== null;
+    const isExampleDetailPage = document.querySelector('.examples-main') !== null && 
+                               window.location.pathname.includes('example-detail.html');
 
-    if (isBusinessPage) {
+    if (isExampleDetailPage) {
+        // 詳細ページの場合の処理
+        loadSection('header', adjustPath('sections/top/'));
+        loadSection('footer', adjustPath('sections/top/')).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+            initializeExampleDetail();
+        });
+    } else if (isBusinessPage) {
         // 事業領域ページの場合の処理
         Promise.all([
             loadSection('header'),
             loadSection('footer'),
-            loadSection('business-details', 'sections/business/'),
-            loadSection('business-other-areas', 'sections/business/'),
-            loadSection('business-works', 'sections/business/') // 新しいセクションを追加
+            loadSection('business-details', adjustPath('sections/business/')),
+            loadSection('business-other-areas', adjustPath('sections/business/')),
+            loadSection('business-works', adjustPath('sections/business/'))
         ]).then(() => {
             initializeHamburgerMenu();
             initializeFooterToggle();
             initializeBusinessDetails();
         });
     } else {
-        // トップページの場合の処理（既存の実装を維持）
+        // トップページとその他のページの処理
         Promise.all([
             loadSection('hero'),
             loadSection('business'),
@@ -137,13 +173,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ▼ ハンバーガーメニューの制御
+    // 残りの関数は変更なし
     function initializeHamburgerMenu() {
         const hamburgerBtn = document.querySelector('.hamburger-menu');
         const nav = document.querySelector('.header-nav');
         const body = document.body;
 
-        // オーバーレイ要素を作成
         const overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         body.appendChild(overlay);
@@ -152,14 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburgerBtn.classList.toggle('active');
             nav.classList.toggle('active');
             overlay.classList.toggle('active');
-            // bodyのoverflowを切り替え（メニュー表示中はスクロール固定）
             body.style.overflow = (body.style.overflow === 'hidden' ? '' : 'hidden');
         }
 
         hamburgerBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // メニュー内のリンクをクリックした時にメニューを閉じる
         const menuLinks = nav.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -169,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // ウィンドウリサイズ時の処理（767pxを超えたら自動的に閉じる等）
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
@@ -324,5 +356,64 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         onResize();
+    }
+
+     // 実績実例詳細ページの初期化関数
+     function initializeExampleDetail() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+
+        if (!articleId) {
+            // IDが無い場合は一覧ページにリダイレクト
+            window.location.href = '../../examples.html';
+            return;
+        }
+
+        // 記事データを取得して表示する処理
+        loadExampleDetail(articleId);
+    }
+
+    // 記事詳細を読み込む関数
+    async function loadExampleDetail(id) {
+        try {
+            // ここで記事データを取得する処理を実装
+            const articleData = await getArticleData(id);
+            if (!articleData) {
+                window.location.href = '../../examples.html';
+                return;
+            }
+            renderArticleDetail(articleData);
+        } catch (error) {
+            console.error('Error loading article detail:', error);
+            window.location.href = '../../examples.html';
+        }
+    }
+
+    // 記事データを取得する関数（仮実装）
+    async function getArticleData(id) {
+        // この部分は後で実際のデータ取得方法に応じて実装
+        return {
+            id: id,
+            tag: 'タグ項目・タグ項目',
+            title: `タイトル${id}がここに入ります。`,
+            supportCategories: ['カテゴリー', 'カテゴリー', 'カテゴリー'],
+            serviceCategories: ['カテゴリー', 'カテゴリー', 'カテゴリー']
+        };
+    }
+
+    // 記事詳細を描画する関数（仮実装）
+    function renderArticleDetail(article) {
+        const mainContent = document.querySelector('.example-detail-main');
+        if (!mainContent) return;
+
+        // ここで詳細ページのコンテンツを描画
+        // 実際のデザインに応じて実装
+        mainContent.innerHTML = `
+            <div class="detail-container">
+                <h1>${article.title}</h1>
+                <div class="article-tag">${article.tag}</div>
+                <!-- 他の記事詳細情報を表示 -->
+            </div>
+        `;
     }
 });

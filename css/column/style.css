@@ -1,0 +1,221 @@
+.column-main {
+    padding-top: 60px;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #F2F2F2;
+}
+
+body {
+    background-color: #F2F2F2;
+    margin: 0;
+    padding: 0;
+}
+
+.column-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.column-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.column-content {
+    max-width: 1350px;
+    margin: 60px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* リンクボタンのスタイル */
+.column-main .link-buttons {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 0;
+    margin-top: 100px;
+}
+
+.column-main .link-buttons-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+.column-main .link-button {
+    width: 50%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 共通のベーススタイル */
+.column-main .link-button .move-icon {
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+/* recruit-move 専用のスタイル */
+.column-main .recruit-button .move-icon {
+    bottom: 80px;
+    right: 80px;
+    width: 270px;
+    height: 32px;
+}
+
+/* contact-move 専用のスタイル */
+.column-main .contact-button .move-icon {
+    bottom: 85px;
+    right: 80px;
+    width: 400px;
+    height: 32px;
+}
+
+/* ホバー時のアニメーション */
+.column-main .recruit-button:hover .move-icon {
+    transform: translateX(20px);
+}
+
+.column-main .contact-button:hover .move-icon {
+    transform: translateX(20px);
+}
+
+.column-main .link-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* リンクボタンのコンテンツスタイル */
+.column-main .link-button-content {
+    position: absolute;
+    top: 80px;
+    left: 90px;
+    z-index: 1;
+}
+
+.column-main .link-button-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.8px;
+    margin-bottom: 10px;
+}
+
+.column-main .link-button-subtitle {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.4px;
+}
+
+/* お問い合わせボタンの文字色を白に */
+.column-main .contact-button .link-button-title,
+.column-main .contact-button .link-button-subtitle {
+    color: #FFF;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1200px) {
+    .column-main .link-button-content {
+        top: 60px;
+        left: 60px;
+    }
+    
+    .column-main .contact-button .move-icon {
+        bottom: 85px;
+        right: 45px;
+        width: 300px;
+        height: 24px;
+    }
+    
+    .column-main .recruit-button .move-icon {
+        bottom: 80px;
+        right: 50px;
+        width: 204px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .column-content {
+        padding: 0 20px;
+    }
+
+    .column-main .link-button-content {
+        top: 40px;
+        left: 40px;
+    }
+    
+    .column-main .link-button-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .column-main .link-button-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .column-main .link-button {
+        height: 300px;
+    }
+
+    .column-main .link-buttons-container {
+        flex-direction: column;
+    }
+
+    .column-main .link-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .column-main {
+        padding-top: 30px;
+    }
+    
+    .column-main .recruit-button .move-icon {
+        bottom: 23px;
+        right: 50px;
+        width: 204px;
+        height: 24px;
+    }
+
+    .column-main .contact-button .move-icon {
+        bottom: 23px;
+        right: 27px;
+        width: 300px;
+        height: 24px;
+    }
+
+    .column-main .link-button-content {
+        top: 30px;
+        left: 30px;
+    }
+    
+    .column-main .link-button-title {
+        font-size: 24px;
+        letter-spacing: 3.6px;
+    }
+
+    .column-main .link-button-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+    }
+
+    .column-main .link-button {
+        height: 200px;
+    }
+}

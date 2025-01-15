@@ -1,0 +1,22 @@
+/* example-detail.css */
+.examples-main .example-detail-container {
+    max-width: 1350px;
+    margin: 60px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 767px) {
+    .examples-main .example-detail-container {
+        padding: 0 20px;
+        margin: 40px auto;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .examples-main .example-detail-container {
+        padding: 0 15px;
+        margin: 30px auto;
+    }
+}

@@ -1,0 +1,367 @@
+ /* コンテナスタイル */
+ .article-detail-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.news-articles-container {
+    max-width: 1350px;
+    margin: 30px auto 0;
+    padding: 0 0px;
+    box-sizing: border-box;
+}
+
+/* 記事詳細カード */
+.article-detail {
+    
+    border-radius: 28px;
+    padding: 0px;
+    margin-bottom: 60px;
+}
+
+/* イメージセクション */
+.article-image {
+    width: 100%;
+    margin-bottom: 40px;
+    height: 500px; /* 高さを固定 */
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* アスペクト比を保持しながら表示 */
+    display: block;
+}
+
+/* ヘッダーセクション */
+.article-header {
+    margin-bottom: 30px;
+}
+
+/* タグスタイル */
+.article-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.article-tag .tag-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.article-tag span {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3.2px;
+}
+
+/* タイトルスタイル */
+.article-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 4px;
+    margin: 0 0 15px 0;
+}
+
+/* 日付スタイル */
+.article-date {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* デコレーティブライン */
+.decorative-lines {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.line {
+    height: 2px;
+    flex-grow: 1;
+}
+
+.blue-line {
+    background-color: #28A7E1;
+}
+
+.red-line {
+    background-color: #E61221;
+}
+
+/* カテゴリーセクション */
+.article-categories {
+    margin-bottom: 40px;
+}
+.categories-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.category-section {
+    margin-bottom: 20px;
+}
+
+.category-sien-header {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.category-label {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    margin-bottom: 12px;
+}
+
+.category-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    display: inline-flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: #28A7E1;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2.4px;
+}
+
+/* 記事本文 */
+.article-content {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 3.2px;
+    margin: 40px 0 120px 0;
+}
+
+/* 戻るボタン */
+.back-to-list {
+    text-align: center;
+}
+
+
+
+
+/* 最新の記事セクションのスタイル */
+.latest-articles-section {
+    margin-top: 80px;
+}
+
+/* 既存のグリッドスタイルを継承しつつ、6記事表示用に調整 */
+.latest-articles .news-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* 一覧に戻るボタンのスタイル */
+.view-all-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+    padding-bottom: 100px;
+}
+
+.view-all-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 51px;
+    background: #333;
+    text-decoration: none;
+    height: 50px;
+    min-width: 295px;
+    padding: 0 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-button:hover {
+    background: #555;
+}
+
+.view-all-button span {
+    color: #FFF;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28.9px;
+    letter-spacing: 3.2px;
+    padding-right: 0px;
+}
+
+.view-all-button .arrow-icon {
+    width: 24px;
+    height: 24px;
+    bottom: 13px;
+    right: 103px;
+}
+
+
+/* タブレット用レイアウト */
+@media screen and (max-width: 1200px) {
+    .latest-articles .news-articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .latest-articles-section {
+        margin-top: 60px;
+    }
+    .latest-articles .news-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 767px) {
+    .category-sien-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .view-all-button-container {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .view-all-button {
+        min-width: 230px;
+    }
+
+    .view-all-button span {
+        font-size: 12px;
+        line-height: 21.675px;
+        letter-spacing: 2.4px;
+    }
+
+    .view-all-button .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+        right: 92px;
+        bottom: 15px;
+    }
+    .article-detail-container {
+        padding: 0 20px;
+    }
+
+    .article-detail {
+        padding: 20px 20px 0px 20px;
+        border-radius: 20px;
+        margin-bottom: 0px;
+    }
+
+    .article-tag {
+        font-size: 14px;
+    }
+
+    .article-tag span {
+        font-size: 14px;
+        letter-spacing: 2.8px;
+    }
+
+    .article-title {
+        font-size: 20px;
+        letter-spacing: 3.2px;
+    }
+
+    .category-label {
+        font-size: 14px;
+        letter-spacing: 2.8px;
+    }
+
+    .article-content {
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 2.8px;
+    }
+
+    
+
+    .decorative-lines {
+        margin: 20px 0;
+    }
+    .article-image {
+        height: 300px; /* モバイル時の高さ調整 */
+    }
+
+    .categories-row {
+        gap: 20px;
+    }
+
+    .category-section {
+        min-width: 100%; /* モバイル時は1列に */
+    }
+    .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .category-label {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .view-all-button .arrow-icon {
+        width: 18.4px;
+        height: 18.4px;
+        right: 75px;
+        bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .view-all-button-container {
+        margin-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .view-all-button {
+        min-width: 230px;
+        height: 38px;
+    }
+
+    .arrow-icon {
+        margin-right: 2px;
+    }
+}
