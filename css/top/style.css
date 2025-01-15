@@ -1,29 +1,29 @@
-
-
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
 }
 
 /* Hero Section */
 .hero {
-    margin-top: 50px;
-    position: relative; /* z-indexを機能させるために必要 */
-    z-index: 0; /* bodyより上のレイヤーに配置 */
+    margin-top: 0px;
+    position: relative;
+    z-index: 0;
+    padding: 0 50px; /* 左右の余白を追加 */
 }
 
 .hero-container {
     width: 100%;
     text-align: center;
-    position: relative; /* z-indexを機能させるために必要 */
-    z-index: 1; /* .hero内での重なり順を制御 */
+    position: relative;
+    z-index: 1;
 }
 
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    position: relative; /* z-indexを機能させるために必要 */
-    z-index: 1; /* .hero-container内での重なり順を制御 */
+/* 動画のスタイルを追加 */
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px; /* 角丸を追加（数値は調整可能） */
+    margin-top: 50px; /* 上部の余白を追加 */
 }

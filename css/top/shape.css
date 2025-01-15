@@ -29,8 +29,8 @@
 
 /* Small blue shape */
 .hero-shape.small-blue {
-    top: -4%;
-    left: 10%;
+    top: 5%;
+    left: 15%;
     width: 180px;
     height: 180px;
 }
@@ -80,7 +80,7 @@
 
 .hero {
     position: relative;
-    margin-top: 50px;
+    
     
 }
 
@@ -118,7 +118,7 @@
 }
 
 .business .hero-shape.big-red {
-    top: -30%;
+    top: -70%;
     right: -2%;
     width: 269px;
     height: 337px;
@@ -314,7 +314,7 @@
     right: 0%;
     width: 403px;
     height: 359px;
-    z-index: 1;
+    z-index: -1;
 }
 
 /* 新しく追加したsmall-blue-shapeの設定 */
@@ -324,7 +324,7 @@
     right: 0%;
     width: 207px;
     height: 207px;
-    z-index: 2;
+    z-index: -1;
 }
 
 

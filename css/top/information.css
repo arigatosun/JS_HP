@@ -9,12 +9,17 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 0;
 }
 
 .information-container {
     width: 100%;
     padding-top: 90px;
+    position: relative;
+    z-index: 2; /* コンテンツを前面に */
 }
+
+
 
 .information-content {
     display: flex;
@@ -23,6 +28,8 @@
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
+    position: relative;
+        z-index: 1;
 }
 
 /* タイポグラフィー */
@@ -62,6 +69,8 @@
     max-width: 1440px;
     margin: 60px auto 0;
     padding: 0 90px;
+    position: relative;
+        z-index: 1;
 }
 
 .main-article {
@@ -153,6 +162,8 @@
     max-width: 1440px;
     margin: 60px auto 0;
     padding: 0 90px;
+    position: relative;
+        z-index: 1;
 }
 
 .sub-article {
