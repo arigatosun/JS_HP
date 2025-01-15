@@ -2,6 +2,13 @@
     padding-top: 60px;
     width: 100%;
     overflow-x: hidden; /* 横スクロール防止 */
+    background-color: #F2F2F2; /* 背景色を追加 */
+}
+
+body {
+    background-color: #F2F2F2;
+    margin: 0;
+    padding: 0;
 }
 
 .examples-image {
@@ -20,7 +27,6 @@
     display: flex;
     flex-direction: row;
     gap: 12px;
-    max-width: 760px;
     min-width: 0; /* flexアイテムの最小幅を0に設定 */
 }
 
@@ -29,7 +35,6 @@
     display: flex;
     flex-direction: row;
     gap: 12px;
-    max-width: 840px;
     min-width: 0; /* flexアイテムの最小幅を0に設定 */
 }
 
@@ -38,8 +43,8 @@
     align-items: center;
     gap: 30px;
     padding: 0 40px;
-    max-width: 1200px;
-    margin: 50px auto;
+    max-width: 1350px;
+    margin: 50px auto 10px auto;
     width: 100%;
     box-sizing: border-box;
 }
@@ -49,8 +54,308 @@
     align-items: center;
     gap: 30px;
     padding: 0 40px;
-    max-width: 1200px;
+    max-width: 1350px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+}
+
+.category-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.category-buttons {
+    background: #FFFFFF;
+    /* opacity: 0.60; */
+    border-radius: 9.996px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 最小幅を調整 */
+    gap: 10px; /* ボタン間の間隔 */
+    padding: 30px 35px;
+    margin-top: 30px;
+}
+
+.category-btn {
+    display: flex; 
+    width: 100%; /* ボタンの幅を100%に設定 */
+    padding: 8px 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background: #B9B9B9;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+    white-space: normal; /* nowrapから変更 */
+    text-align: center; /* テキストを中央寄せ */
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn.active {
+    background: #E61221;
+    transform: translateY(0);
+}
+
+.category-btn .ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* 最新の記事セクション */
+.news-articles-container {
+    max-width: 1350px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.news-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.news-articles-grid .example-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: #FFF;
+    border-radius: 28px;
+    
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.news-articles-grid .example-card-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.news-articles-grid .tag-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.news-articles-grid .example-card-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 4px;
+}
+
+.news-articles-grid .card-divider {
+    display: flex;
+    padding-bottom: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 2px solid #333;
+}
+
+.news-articles-grid .example-card-categories,
+.news-articles-grid .example-card-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-articles-grid .category-label {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 3.2px;
+}
+
+.news-articles-grid .category-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.news-articles-grid .category-tag {
+    display: inline-flex;
+    padding: 2px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background: #28A7E1;
+    color: #FFF;
+    font-family: "BIZ UDGothic";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2.4px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1200px) {
+    .news-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .news-articles-grid .example-card {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .service-header,
+    .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 0 20px;
+    }
+ 
+    .service-decorative-lines,
+    .news-decorative-lines {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .news-articles-container {
+        padding: 0 20px;
+    }
+
+    .news-articles-grid {
+        gap: 10px;
+    }
+
+    .news-articles-grid .example-card {
+        padding: 27px;
+    }
+
+    .news-articles-grid .example-card-tag {
+        font-size: 10px;
+        line-height: 21px;
+        letter-spacing: 2px;
+    }
+
+    .news-articles-grid .example-card-title {
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 2.4px;
+    }
+
+    .news-articles-grid .card-divider {
+        padding-bottom: 0px;
+    }
+
+    .news-articles-grid .category-label {
+        font-size: 10px;
+        line-height: 28px;
+        letter-spacing: 2px;
+        margin-top:6px;
+    }
+
+    .news-articles-grid .category-tag {
+        padding: 0px 16px;
+        font-size: 8px;
+        line-height: 19px;
+        letter-spacing: 1.6px;
+    }
+
+    .category-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 25px;
+        gap: 7px;
+    }
+
+    .category-btn {
+        font-size: 13px;
+        padding: 6px 25px;
+        letter-spacing: 2px;
+        line-height: 22px;
+        border-radius: 5px;
+    }
+
+    .category-container {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .news-articles-grid {
+        grid-template-columns: 1fr; /* 1列に変更 */
+        gap: 15px; /* カード間のスペースを調整 */
+    }
+
+    .news-articles-container {
+        padding: 0 15px; /* コンテナの左右パディングを調整 */
+    }
+
+    .news-articles-grid .example-card {
+        padding: 30px; /* カード内のパディングを調整 */
+        gap: 0px;
+    }
+
+    /* 既存の575px以下のスタイルを維持 */
+    .category-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px 20px;
+        gap: 6px;
+    }
+
+    .category-btn {
+        font-size: 12px;
+        padding: 5px 20px;
+        letter-spacing: 1.6px;
+        line-height: 20px;
+        border-radius: 4px;
+    }
+
+    .category-container {
+        padding: 0 15px;
+    }
+
+    .news-articles-grid .category-tags {
+        gap: 12px;
+    }
+
+    .news-articles-grid .example-card-categories,
+    .news-articles-grid .example-card-services {
+        gap: 0px;
+    }
 }

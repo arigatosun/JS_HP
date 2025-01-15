@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/top/footer.css">
     <link rel="stylesheet" href="css/business/style.css">
     <link rel="stylesheet" href="css/examples/style.css">
+    <link rel="stylesheet" href="css/examples/pagination.css">
 </head>
 <body>
     <div id="header-section">
@@ -27,16 +28,15 @@
             </div>
         </div>
 
-         <!-- イメージセクション -->
-         <div class="examples-image">
+        <!-- イメージセクション -->
+        <div class="examples-image">
             <img src="images/examples-image.png" alt="実績実例イメージ">
         </div>
 
-         <!-- ヘッダーセクション -->
-         <div class="service-header">
+        <!-- ヘッダーセクション -->
+        <div class="service-header">
             <div class="title-group">
                 <h1 class="main-title">提供サービス別</h1>
-                
             </div>
             <div class="service-decorative-lines">
                 <span class="line blue-line"></span>
@@ -44,17 +44,24 @@
             </div>
         </div>
 
+        <div class="category-container">
+            <div class="category-buttons">
+                <button class="category-btn active">すべて</button>
+                <button class="category-btn">カテゴリ名が入ります</button>
+                <button class="category-btn">カテゴリ名</button>
+                <button class="category-btn">カテゴリ名が入ります</button>
+                <button class="category-btn">カテゴリ名</button>
+                <button class="category-btn">カテゴリ名が入ります</button>
+                <button class="category-btn">カテゴリ名</button>
+                <button class="category-btn">カテゴリ名が入ります</button>
+                <button class="category-btn">カテゴリ名</button>
+            </div>
+        </div>
 
-
-
-
-        
-
-         <!-- ヘッダーセクション -->
-         <div class="news-header">
+        <!-- ヘッダーセクション -->
+        <div class="news-header">
             <div class="title-group">
                 <h1 class="main-title">最新の記事</h1>
-                
             </div>
             <div class="news-decorative-lines">
                 <span class="line blue-line"></span>
@@ -62,8 +69,12 @@
             </div>
         </div>
 
-        
-
+        <div class="news-articles-container">
+            <div class="news-articles-grid">
+                <!-- 記事カードがJavaScriptによって動的に生成されます -->
+            </div>
+            <!-- ページネーションがJavaScriptによって動的に生成されます -->
+        </div>
     </main>
 
     <div id="footer-section">
@@ -71,6 +82,7 @@
     </div>
 
     <script src="js/main.js"></script>
-    
+    <script src="js/examples/category-buttons.js"></script>
+    <script src="js/examples/articles.js"></script>
 </body>
 </html>
