@@ -17,10 +17,91 @@ body {
     box-sizing: border-box;
 }
 
-.column-image {
+.column-image-container {
+    position: relative;
     margin-top: 60px;
     width: 100%;
+    z-index: 0;
 }
+
+/* シェイプ画像の基本スタイル */
+.shape-red1,
+.shape-blue1,
+.shape-red2,
+.shape-blue2,
+.shape-blue3,
+.shape-red3,
+.shape-pink1,
+.shape-blue4,
+.shape-red4 {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* 上部右のシェイプ */
+.shape-red1 {
+    top: -126px;
+    right: 40px;
+    z-index: 2;
+}
+
+.shape-blue1 {
+    top: -20px;
+    right: 20px;
+    z-index: 3;
+}
+
+/* 下部左のシェイプ */
+.shape-red2 {
+    bottom: -84px;
+    left: 59px;
+    z-index: 2;
+}
+
+.shape-blue2 {
+    bottom: -250px;
+    left: 0px;
+    z-index: -1;
+}
+
+/* カテゴリー欄周辺のシェイプ */
+.shape-blue3 {
+    top: -419%;
+    right: -20px;
+    width: 527px;
+    height: 633px;
+    z-index: -1;
+}
+
+.shape-red3 {
+    top: -300%;
+    right: 0px;
+    
+    height: 100px;
+    z-index: 1;
+}
+
+.shape-pink1 {
+    left: -50px;
+    top: 40%;
+    width: 527px;
+    height: 100px;
+    z-index: 1;
+}
+
+/* 最新記事セクション周辺のシェイプ */
+.shape-blue4 {
+    bottom: -189%;
+    left: 0px;
+    z-index: 1;
+}
+
+.shape-red4 {
+    bottom: 169%;
+    right: 250px;
+    z-index: -1;
+}
+
 
 .column-image img {
     width: 100%;
