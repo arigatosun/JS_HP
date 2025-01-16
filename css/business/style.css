@@ -89,7 +89,7 @@
     }
 
     .decorative-lines {
-        max-width: 50%; /* 画面幅に応じて相対的に調整 */
+        max-width: 100%; /* 画面幅に応じて相対的に調整 */
     }
 }
 

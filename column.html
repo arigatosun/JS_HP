@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>コラム | 会社名</title>
+    <!-- 既存のCSS -->
     <link rel="stylesheet" href="css/top/header.css">
     <link rel="stylesheet" href="css/top/footer.css">
     <link rel="stylesheet" href="css/business/style.css">
@@ -34,200 +35,82 @@
             <img src="images/column-page-image.png" alt="コラムページイメージ">
         </div>
 
-       <!-- コンテンツコンテナ -->
-<div class="column-content">
-    <p class="column-description">マーケティング領域においてのお役立ち情報を公開中！</p>
-    
-    <!-- 人気の記事セクション -->
-    <div class="popular-header">
-        <div class="title-group">
-            <h1 class="main-title">人気の記事</h1>
-        </div>
-        <div class="popular-decorative-lines">
-            <span class="line blue-line"></span>
-            <span class="line red-line"></span>
-        </div>
-    </div>
-    
-    <!-- 人気の記事カード一覧 -->
-    <div class="popular-cards">
-        <!-- 人気の記事カード1 -->
-        <article class="column-card">
-            <div class="card-thumbnail">
-                <img src="images/column_js_image.png" alt="コラムサムネイル">
-            </div>
-            <div class="card-content">
-                <div class="card-title">コラムタイトルがここに入ります</div>
-                <div class="card-meta">
-                    <span class="card-category">カテゴリー</span>
-                    <time class="card-date">2024.10.10</time>
+        <!-- コンテンツコンテナ -->
+        <div class="column-content">
+            <p class="column-description">マーケティング領域においてのお役立ち情報を公開中！</p>
+            
+            <!-- 人気の記事セクション -->
+            <div class="popular-header">
+                <div class="title-group">
+                    <h1 class="main-title">人気の記事</h1>
+                </div>
+                <div class="popular-decorative-lines">
+                    <span class="line blue-line"></span>
+                    <span class="line red-line"></span>
                 </div>
             </div>
-        </article>
-        
-        <!-- 人気の記事カード2 -->
-        <article class="column-card">
-            <div class="card-thumbnail">
-                <img src="images/column_js_image.png" alt="コラムサムネイル">
-            </div>
-            <div class="card-content">
-                <div class="card-title">コラムタイトルがここに入ります</div>
-                <div class="card-meta">
-                    <span class="card-category">カテゴリー</span>
-                    <time class="card-date">2024.10.10</time>
+
+            <!-- “人気の記事”カード一覧（JSで動的生成） -->
+            <div class="popular-cards">
+                <div class="popular-articles-grid">
+                    <!-- JSにより動的に生成されます -->
                 </div>
             </div>
-        </article>
-        
-        <!-- 人気の記事カード3 -->
-        <article class="column-card">
-            <div class="card-thumbnail">
-                <img src="images/column_js_image.png" alt="コラムサムネイル">
-            </div>
-            <div class="card-content">
-                <div class="card-title">コラムタイトルがここに入ります</div>
-                <div class="card-meta">
-                    <span class="card-category">カテゴリー</span>
-                    <time class="card-date">2024.10.10</time>
+
+            <!-- カテゴリー覧セクション -->
+            <div class="category-header">
+                <div class="title-group">
+                    <h1 class="main-title">カテゴリー覧</h1>
+                </div>
+                <div class="category-decorative-lines">
+                    <span class="line blue-line"></span>
+                    <span class="line red-line"></span>
                 </div>
             </div>
-        </article>
-    </div>
 
-    <!-- カテゴリー覧セクション -->
-    <div class="category-header">
-        <div class="title-group">
-            <h1 class="main-title">カテゴリー覧</h1>
-        </div>
-        <div class="category-decorative-lines">
-            <span class="line blue-line"></span>
-            <span class="line red-line"></span>
-        </div>
-    </div>
+            <!-- 検索フォームセクション -->
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="キーワードを入力">
+                    <button type="submit" class="search-button">検索</button>
+                </form>
+            </div>
 
-    <!-- 検索フォームセクション -->
-<div class="search-container">
-    <form class="search-form">
-        <input type="text" class="search-input" placeholder="キーワードを入力">
-        <button type="submit" class="search-button">検索</button>
-    </form>
-</div>
+            <div class="category-container">
+                <div class="category-buttons">
+                    <button class="category-btn active">すべて</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                </div>
+            </div>
+            
+            <!-- 最新の記事セクション -->
+            <div class="latest-header">
+                <div class="title-group">
+                    <h1 class="main-title">最新の記事</h1>
+                </div>
+                <div class="latest-decorative-lines">
+                    <span class="line blue-line"></span>
+                    <span class="line red-line"></span>
+                </div>
+            </div>
 
-    <div class="category-container">
-        <div class="category-buttons">
-            <button class="category-btn active">すべて</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-        </div>
-    </div>
-    
-    <!-- 最新の記事セクション -->
-<div class="latest-header">
-    <div class="title-group">
-        <h1 class="main-title">最新の記事</h1>
-    </div>
-    <div class="latest-decorative-lines">
-        <span class="line blue-line"></span>
-        <span class="line red-line"></span>
-    </div>
-</div>
-<!-- 最新の記事カード一覧 -->
-<div class="latest-cards">
-    <!-- 最新の記事カード1 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
+            <!-- “最新の記事”カード一覧 + ページネーション（JSで動的生成） -->
+            <div class="latest-cards">
+                <div class="latest-articles-grid">
+                    <!-- JSにより動的に生成されます -->
+                </div>
+                <!-- ページネーションもJSで追加 -->
             </div>
         </div>
-    </article>
-    
-    <!-- 最新の記事カード2 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
-            </div>
-        </div>
-    </article>
-    
-    <!-- 最新の記事カード3 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
-            </div>
-        </div>
-    </article>
-    
-    <!-- 最新の記事カード4 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
-            </div>
-        </div>
-    </article>
-    
-    <!-- 最新の記事カード5 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
-            </div>
-        </div>
-    </article>
-    
-    <!-- 最新の記事カード6 -->
-    <article class="column-card">
-        <div class="card-thumbnail">
-            <img src="images/column_js_image.png" alt="コラムサムネイル">
-        </div>
-        <div class="card-content">
-            <div class="card-title">コラムタイトルがここに入ります</div>
-            <div class="card-meta">
-                <span class="card-category">カテゴリー</span>
-                <time class="card-date">2024.10.10</time>
-            </div>
-        </div>
-    </article>
-</div>
-</div>
 
-
-
-
+        <!-- リンクボタン（採用情報・お問い合わせ） -->
         <div class="link-buttons">
             <div class="link-buttons-container">
                 <!-- 採用情報ボタン -->
@@ -259,6 +142,5 @@
     <script src="js/main.js"></script>
     <script src="js/column/articles.js"></script>
     <script src="js/examples/category-buttons.js"></script>
-    <script src="js/examples/articles.js"></script>
 </body>
 </html>

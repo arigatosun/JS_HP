@@ -1,5 +1,5 @@
 .column-main {
-    padding-top: 60px;
+    padding-top: 40px;
     width: 100%;
     overflow-x: hidden;
     background-color: #F2F2F2;
@@ -42,7 +42,7 @@ body {
     transform: translateX(-50%);
     position: relative;
     left: 0;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .column-main .link-buttons-container {
@@ -302,8 +302,10 @@ body {
 }
 
 .latest-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid を削除 */
+    /* grid-template-columns: repeat(3, 1fr) を削除 */
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     margin-top: 40px;
     margin-bottom: 60px;
@@ -378,8 +380,39 @@ body {
     opacity: 0.5;
 }
 
+.latest-cards .articles-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* カードリンクのスタイル */
+.popular-cards .column-card,
+.latest-cards .column-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-cards .column-card:hover,
+.latest-cards .column-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* カードのホバー効果用のベーススタイル */
+.popular-cards .column-card,
+.latest-cards .column-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
+    .latest-cards .articles-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .latest-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -559,7 +592,7 @@ body {
         gap: 15px;
         padding: 0 0px;
         margin: 40px 0px 30px 0px;
-        max-width: 500px;
+        max-width: 680px;
     }
 
     .popular-decorative-lines,
@@ -601,6 +634,9 @@ body {
 }
 
 @media screen and (max-width: 575px) {
+    .latest-cards .articles-wrapper {
+        grid-template-columns: 1fr;
+    }
     .latest-cards {
         grid-template-columns: 1fr;
         gap: 15px;

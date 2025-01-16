@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コラム記事 詳細 | 会社名</title>
+    <!-- 必要なCSS -->
+    <link rel="stylesheet" href="../../css/top/header.css">
+    <link rel="stylesheet" href="../../css/top/footer.css">
+    <link rel="stylesheet" href="../../css/business/style.css">
+    <link rel="stylesheet" href="../../css/column/style.css">
+    <link rel="stylesheet" href="../../css/column/column-detail.css">
+    <link rel="stylesheet" href="../../css/column/category-accordion.css">
+    <link rel="stylesheet" href="../../css/examples/style.css">
+    <link rel="stylesheet" href="../../css/examples/pagination.css">
+    <!-- 必要に応じて詳細ページ用のCSSを追加（例） -->
+    <!-- <link rel="stylesheet" href="../../css/column/detail.css"> -->
+</head>
+<body>
+    <div id="header-section">
+        <!-- header.htmlの内容を読み込み -->
+    </div>
+
+    <!-- mainタグのクラスはコラムページに合わせる -->
+    <main class="column-main">
+        <!-- 詳細コンテンツエリア -->
+        <div class="column-detail-container">
+            <div class="column-detail-layout">
+                <!-- 左側：記事詳細エリア -->
+                <div class="article-main">
+                    <div id="detail-content">
+                        <!-- コラム詳細コンテンツ -->
+                    </div>
+                </div>
+                
+                <!-- 右側：サイドバー -->
+                <div class="article-sidebar">
+                    <!-- バナーエリア -->
+                    <div class="sidebar-banner"></div>
+                    
+                    <!-- 検索エリア -->
+                    <div class="search-area">
+                        <input type="text" class="search-input" placeholder="キーワードを入力">
+                        <button type="button" class="search-button">検索</button>
+                    </div>
+                    
+                    <!-- カテゴリーエリア -->
+                    <div class="category-container category-detail">
+                        <button class="category-button">カテゴリー１</button>
+                        <button class="category-button">カテゴリー２</button>
+                        <button class="category-button">カテゴリー３</button>
+                        <button class="category-button">カテゴリー４</button>
+                        <button class="category-button">カテゴリー５</button>
+                        <button class="category-button">カテゴリー６</button>
+                        <button class="category-button">カテゴリー７</button>
+                        <button class="category-button">カテゴリー８</button>
+
+
+
+        
+                        <!-- 必要に応じて追加 -->
+                    </div>
+                    
+                    <!-- 人気記事エリア -->
+                    <div class="popular-articles">
+                        <h2 class="popular-title">人気の記事</h2>
+                        <div class="popular-list">
+                            <!-- 人気記事は JavaScript で動的に生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="related-articles">
+                <div class="latest-header">
+                    <div class="title-group">
+                        <h1 class="main-title">関連度の高い記事</h1>
+                    </div>
+                    <div class="latest-decorative-lines">
+                        <span class="line blue-line"></span>
+                        <span class="line red-line"></span>
+                    </div>
+                </div>
+                <div class="latest-cards">
+                    <div class="articles-wrapper">
+                        <!-- JSで動的に生成される関連記事カードがここに入ります -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <!-- リンクボタン -->
+        <div class="link-buttons">
+            <div class="link-buttons-container">
+                <!-- 採用情報ボタン -->
+                <a href="#" class="link-button recruit-button">
+                    <div class="link-button-content">
+                        <h3 class="link-button-title">採用情報</h3>
+                        <p class="link-button-subtitle">Recruit</p>
+                    </div>
+                    <img src="../../images/recruit_image.png" alt="採用情報">
+                    <img src="../../images/recruit-move.png" alt="recruit move" class="move-icon">
+                </a>
+                <!-- お問い合わせボタン -->
+                <a href="#" class="link-button contact-button">
+                    <div class="link-button-content">
+                        <h3 class="link-button-title">お問い合わせ</h3>
+                        <p class="link-button-subtitle">Contact</p>
+                    </div>
+                    <img src="../../images/contact_image.png" alt="お問い合わせ">
+                    <img src="../../images/contact-move.png" alt="contact move" class="move-icon">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-section">
+        <!-- footer.htmlの内容を読み込み -->
+    </div>
+
+    <!-- スクリプト読み込み -->
+    <script src="../../js/main.js"></script>
+    <!-- ▼ コラムの詳細ページ用スクリプト -->
+    <script src="../../js/column/articles.js"></script>
+    <script src="../../js/column/column-detail.js"></script>
+    <script src="../../js/column/category-accordion.js"></script>
+</body>
+</html>

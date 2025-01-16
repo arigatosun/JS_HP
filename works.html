@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/top/footer.css">
     <link rel="stylesheet" href="css/business/style.css">
     <link rel="stylesheet" href="css/works/style.css">
+    <link rel="stylesheet" href="css/column/style.css">
     <link rel="stylesheet" href="css/works/pagination.css">
 </head>
 <body>
@@ -33,10 +34,32 @@
             <img src="images/works-page-image.png" alt="最新情報イメージ">
         </div>
 
-        <!-- コンテンツコンテナ -->
-        <div class="works-content">
-            <!-- コンテンツがJavaScriptによって動的に生成されます -->
+        <!-- works-content divの中に追加 -->
+<div class="works-content">
+    <!-- 検索フォームセクション -->
+    <div class="search-container">
+        <form class="search-form">
+            <input type="text" class="search-input" placeholder="キーワードを入力">
+            <button type="submit" class="search-button">検索</button>
+        </form>
+    </div>
+
+    <div class="category-container">
+        <div class="category-buttons">
+            <button class="category-btn active">すべて</button>
+            <button class="category-btn">カテゴリ名が入ります</button>
+            <button class="category-btn">カテゴリ名</button>
+            <button class="category-btn">カテゴリ名が入ります</button>
+            <button class="category-btn">カテゴリ名</button>
+            <button class="category-btn">カテゴリ名が入ります</button>
+            <button class="category-btn">カテゴリ名</button>
+            <button class="category-btn">カテゴリ名が入ります</button>
+            <button class="category-btn">カテゴリ名</button>
         </div>
+    </div>
+    
+    <!-- 既存のコンテンツがここに動的に生成される -->
+</div>
 
         <div class="link-buttons">
             <div class="link-buttons-container">
@@ -68,5 +91,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/works/articles.js"></script>
+    <script src="js/examples/category-buttons.js"></script>
 </body>
 </html>
