@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/business/style.css">
     <link rel="stylesheet" href="css/works/style.css">
     <link rel="stylesheet" href="css/column/style.css">
-    <link rel="stylesheet" href="css/works/pagination.css">
+    <link rel="stylesheet" href="css/examples/pagination.css">
 </head>
 <body>
     <div id="header-section">
@@ -35,135 +35,39 @@
         </div>
 
         <!-- works-content divの中に追加 -->
-<div class="works-content">
-    <!-- 検索フォームセクション -->
-    <div class="search-container">
-        <form class="search-form">
-            <input type="text" class="search-input" placeholder="キーワードを入力">
-            <button type="submit" class="search-button">検索</button>
-        </form>
-    </div>
+        <div class="works-content">
+            <!-- 検索フォームセクション -->
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" class="search-input" placeholder="キーワードを入力">
+                    <button type="submit" class="search-button">検索</button>
+                </form>
+            </div>
 
-    <div class="category-container">
-        <div class="category-buttons">
-            <button class="category-btn active">すべて</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-            <button class="category-btn">カテゴリ名が入ります</button>
-            <button class="category-btn">カテゴリ名</button>
-        </div>
-    </div>
+            <div class="category-container">
+                <div class="category-buttons">
+                    <button class="category-btn active">すべて</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                    <button class="category-btn">カテゴリ名が入ります</button>
+                    <button class="category-btn">カテゴリ名</button>
+                </div>
+            </div>
 
-    <!-- メイン記事セクション -->
-<div class="information-main">
-    <!-- 1つ目のメイン記事 -->
-    <div class="main-article">
-        <div class="article-image">
-            <img src="/images/news-image-icon.png" alt="ニュース画像">
-        </div>
-        <div class="article-content">
-            <time class="article-date">2024.10.10</time>
-            <div class="article-title">ニュースのタイトルがここに入ります</div>
-            <div class="article-divider"></div>
-            <p class="article-excerpt">
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。
-            </p>
-            <div class="category-labels">
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
+            <!-- メイン記事セクション -->
+            <div class="information-main">
+                <!-- JSで動的に生成されるメイン記事 -->
+            </div>
+
+            <!-- サブ記事グリッド -->
+            <div class="sub-articles-grid">
+                <!-- JSで動的に生成されるサブ記事 -->
             </div>
         </div>
-    </div>
-    <!-- 2つ目のメイン記事 -->
-    <div class="main-article">
-        <div class="article-image">
-            <img src="/images/news-image-icon.png" alt="ニュース画像">
-        </div>
-        <div class="article-content">
-            <time class="article-date">2024.10.10</time>
-            <div class="article-title">ニュースのタイトルがここに入ります</div>
-            <div class="article-divider"></div>
-            <p class="article-excerpt">
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。
-            </p>
-            <div class="category-labels">
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3つ目のメイン記事 -->
-    <div class="main-article">
-        <div class="article-image">
-            <img src="/images/news-image-icon.png" alt="ニュース画像">
-        </div>
-        <div class="article-content">
-            <time class="article-date">2024.10.10</time>
-            <div class="article-title">ニュースのタイトルがここに入ります</div>
-            <div class="article-divider"></div>
-            <p class="article-excerpt">
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。ここにニュース本文の一部が入ります。
-                ここにニュース本文の一部が入ります。
-            </p>            
-            <div class="category-labels">
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
-                <div class="category-label">#カテゴリー名</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- サブ記事グリッド -->
-<div class="sub-articles-grid">
-    <!-- サブ記事（6つ） -->
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    <div class="sub-article">
-        <time class="sub-article-date">2024.10.10</time>
-        <div class="sub-article-title">ニュースのタイトルがここに入ります</div>
-    </div>
-    
-</div>
-    
-    <!-- 既存のコンテンツがここに動的に生成される -->
-</div>
 
         <div class="link-buttons">
             <div class="link-buttons-container">
@@ -195,6 +99,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/works/articles.js"></script>
-    <script src="js/examples/category-buttons.js"></script>
+    <script src="js/works/category-buttons.js"></script>
 </body>
 </html>

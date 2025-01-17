@@ -32,6 +32,47 @@
             <img src="images/contact-page-image.png" alt="お問い合わせイメージ">
         </div>
 
+        <!-- お問い合わせ案内テキスト -->
+       
+        <div class="contact-info">
+            <p>お問い合わせにつきましては、以下の窓口よりお受けしております。</p>
+            <p>（対応時間：平日10:00〜18:00）</p>
+        </div>
+
+        <!-- お問い合わせ項目選択セクション -->
+        <div class="contact-type-container">
+        <div class="contact-type-section">
+            <div class="contact-type-title">■お問い合わせの項目をお選びください。</div>
+            <div class="contact-type-options">
+                <label class="contact-type-checkbox">
+                    <input type="radio" name="contact-type" value="service">
+                    <span class="checkmark"></span>
+                    <span class="option-text">サービスについてのお問い合わせ</span>
+                </label>
+                <label class="contact-type-checkbox">
+                    <input type="radio" name="contact-type" value="business">
+                    <span class="checkmark"></span>
+                    <span class="option-text">当社へのサービス案内や業務提携に関するお問い合わせ</span>
+                </label>
+                <label class="contact-type-checkbox">
+                    <input type="radio" name="contact-type" value="media">
+                    <span class="checkmark"></span>
+                    <span class="option-text">メディア取材、広報に関するお問い合わせ</span>
+                </label>
+                <label class="contact-type-checkbox">
+                    <input type="radio" name="contact-type" value="recruit">
+                    <span class="checkmark"></span>
+                    <span class="option-text">採用、求人に関するお問い合わせ</span>
+                </label>
+                <label class="contact-type-checkbox">
+                    <input type="radio" name="contact-type" value="other">
+                    <span class="checkmark"></span>
+                    <span class="option-text">その他のお問い合わせ</span>
+                </label>
+            </div>
+        </div>
+        </div>
+
         <!-- お問い合わせフォームセクション -->
         <div class="contact-form-section">
             <form class="contact-form" id="contactForm">
@@ -55,23 +96,16 @@
                     <input type="tel" id="phone" name="phone" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="inquiryType" class="required">お問い合わせ種別</label>
-                    <select id="inquiryType" name="inquiryType" required>
-                        <option value="">選択してください</option>
-                        <option value="general">一般的なお問い合わせ</option>
-                        <option value="business">事業に関するお問い合わせ</option>
-                        <option value="recruit">採用に関するお問い合わせ</option>
-                        <option value="other">その他</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
+                <div class="form-group full-width">
                     <label for="message" class="required">お問い合わせ内容</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
 
                 <div class="privacy-policy">
+                    <div class="privacy-header">
+                        個人情報取り扱いの同意
+                        <span class="required">(必須)</span>
+                    </div>
                     <label class="checkbox-container">
                         <input type="checkbox" required>
                         <span class="checkmark"></span>
@@ -117,5 +151,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/contact/form.js"></script>
+    <script src="js/contact/contact-type.js"></script>
 </body>
 </html>

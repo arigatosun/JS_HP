@@ -32,19 +32,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // 現在のパスに基づいてコンテンツを調整
             let adjustedHtml = html;
             
-            // コラム詳細ページの場合のパス調整
-            if (window.location.pathname.includes('column-detail.html')) {
+            // 詳細ページの場合のパス調整
+            if (window.location.pathname.includes('column-detail.html') || 
+                window.location.pathname.includes('works-detail.html') || 
+                window.location.pathname.includes('example-detail.html')) {
                 // ロゴ画像のパスを調整
                 adjustedHtml = adjustedHtml.replace(/src="images\//g, 'src="../../images/');
                 adjustedHtml = adjustedHtml.replace(/href="(?!http|\/\/|#)([^"]*)"/g, (match, p1) => {
                     return `href="../../${p1}"`;
                 });
+                // JS_LOGOのパスを特別に調整
+                adjustedHtml = adjustedHtml.replace(/src="js_logo.png"/g, 'src="../../js_logo.png"');
             } else {
                 // 既存のパス調整ロジック
                 adjustedHtml = adjustedHtml.replace(/src="images\//g, `src="${adjustPath('images/')}`);
                 adjustedHtml = adjustedHtml.replace(/href="(?!http|\/\/|#)([^"]*)"/g, (match, p1) => {
                     return `href="${adjustPath(p1)}"`;
                 });
+                // JS_LOGOのパスを調整
+                adjustedHtml = adjustedHtml.replace(/src="js_logo.png"/g, `src="${adjustPath('js_logo.png')}"`);
             }
             
             document.getElementById(`${sectionName}-section`).innerHTML = adjustedHtml;
@@ -128,15 +134,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ページタイプを判定
-    // ページタイプを判定する部分を修正
+  // ページタイプを判定する部分を修正
 const isBusinessPage = document.querySelector('.business-main') !== null;
 const isExampleDetailPage = document.querySelector('.examples-main') !== null && 
                            window.location.pathname.includes('example-detail.html');
 const isColumnDetailPage = document.querySelector('.column-main') !== null && 
                           window.location.pathname.includes('column-detail.html');
+const isWorksDetailPage = document.querySelector('.works-main') !== null && 
+                         window.location.pathname.includes('works-detail.html');
 
-if (isColumnDetailPage) {
+if (isWorksDetailPage) {
+    // 最新情報詳細ページの場合の処理
+    Promise.all([
+        loadSection('header', '../../sections/top/'),
+        loadSection('footer', '../../sections/top/')
+    ]).then(() => {
+        initializeHamburgerMenu();
+        initializeFooterToggle();
+    });
+} else if (isColumnDetailPage) {
     // コラム詳細ページの場合の処理
     Promise.all([
         loadSection('header', '../../sections/top/'),
@@ -146,7 +162,7 @@ if (isColumnDetailPage) {
         initializeFooterToggle();
     });
 } else if (isExampleDetailPage) {
-    // 詳細ページの場合の処理
+    // 実績実例詳細ページの場合の処理
     loadSection('header', adjustPath('sections/top/'));
     loadSection('footer', adjustPath('sections/top/')).then(() => {
         initializeHamburgerMenu();
@@ -154,47 +170,47 @@ if (isColumnDetailPage) {
         initializeExampleDetail();
     });
 } else if (isBusinessPage) {
-        // 事業領域ページの場合の処理
-        Promise.all([
-            loadSection('header'),
-            loadSection('footer'),
-            loadSection('business-details', adjustPath('sections/business/')),
-            loadSection('business-other-areas', adjustPath('sections/business/')),
-            loadSection('business-works', adjustPath('sections/business/'))
-        ]).then(() => {
-            initializeHamburgerMenu();
-            initializeFooterToggle();
-            initializeBusinessDetails();
+    // 事業領域ページの場合の処理
+    Promise.all([
+        loadSection('header'),
+        loadSection('footer'),
+        loadSection('business-details', adjustPath('sections/business/')),
+        loadSection('business-other-areas', adjustPath('sections/business/')),
+        loadSection('business-works', adjustPath('sections/business/'))
+    ]).then(() => {
+        initializeHamburgerMenu();
+        initializeFooterToggle();
+        initializeBusinessDetails();
+    });
+} else {
+    // トップページとその他のページの処理
+    Promise.all([
+        loadSection('hero'),
+        loadSection('business'),
+        loadSection('service'),
+        loadSection('examples'),
+        loadSection('column')
+    ]).then(() => {
+        requestAnimationFrame(() => {
+            initializeRellax();
         });
-    } else {
-        // トップページとその他のページの処理
-        Promise.all([
-            loadSection('hero'),
-            loadSection('business'),
-            loadSection('service'),
-            loadSection('examples'),
-            loadSection('column')
-        ]).then(() => {
-            requestAnimationFrame(() => {
-                initializeRellax();
-            });
-        });
-        
-        loadSection('header').then(() => {
-            initializeHamburgerMenu();
-        });
-        
-        loadSection('column').then(() => {
-            initializeColumnScroll();
-            initializeCustomScrollbar();
-        });
-        
-        loadSection('information');
-        
-        loadSection('footer').then(() => {
-            initializeFooterToggle();
-        });
-    }
+    });
+    
+    loadSection('header').then(() => {
+        initializeHamburgerMenu();
+    });
+    
+    loadSection('column').then(() => {
+        initializeColumnScroll();
+        initializeCustomScrollbar();
+    });
+    
+    loadSection('information');
+    
+    loadSection('footer').then(() => {
+        initializeFooterToggle();
+    });
+}
 
     // 残りの関数は変更なし
     function initializeHamburgerMenu() {

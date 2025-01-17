@@ -355,10 +355,12 @@
     }
     .footer-banner-content {
         padding: 0 15px;
+       margin-right:60px;
     }
     
     .footer-banner-logo {
-        max-width: 120px;
+        max-width: 230px;
+        margin-left: 60px;
     }
 
     .menu-list {

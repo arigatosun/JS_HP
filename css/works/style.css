@@ -1,5 +1,5 @@
 .works-main {
-    padding-top: 60px;
+    padding-top: 0px;
     width: 100%;
     overflow-x: hidden;
     background-color: #F2F2F2;
@@ -9,6 +9,25 @@ body {
     background-color: #F2F2F2;
     margin: 0;
     padding: 0;
+}
+
+.works-main .page-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.works-main .search-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 0 0 200px;
+    box-sizing: border-box;
 }
 
 .works-image {
@@ -304,6 +323,8 @@ body {
     z-index: 1;
 }
 
+
+
 .works-main .sub-article {
     display: flex;
     flex-direction: column;
@@ -312,6 +333,23 @@ body {
     border-bottom: 2px solid #D9D9D9;
 }
 
+/* 記事カードのホバーアニメーション */
+.works-main .main-article,
+.works-main .sub-article {
+    text-decoration: none;
+    color: inherit;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    
+}
+
+.works-main .main-article:hover,
+.works-main .sub-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    
+}
 .works-main .sub-article-date {
     color: #333;
     font-family: "BIZ UDGothic";
@@ -332,6 +370,12 @@ body {
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 1440px) {
+    .works-main .search-container {
+        max-width: 1350px;
+        margin: 0 auto;
+        padding: 0 0 0 65px;
+        box-sizing: border-box;
+    }
     .works-main .information-main {
         padding: 0 65px;
     }
@@ -357,6 +401,28 @@ body {
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
+
+    .works-main .search-button{
+            display: inline-flex ;
+            padding: 10px 16px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 14px;
+            background: #E61221;
+            border: none;
+            cursor: pointer;
+            color: #FFF;
+            font-family: "BIZ UDGothic";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 4px;
+            transition: background-color 0.3s ease;
+    }
+  
+    
     .works-main .information-main,
     .works-main .sub-articles-grid {
         padding: 0 20px;
@@ -398,6 +464,67 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+
+    .works-main .search-button{
+        display: inline-flex ;
+        padding: 3px 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        background: #E61221;
+        border: none;
+        cursor: pointer;
+        color: #FFF;
+        font-family: "BIZ UDGothic";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 4px;
+        transition: background-color 0.3s ease;
+}
+
+    .works-main .article-title {
+        color: #333;
+font-family: "BIZ UDGothic";
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 177.778% */
+letter-spacing: 2.7px;
+        margin: 16px 0;
+    }
+
+    .works-main .article-date {
+        color: #333;
+        font-family: "BIZ UDGothic";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.8px;
+        opacity: 0.5;
+    }
+
+    .works-main .category-label {
+        display: flex;
+        width: 121px;
+        height: 25px;
+        padding: 2px 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        background: #FFF;
+        color: #333;
+font-family: "BIZ UDGothic";
+font-size: 9.996px;
+font-style: normal;
+font-weight: 700;
+line-height: 17.85px; /* 178.571% */
+letter-spacing: 1.499px;
+        opacity: 0.5;
+    }
   
     .category-buttons {
         grid-template-columns: repeat(2, 1fr);
@@ -449,9 +576,21 @@ body {
 }
 
 @media screen and (max-width: 575px) {
+    .works-main .search-form{
+        gap: 10px;
+    }
+
+    .works-main .search-input {
+        width: 200px;
+        height: 36px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
     .works-main .article-date {
         font-size: 12px;
         letter-spacing: 1.8px;
+        margin-bottom: 8px;
     }
     .works-main .main-article {
         margin-bottom: 40px;
@@ -460,7 +599,7 @@ body {
     .works-main .article-title {
         font-size: 14px;
         line-height: 30px;
-        margin: 10px 0;
+        margin: 0 0 12px 0;
 
     }
 
@@ -501,7 +640,7 @@ body {
         max-width: 425px;
     }
     .works-main {
-        padding-top: 30px;
+        padding-top: 0px;
     }
     
     .works-main .recruit-button .move-icon {

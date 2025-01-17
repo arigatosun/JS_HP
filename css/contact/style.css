@@ -22,26 +22,93 @@ body {
     display: block;
 }
 
-/* フォームセクション */
-.contact-form-section {
-    max-width: 1000px;
+/* お問い合わせ案内テキスト */
+.contact-info {
+    max-width: 900px;
+    height: auto;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 60px auto;
-    padding: 0 40px;
+    color: #333;
+    text-align: center;
+    font-family: "BIZ UDGothic";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 3.36px;
+    padding: 0 20px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+/* フォームセクションの共通スタイル */
+.contact-form-section,
+.contact-type-section {
+    max-width: 1270px;
+    margin: 60px auto;
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
+.contact-type-container {
+    max-width: 1270px;
+    margin: 60px auto;
+    padding: 0 20px;  /* 左右のパディングを設定 */
+    box-sizing: border-box;
+}
+
+/* お問い合わせ項目選択セクション */
+.contact-type-section {
+    margin-bottom: 0;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-type-title {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 25px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.2px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.contact-type-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* お問い合わせフォーム */
 .contact-form {
     background: #FFFFFF;
     padding: 60px;
     border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
 .form-group {
-    margin-bottom: 30px;
+    position: relative;
 }
 
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* フォームラベル */
 .form-group label {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #333;
     font-family: "BIZ UDGothic";
     font-size: 16px;
@@ -50,46 +117,126 @@ body {
     margin-bottom: 10px;
 }
 
+.form-group label::before {
+    content: "■";
+    margin-right: 8px;
+    color: #333;
+}
+
 .form-group label.required::after {
-    content: "必須";
-    background-color: #E61221;
-    color: white;
-    font-size: 12px;
-    padding: 2px 8px;
-    border-radius: 4px;
+    content: "(必須)";
+    color: #E60012;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 1.25px;
     margin-left: 10px;
 }
 
+/* フォーム入力要素 */
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
+    border: 1px solid #F2F2F2;
+    border-radius: 7px;
     font-family: "BIZ UDGothic";
     font-size: 16px;
     box-sizing: border-box;
+    background: #F2F2F2;
 }
 
 .form-group textarea {
     resize: vertical;
+    min-height: 150px;
 }
 
-/* プライバシーポリシーチェックボックス */
-.privacy-policy {
-    margin: 40px 0;
-    text-align: center;
+/* チェックボックススタイル */
+.contact-type-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 7px 20px 6px 60px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #FFFFFF;
+    border: 1px solid transparent;
 }
+
+.contact-type-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.contact-type-checkbox .checkmark {
+    position: absolute;
+    left: 20px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #CCCCCC;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.contact-type-checkbox .option-text {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 2px;
+    transition: color 0.2s ease;
+}
+
+/* プライバシーポリシー */
+.privacy-policy {
+    grid-column: 1 / -1;
+    margin: 0;
+    text-align: left;
+}
+
+.privacy-header {
+    display: block;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.privacy-header::before {
+    content: "■";
+    margin-right: 8px;
+    color: #333;
+}
+
+.privacy-header .required {
+    color: #E60012;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 1.25px;
+    margin-left: 10px;
+}
+
 
 .checkbox-container {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
     font-family: "BIZ UDGothic";
     font-size: 16px;
+    padding-left: 30px;
 }
+
 
 .checkbox-container input {
     position: absolute;
@@ -97,13 +244,14 @@ body {
     cursor: pointer;
 }
 
-.checkmark {
+.checkbox-container .checkmark {
+    position: absolute;
+    left: 0;
     height: 20px;
     width: 20px;
     background-color: #fff;
     border: 1px solid #CCCCCC;
     border-radius: 4px;
-    margin-right: 10px;
 }
 
 .checkbox-container input:checked ~ .checkmark {
@@ -128,6 +276,10 @@ body {
     display: block;
 }
 
+.policy-text {
+    margin-left: 10px;
+}
+
 .policy-text a {
     color: #28A7E1;
     text-decoration: none;
@@ -139,6 +291,7 @@ body {
 
 /* 送信ボタン */
 .form-button {
+    grid-column: 1 / -1;
     text-align: center;
     margin-top: 40px;
 }
@@ -147,11 +300,11 @@ body {
     background: #28A7E1;
     color: white;
     font-family: "BIZ UDGothic";
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px !important;
+    letter-spacing: 2px;
     padding: 15px 100px;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -184,13 +337,11 @@ body {
     overflow: hidden;
 }
 
-/* 共通のベーススタイル */
 .contact-main .link-button .move-icon {
     position: absolute;
     transition: transform 0.3s ease;
 }
 
-/* recruit-move 専用のスタイル */
 .contact-main .recruit-button .move-icon {
     bottom: 80px;
     right: 80px;
@@ -198,7 +349,6 @@ body {
     height: 32px;
 }
 
-/* column-move 専用のスタイル */
 .contact-main .return-button .move-icon {
     bottom: 85px;
     right: 80px;
@@ -206,9 +356,7 @@ body {
     height: 32px;
 }
 
-/* ホバー時のアニメーション */
-.contact-main .recruit-button:hover .move-icon,
-.contact-main .return-button:hover .move-icon {
+.contact-main .link-button:hover .move-icon {
     transform: translateX(20px);
 }
 
@@ -219,7 +367,6 @@ body {
     display: block;
 }
 
-/* リンクボタンのコンテンツスタイル */
 .contact-main .link-button-content {
     position: absolute;
     top: 80px;
@@ -231,7 +378,6 @@ body {
     color: #333;
     font-family: "BIZ UDGothic";
     font-size: 32px;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 4.8px;
@@ -242,14 +388,59 @@ body {
     color: #333;
     font-family: "BIZ UDGothic";
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 2.4px;
 }
 
+/* チェックボックスの状態スタイル */
+.contact-type-checkbox input:checked ~ .checkmark {
+    background-color: #28A7E1;
+    border-color: #28A7E1;
+    transform: scale(1.05);
+}
+
+.contact-type-checkbox input:checked ~ .option-text {
+    color: #28A7E1;
+}
+
+.contact-type-checkbox input:checked ~ .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.contact-type-checkbox:hover {
+    border-color: #E6E6E6;
+    background: #F8F8F8;
+}
+
+.contact-type-checkbox:hover .checkmark {
+    border-color: #28A7E1;
+}
+
+.contact-type-checkbox:active {
+    transform: scale(0.99);
+}
+
+.contact-type-checkbox input:focus-visible ~ .checkmark {
+    box-shadow: 0 0 0 2px rgba(40, 167, 225, 0.3);
+}
+
 /* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
+    .contact-form-section,
+    .contact-type-section {
+        max-width: 90%;
+    }
+
     .contact-main .link-button-content {
         top: 60px;
         left: 60px;
@@ -271,19 +462,68 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-    .contact-form-section {
-        padding: 0 20px;
+    .privacy-header,
+    .checkbox-container {
+        font-size: 14px;
+    }
+
+    .checkbox-container .checkmark {
+        height: 18px;
+        width: 18px;
+    }
+
+    .checkbox-container .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 4px;
+        height: 9px;
+    }
+    .contact-main {
+        padding-top: 40px;
+    }
+
+    .contact-info {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .contact-form-section,
+    .contact-type-section {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .contact-type-section {
+        padding: 30px 20px;
+    }
+
+    .contact-type-title {
+        font-size: 20px;
+        letter-spacing: 3px;
     }
 
     .contact-form {
         padding: 30px 20px;
+        grid-template-columns: 1fr;  /* 縦並びに変更 */
+        gap: 20px;
+    }
+
+    .contact-main .link-buttons-container {
+        flex-direction: column;
+    }
+
+    .contact-main .link-button {
+        width: 100%;
+        height: 300px;
     }
 
     .contact-main .link-button-content {
         top: 40px;
         left: 40px;
     }
-    
+
     .contact-main .link-button-title {
         font-size: 28px;
         letter-spacing: 4px;
@@ -294,56 +534,86 @@ body {
         letter-spacing: 2px;
     }
 
-    .contact-main .link-button {
-        height: 300px;
-    }
-
-    .contact-main .link-buttons-container {
-        flex-direction: column;
-    }
-
-    .contact-main .link-button {
-        width: 100%;
-    }
-
     .submit-button {
-        padding: 15px 60px;
         width: 100%;
+        padding: 15px 20px;
     }
 }
 
 @media screen and (max-width: 575px) {
+    .privacy-header {
+        font-size: 14px;
+    }
+
+    .checkbox-container {
+        font-size: 14px;
+    }
     .contact-main {
         padding-top: 30px;
     }
-    
-    .contact-form {
+
+    .contact-info {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+
+    .contact-form-section,
+    .contact-type-section {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .contact-type-section {
         padding: 20px 15px;
     }
-    
+
+    .contact-type-title {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .contact-type-checkbox {
+        padding: 10px 12px 10px 45px;
+    }
+
+    .contact-type-checkbox .option-text {
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        line-height: 24px;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
     .form-group label {
         font-size: 14px;
     }
-    
-    .contact-main .recruit-button .move-icon {
-        bottom: 23px;
-        right: 50px;
-        width: 204px;
-        height: 24px;
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
     }
 
-    .contact-main .return-button .move-icon {
-        bottom: 23px;
-        right: 27px;
-        width: 300px;
-        height: 24px;
+    .privacy-header,
+    .checkbox-container {
+        font-size: 14px;
+    }
+
+    .contact-main .link-button {
+        height: 200px;
     }
 
     .contact-main .link-button-content {
         top: 30px;
         left: 30px;
     }
-    
+
     .contact-main .link-button-title {
         font-size: 24px;
         letter-spacing: 3.6px;
@@ -354,31 +624,15 @@ body {
         letter-spacing: 1.8px;
     }
 
-    .contact-main .link-button {
-        height: 200px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .checkbox-container {
-        font-size: 14px;
-    }
-
-    .privacy-policy {
-        margin: 30px 0;
-    }
-
     .submit-button {
         font-size: 16px;
-        padding: 12px 40px;
+    }
+
+    .contact-main .recruit-button .move-icon,
+    .contact-main .return-button .move-icon {
+        bottom: 23px;
+        right: 27px;
+        width: 200px;
+        height: 20px;
     }
 }
