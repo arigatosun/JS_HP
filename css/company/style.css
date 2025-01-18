@@ -1,400 +1,403 @@
-.company-main {
-    padding-top: 60px;
-    width: 100%;
-    overflow-x: hidden;
-    background-color: #F2F2F2;
+/* 全体設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F2F2F2;
 }
 
-body {
-    background-color: #F2F2F2;
-    margin: 0;
-    padding: 0;
+.company-main {
+  padding-top: 60px;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #F2F2F2;
+}
+
+/* メインビジュアルセクション */
+.main-visual-section {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
 }
 
 /* イメージセクション */
 .company-image {
-    margin-top: 60px;
-    width: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .company-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* カスタムメニューボタンのスタイル */
+/* カスタムメニューボタン */
 .custom-menu {
-    max-width: 1350px;
-    margin: 60px auto;
-    padding: 0 40px;
+  position: absolute;
+  top: 22%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .custom-menu-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-/* 左側のメニュー */
 .menu-left {
-    flex: 1;
-    max-width: 610px;
+  flex: 1;
+  max-width: 610px;
 }
 
-.message-button {
-    display: block;
-    width: 100%;
-    max-width: 610px;
-    background: #FFF;
-    border-radius: 28px;
-    overflow: hidden;
-    text-decoration: none;
-    filter: drop-shadow(2px 4px 12px rgba(51, 51, 51, 0.25));
-    line-height: 0;
-}
-
-.button-image {
-    width: 100%;
-    display: block;
-    line-height: 0;
-}
-
-.button-image img {
-    width: 100%;
-    display: block;
-    line-height: 0;
-}
-
-.message-image {
-    width: 100%;
-   
-}
-
-/* 右側のメニュー */
 .menu-right {
-    flex: 1;
-    max-width: 610px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  flex: 1;
+  max-width: 610px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 307px; /* 代表挨拶カードと同じ高さ */
 }
 
-.profile-button,
-.mission-button {
-    display: block;
-    width: 100%;
-    min-height: 120px;
-    border-radius: 28px;
-    opacity: 0.8;
-    background: #FFF;
-    text-decoration: none;
-}
-
-/* ボタンコンテンツの共通スタイル */
-.button-content {
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    min-height: 0px;
-    line-height: normal;
-    background: #FFF;
-    margin-top: 45px;
-}
-
-.button-title {
-    color: #333;
-    font-family: "BIZ UDGothic";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 27px;
-    letter-spacing: 2.8px;
-    margin: 0;
-    margin-right: 20px;
-}
-
-.button-subtitle {
-    color: #333;
-    font-family: "BIZ UDGothic";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 27px;
-    letter-spacing: 1.96px;
-    opacity: 0.5;
-    margin: 0;
-    margin-right: auto;
-}
-
-.arrow-icon {
-    width: 24px;
-    height: 24px;
-}
-
-/* ホバーエフェクト */
+/* ボタン共通スタイル */
 .menu-button {
-    transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  filter: drop-shadow(2px 4px 12px rgba(51, 51, 51, 0.25));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFFFFF;
+  position: relative;
 }
 
 .menu-button:hover {
-    transform: translateY(-5px);
+  transform: translateX(10px);
+  filter: drop-shadow(4px 8px 16px rgba(51, 51, 51, 0.3));
 }
 
-/* リンクボタンのスタイル */
+.message-button .nav-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.message-button .nav-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 会社概要・企業理念ボタン固有のスタイル */
+.profile-button,
+.mission-button {
+  flex: 1;
+  height: calc((410px - 25px) / 2); /* 全体の高さからgapを引いて2分割 */
+}
+
+/* ボタンコンテンツ部分 */
+.button-content {
+  padding: 30px 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  transition: padding 0.3s ease;
+}
+
+.profile-button .button-content,
+.mission-button .button-content {
+  height: 100%;
+  padding: 15px 25px;
+}
+
+/* タイトルグループ */
+.button-title-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+/* タイトル */
+.button-title {
+  color: #333;
+  font-family: "BIZ UDGothic", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 2.8px;
+  margin: 0;
+}
+
+/* サブタイトル */
+.button-subtitle {
+  color: #333;
+  font-family: "BIZ UDGothic", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 1.96px;
+  opacity: 0.5;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* 矢印アイコン */
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* リンクボタン（採用情報・お問い合わせ） */
 .company-main .link-buttons {
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    position: relative;
-    left: 0;
-    margin-top: 100px;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  left: 0;
+  margin-top: 100px;
 }
 
 .company-main .link-buttons-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .company-main .link-button {
-    width: 50%;
-    height: 450px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* 共通のベーススタイル */
-.company-main .link-button .move-icon {
-    position: absolute;
-    transition: transform 0.3s ease;
-}
-
-/* recruit-move 専用のスタイル */
-.company-main .recruit-button .move-icon {
-    bottom: 80px;
-    right: 80px;
-    width: 270px;
-    height: 32px;
-}
-
-/* contact-move 専用のスタイル */
-.company-main .contact-button .move-icon {
-    bottom: 85px;
-    right: 80px;
-    width: 400px;
-    height: 32px;
-}
-
-/* ホバー時のアニメーション */
-.company-main .recruit-button:hover .move-icon,
-.company-main .contact-button:hover .move-icon {
-    transform: translateX(20px);
+  width: 50%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
 }
 
 .company-main .link-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* リンクボタンのコンテンツスタイル */
+.company-main .link-button .move-icon {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.company-main .recruit-button .move-icon {
+  bottom: 80px;
+  right: 80px;
+  width: 270px;
+  height: 32px;
+}
+
+.company-main .contact-button .move-icon {
+  bottom: 85px;
+  right: 80px;
+  width: 400px;
+  height: 32px;
+}
+
+.company-main .recruit-button:hover .move-icon,
+.company-main .contact-button:hover .move-icon {
+  transform: translateX(20px);
+}
+
 .company-main .link-button-content {
-    position: absolute;
-    top: 80px;
-    left: 90px;
-    z-index: 1;
+  position: absolute;
+  top: 80px;
+  left: 90px;
+  z-index: 1;
 }
 
 .company-main .link-button-title {
-    color: #333;
-    font-family: "BIZ UDGothic";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 4.8px;
-    margin-bottom: 10px;
+  color: #333;
+  font-family: "BIZ UDGothic";
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 4.8px;
+  margin-bottom: 10px;
 }
 
 .company-main .link-button-subtitle {
-    color: #333;
-    font-family: "BIZ UDGothic";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.4px;
+  color: #333;
+  font-family: "BIZ UDGothic";
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
 }
 
-/* お問い合わせボタンの文字色を白に */
 .company-main .contact-button .link-button-title,
 .company-main .contact-button .link-button-subtitle {
-    color: #FFF;
+  color: #FFF;
 }
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
-    .custom-menu-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
+  .custom-menu {
+    position: relative;
+    transform: none;
+    top: -100px;
+    margin-bottom: -100px;
+  }
 
-    .menu-left,
-    .menu-right {
-        width: 100%;
-        max-width: 610px;
-    }
+  .custom-menu-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
 
-    .company-main .link-button-content {
-        top: 60px;
-        left: 60px;
-    }
-    
-    .company-main .contact-button .move-icon {
-        bottom: 85px;
-        right: 45px;
-        width: 300px;
-        height: 24px;
-    }
-    
-    .company-main .recruit-button .move-icon {
-        bottom: 80px;
-        right: 50px;
-        width: 204px;
-        height: 24px;
-    }
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    max-width: 610px;
+    height: auto;
+  }
+
+  .profile-button,
+  .mission-button {
+    height: 100px;
+  }
+
+  .company-main .link-button-content {
+    top: 60px;
+    left: 60px;
+  }
+
+  .company-main .contact-button .move-icon {
+    bottom: 85px;
+    right: 45px;
+    width: 300px;
+    height: 24px;
+  }
+
+  .company-main .recruit-button .move-icon {
+    bottom: 80px;
+    right: 50px;
+    width: 204px;
+    height: 24px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .custom-menu {
-        padding: 0 20px;
-        margin: 40px auto;
-    }
+  .custom-menu {
+    padding: 0 20px;
+    top: -50px;
+    margin-bottom: -50px;
+  }
 
-    .message-button {
-        height: 250px;
-    }
+  .profile-button,
+  .mission-button {
+    height: 80px;
+  }
 
-    .button-content {
-        padding: 0 20px;
-        min-height: 60px;
-    }
+  .button-content {
+    padding: 20px;
+  }
 
-    .button-title {
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
+  .button-title {
+    font-size: 14.004px;
+    line-height: 21.006px;
+    letter-spacing: 1.961px;
+  }
 
-    .button-subtitle {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-    }
+  .button-subtitle {
+    font-size: 10.892px;
+    line-height: 21.006px;
+    letter-spacing: 1.525px;
+  }
 
-    .company-main .link-button-content {
-        top: 40px;
-        left: 40px;
-    }
-    
-    .company-main .link-button-title {
-        font-size: 28px;
-        letter-spacing: 4px;
-    }
+  .company-main .link-button-content {
+    top: 40px;
+    left: 40px;
+  }
 
-    .company-main .link-button-subtitle {
-        font-size: 14px;
-        letter-spacing: 2px;
-    }
+  .company-main .link-button-title {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
 
-    .company-main .link-button {
-        height: 300px;
-    }
+  .company-main .link-button-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
 
-    .company-main .link-buttons-container {
-        flex-direction: column;
-    }
+  .company-main .link-button {
+    height: 300px;
+  }
 
-    .company-main .link-button {
-        width: 100%;
-    }
+  .company-main .link-buttons-container {
+    flex-direction: column;
+  }
 
-    .company-image {
-        margin-top: 40px;
-    }
+  .company-main .link-button {
+    width: 100%;
+  }
+
+  .message-button .nav-image {
+    height: 160px;
+  }
 }
 
 @media screen and (max-width: 575px) {
-    .custom-menu {
-        margin: 30px auto;
-        padding: 0 15px;
-    }
+  .custom-menu {
+    padding: 0 15px;
+    margin: 30px auto;
+  }
 
-    .message-button {
-        height: 200px;
-    }
+  .button-content {
+    padding: 15px;
+  }
 
-    .profile-button,
-    .mission-button {
-        min-height: 100px;
-    }
+  .button-title-group {
+    gap: 10px;
+  }
 
-    .button-content {
-        padding: 0 15px;
-        min-height: 50px;
-    }
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+  }
 
-    .button-title {
-        font-size: 14px;
-        letter-spacing: 1.8px;
-    }
+  .company-main .recruit-button .move-icon {
+    bottom: 23px;
+    right: 50px;
+    width: 204px;
+    height: 24px;
+  }
 
-    .button-subtitle {
-        font-size: 10px;
-        letter-spacing: 1.2px;
-    }
+  .company-main .contact-button .move-icon {
+    bottom: 23px;
+    right: 27px;
+    width: 300px;
+    height: 24px;
+  }
 
-    .arrow-icon {
-        width: 20px;
-        height: 20px;
-    }
+  .company-main .link-button-content {
+    top: 30px;
+    left: 30px;
+  }
 
-    .company-main .recruit-button .move-icon {
-        bottom: 23px;
-        right: 50px;
-        width: 204px;
-        height: 24px;
-    }
+  .company-main .link-button-title {
+    font-size: 24px;
+    letter-spacing: 3.6px;
+  }
 
-    .company-main .contact-button .move-icon {
-        bottom: 23px;
-        right: 27px;
-        width: 300px;
-        height: 24px;
-    }
+  .company-main .link-button-subtitle {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+  }
 
-    .company-main .link-button-content {
-        top: 30px;
-        left: 30px;
-    }
-    
-    .company-main .link-button-title {
-        font-size: 24px;
-        letter-spacing: 3.6px;
-    }
-
-    .company-main .link-button-subtitle {
-        font-size: 12px;
-        letter-spacing: 1.8px;
-    }
-
-    .company-main .link-button {
-        height: 200px;
-    }
-
-    .company-image {
-        margin-top: 30px;
-    }
+  .company-main .link-button {
+    height: 200px;
+  }
 }

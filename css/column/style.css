@@ -91,14 +91,16 @@ body {
 
 /* 最新記事セクション周辺のシェイプ */
 .shape-blue4 {
-    bottom: -189%;
+    bottom: 0%;
+    width: 1100px;
+    height: 1100px;
     left: 0px;
-    z-index: 1;
+    z-index: -1;
 }
 
 .shape-red4 {
-    bottom: 169%;
-    right: 250px;
+    bottom: 140%;
+    right: 230px;
     z-index: -1;
 }
 
@@ -114,6 +116,8 @@ body {
     margin: 60px auto;
     padding: 0 40px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
 /* リンクボタンのスタイル */
@@ -490,7 +494,18 @@ body {
 }
 
 /* レスポンシブ対応 */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {.shape-red4 {
+    bottom: 140%;
+    right: 20px;
+    z-index: -1;
+}
+.shape-blue4 {
+    bottom: 100%;
+    width: 550px;
+    height: 550px;
+    left: 0px;
+    z-index: -1;
+}
     .latest-cards .articles-wrapper {
         grid-template-columns: repeat(2, 1fr);
     }

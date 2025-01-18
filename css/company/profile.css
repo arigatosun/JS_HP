@@ -1,0 +1,45 @@
+/* profile.css */
+.profile-main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #F2F2F2;
+}
+
+.profile-main .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+}
+
+.profile-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-content {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+    .profile-main .page-header {
+        padding: 40px 15px 0;
+    }
+    
+    .profile-image {
+        margin-top: 40px;
+    }
+    
+    .profile-content {
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+}

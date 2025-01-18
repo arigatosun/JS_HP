@@ -1,0 +1,45 @@
+/* message.css */
+.message-main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #F2F2F2;
+}
+
+.message-main .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+}
+
+.message-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.message-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.message-content {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+    .message-main .page-header {
+        padding: 40px 15px 0;
+    }
+    
+    .message-image {
+        margin-top: 40px;
+    }
+    
+    .message-content {
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+}

@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // 詳細ページの場合のパス調整
             if (window.location.pathname.includes('column-detail.html') || 
                 window.location.pathname.includes('works-detail.html') || 
-                window.location.pathname.includes('example-detail.html')) {
+                window.location.pathname.includes('example-detail.html') ||
+                window.location.pathname.includes('/company/')) {
                 // ロゴ画像のパスを調整
                 adjustedHtml = adjustedHtml.replace(/src="images\//g, 'src="../../images/');
                 adjustedHtml = adjustedHtml.replace(/href="(?!http|\/\/|#)([^"]*)"/g, (match, p1) => {
@@ -135,82 +136,92 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
   // ページタイプを判定する部分を修正
-const isBusinessPage = document.querySelector('.business-main') !== null;
-const isExampleDetailPage = document.querySelector('.examples-main') !== null && 
-                           window.location.pathname.includes('example-detail.html');
-const isColumnDetailPage = document.querySelector('.column-main') !== null && 
-                          window.location.pathname.includes('column-detail.html');
-const isWorksDetailPage = document.querySelector('.works-main') !== null && 
-                         window.location.pathname.includes('works-detail.html');
+  const isBusinessPage = document.querySelector('.business-main') !== null;
+    const isExampleDetailPage = document.querySelector('.examples-main') !== null && 
+                               window.location.pathname.includes('example-detail.html');
+    const isColumnDetailPage = document.querySelector('.column-main') !== null && 
+                              window.location.pathname.includes('column-detail.html');
+    const isWorksDetailPage = document.querySelector('.works-main') !== null && 
+                             window.location.pathname.includes('works-detail.html');
+    const isCompanyPage = document.querySelector('.message-main, .mission-main, .profile-main') !== null;
 
-if (isWorksDetailPage) {
-    // 最新情報詳細ページの場合の処理
-    Promise.all([
-        loadSection('header', '../../sections/top/'),
-        loadSection('footer', '../../sections/top/')
-    ]).then(() => {
-        initializeHamburgerMenu();
-        initializeFooterToggle();
-    });
-} else if (isColumnDetailPage) {
-    // コラム詳細ページの場合の処理
-    Promise.all([
-        loadSection('header', '../../sections/top/'),
-        loadSection('footer', '../../sections/top/')
-    ]).then(() => {
-        initializeHamburgerMenu();
-        initializeFooterToggle();
-    });
-} else if (isExampleDetailPage) {
-    // 実績実例詳細ページの場合の処理
-    loadSection('header', adjustPath('sections/top/'));
-    loadSection('footer', adjustPath('sections/top/')).then(() => {
-        initializeHamburgerMenu();
-        initializeFooterToggle();
-        initializeExampleDetail();
-    });
-} else if (isBusinessPage) {
-    // 事業領域ページの場合の処理
-    Promise.all([
-        loadSection('header'),
-        loadSection('footer'),
-        loadSection('business-details', adjustPath('sections/business/')),
-        loadSection('business-other-areas', adjustPath('sections/business/')),
-        loadSection('business-works', adjustPath('sections/business/'))
-    ]).then(() => {
-        initializeHamburgerMenu();
-        initializeFooterToggle();
-        initializeBusinessDetails();
-    });
-} else {
-    // トップページとその他のページの処理
-    Promise.all([
-        loadSection('hero'),
-        loadSection('business'),
-        loadSection('service'),
-        loadSection('examples'),
-        loadSection('column')
-    ]).then(() => {
-        requestAnimationFrame(() => {
-            initializeRellax();
+    if (isCompanyPage) {
+        // 企業情報ページの場合の処理
+        Promise.all([
+            loadSection('header', '../../sections/top/'),
+            loadSection('footer', '../../sections/top/')
+        ]).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
         });
-    });
-    
-    loadSection('header').then(() => {
-        initializeHamburgerMenu();
-    });
-    
-    loadSection('column').then(() => {
-        initializeColumnScroll();
-        initializeCustomScrollbar();
-    });
-    
-    loadSection('information');
-    
-    loadSection('footer').then(() => {
-        initializeFooterToggle();
-    });
-}
+    } else if (isWorksDetailPage) {
+        // 最新情報詳細ページの場合の処理
+        Promise.all([
+            loadSection('header', '../../sections/top/'),
+            loadSection('footer', '../../sections/top/')
+        ]).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+        });
+    } else if (isColumnDetailPage) {
+        // コラム詳細ページの場合の処理
+        Promise.all([
+            loadSection('header', '../../sections/top/'),
+            loadSection('footer', '../../sections/top/')
+        ]).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+        });
+    } else if (isExampleDetailPage) {
+        // 実績実例詳細ページの場合の処理
+        loadSection('header', adjustPath('sections/top/'));
+        loadSection('footer', adjustPath('sections/top/')).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+            initializeExampleDetail();
+        });
+    } else if (isBusinessPage) {
+        // 事業領域ページの場合の処理
+        Promise.all([
+            loadSection('header'),
+            loadSection('footer'),
+            loadSection('business-details', adjustPath('sections/business/')),
+            loadSection('business-other-areas', adjustPath('sections/business/')),
+            loadSection('business-works', adjustPath('sections/business/'))
+        ]).then(() => {
+            initializeHamburgerMenu();
+            initializeFooterToggle();
+            initializeBusinessDetails();
+        });
+    } else {
+        // トップページとその他のページの処理
+        Promise.all([
+            loadSection('hero'),
+            loadSection('business'),
+            loadSection('service'),
+            loadSection('examples'),
+            loadSection('column')
+        ]).then(() => {
+            requestAnimationFrame(() => {
+                initializeRellax();
+            });
+        });
+        
+        loadSection('header').then(() => {
+            initializeHamburgerMenu();
+        });
+        
+        loadSection('column').then(() => {
+            initializeColumnScroll();
+            initializeCustomScrollbar();
+        });
+        
+        loadSection('information');
+        
+        loadSection('footer').then(() => {
+            initializeFooterToggle();
+        });
+    }
 
     // 残りの関数は変更なし
     function initializeHamburgerMenu() {

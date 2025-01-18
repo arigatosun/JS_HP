@@ -1,0 +1,45 @@
+/* mission.css */
+.mission-main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #F2F2F2;
+}
+
+.mission-main .page-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+}
+
+.mission-image {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.mission-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mission-content {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+    .mission-main .page-header {
+        padding: 40px 15px 0;
+    }
+    
+    .mission-image {
+        margin-top: 40px;
+    }
+    
+    .mission-content {
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+}
