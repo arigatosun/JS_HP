@@ -705,3 +705,161 @@
         margin-right: 2px;
     }
 }
+
+
+/* その他の事業領域セクションのレスポンシブ対応 */
+
+/* タブレット対応 (1024px以下) */
+@media screen and (max-width: 1024px) {
+    .other-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        margin-left: 40px;
+        padding-top: 60px;
+    }
+
+    .other-title-group {
+        width: 100%;
+    }
+
+    .other-decorative-lines {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .other-main-title {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .other-sub-title {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .business-white-container {
+        margin-left: 40px;
+        margin-top: 40px;
+        border-radius: 30px 0 0 30px;
+        height: auto;
+        padding-bottom: 60px;
+    }
+
+    .business-menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 40px 40px 0;
+    }
+
+    .menu-card {
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    .menu-title {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+
+    .arrow-icon {
+        width: 24px;
+        height: auto;
+    }
+}
+
+/* モバイル対応 (768px以下) */
+@media screen and (max-width: 768px) {
+    .other-header {
+        margin-left: 20px;
+        padding-top: 40px;
+    }
+
+    .other-main-title {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    .other-sub-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .business-white-container {
+        margin-left: 20px;
+        margin-top: 30px;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .business-menu {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 30px 20px 0;
+    }
+
+    .menu-title {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        bottom: 10px;
+        left: 15px;
+    }
+
+    .arrow-icon {
+        width: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* 2行タイトルの位置調整 */
+    .menu-card-1 .menu-title,
+    .menu-card-3 .menu-title,
+    .menu-card-5 .menu-title,
+    .menu-card-7 .menu-title {
+        bottom: 40px;
+    }
+
+    .menu-card-1 .arrow-icon,
+    .menu-card-3 .arrow-icon,
+    .menu-card-5 .arrow-icon,
+    .menu-card-7 .arrow-icon {
+        bottom: 40px;
+    }
+}
+
+/* 小さいモバイル対応 (480px以下) */
+@media screen and (max-width: 480px) {
+    .other-header {
+        margin-left: 15px;
+        padding-top: 30px;
+    }
+
+    .other-main-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .other-sub-title {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .business-white-container {
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+
+    .business-menu {
+        padding: 20px 15px 0;
+        gap: 10px;
+    }
+
+    .menu-title {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .arrow-icon {
+        width: 16px;
+    }
+}
