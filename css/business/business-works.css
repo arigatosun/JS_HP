@@ -863,3 +863,48 @@
         width: 16px;
     }
 }
+
+/* カードのホバーアニメーション */
+.works-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.works-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 一覧を見るボタンのホバーアニメーション */
+.business-works .view-all-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.business-works .view-all-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.business-works .view-all-button span {
+    transition: color 0.3s ease;
+}
+
+.business-works .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.business-works .view-all-button:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+/* レスポンシブ対応時のホバーアニメーション調整 */
+@media screen and (max-width: 768px) {
+    .works-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .business-works .view-all-button:hover {
+        transform: translateY(-1px);
+    }
+}
