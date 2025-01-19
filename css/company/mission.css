@@ -1,4 +1,5 @@
 /* mission.css */
+/* ベース設定 */
 .mission-main {
     width: 100%;
     margin: 0 auto;
@@ -6,10 +7,11 @@
     background-color: #F2F2F2;
 }
 
+/* ヘッダー部分 */
 .mission-main .page-header {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px 0;
+    padding: 80px 20px 40px; /* 下部に余白を追加 */
 }
 
 .mission-image {
@@ -21,25 +23,228 @@
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
+/* メインコンテンツエリア */
 .mission-content {
     max-width: 1200px;
     margin: 60px auto 0;
     padding: 0 20px;
 }
 
-@media (max-width: 767px) {
+/* セクションブロック */
+.section-block {
+    margin-bottom: 60px;
+}
+
+.section-block:last-child {
+    margin-bottom: 0;
+}
+
+.section-block .page-header {
+    padding: 0 20px 40px; /* セクションタイトルと白コンテナの間の余白 */
+}
+
+/* 白コンテナのスタイル */
+.content-area {
+    display: flex;
+    padding: 58px 66px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 28px;
+    background: #FFF;
+}
+
+/* ミッションタイトルスタイル */
+.mission-title-red, .vision-title-red {
+    color: #E60012;
+    font-family: "BIZ UDGothic";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.43;
+    letter-spacing: 3.92px;
+}
+
+.mission-title-blue, .vision-title-blue {
+    color: #28A7E1;
+    font-family: "BIZ UDGothic";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.43;
+    letter-spacing: 3.92px;
+}
+
+/* テキストスタイル */
+.mission-text, .vision-text {
+    margin-top: 15px;
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.875;
+    letter-spacing: 2.24px;
+}
+
+/* ビジョンテキスト特有のスタイル */
+.vision-text p {
+    margin-bottom: 15px;
+}
+
+.vision-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* バリューセクション */
+.value-item {
+    margin-bottom: 30px;
+}
+
+.value-item:last-child {
+    margin-bottom: 0;
+}
+
+.value-title {
+    color: #E60012;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 2.8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.value-title-en {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.value-text {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.875;
+    letter-spacing: 2.24px;
+}
+
+/* タブレット用メディアクエリ */
+@media (max-width: 1024px) {
     .mission-main .page-header {
-        padding: 40px 15px 0;
+        padding: 60px 20px 30px;
     }
-    
+
     .mission-image {
         margin-top: 40px;
     }
-    
+
     .mission-content {
         margin-top: 40px;
+    }
+
+    .content-area {
+        padding: 40px;
+    }
+
+    .mission-title-red, .mission-title-blue,
+    .vision-title-red, .vision-title-blue {
+        font-size: 24px;
+        letter-spacing: 3px;
+        line-height: 1.4;
+    }
+}
+
+/* スマートフォン用メディアクエリ */
+@media (max-width: 767px) {
+    .mission-main .page-header {
+        padding: 40px 15px 20px;
+    }
+
+    .mission-image {
+        margin-top: 30px;
+    }
+
+    .mission-content {
+        margin-top: 30px;
         padding: 0 15px;
+    }
+
+    .section-block {
+        margin-bottom: 40px;
+    }
+
+    .section-block .page-header {
+        padding: 0 15px 20px;
+    }
+
+    .content-area {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .mission-title-red, .mission-title-blue,
+    .vision-title-red, .vision-title-blue {
+        font-size: 20px;
+        letter-spacing: 2px;
+        line-height: 1.4;
+    }
+
+    .mission-text, .vision-text {
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 1.5px;
+    }
+
+    .value-item {
+        margin-bottom: 25px;
+    }
+
+    .value-title {
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .value-title-en {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .value-text {
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* 小型スマートフォン用メディアクエリ */
+@media (max-width: 374px) {
+    .content-area {
+        padding: 25px 15px;
+    }
+
+    .mission-title-red, .mission-title-blue,
+    .vision-title-red, .vision-title-blue {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+
+    .value-title {
+        font-size: 16px;
+    }
+
+    .value-title-en {
+        font-size: 14px;
     }
 }

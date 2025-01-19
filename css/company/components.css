@@ -134,7 +134,8 @@
 
     .company-nav-item {
         width: 100%;
-        max-width: 520px;
+        max-width: 750px;
+        margin-right: 55px;
     }
 
     .nav-title {
@@ -162,6 +163,11 @@
 
 /* モバイル対応 */
 @media (max-width: 767px) {
+    .company-nav-item {
+        width: 100%;
+        max-width: 640px;
+        margin-right: 35px;
+    }
     .company-nav {
         padding: 15px;
         gap: 20px;
