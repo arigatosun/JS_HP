@@ -4,6 +4,8 @@
     margin: 0 auto;
     padding: 0;
     background-color: #F2F2F2;
+    position: relative; /* 追加 */
+    overflow-x: hidden; /* 追加 */
 }
 
 .message-main .page-header {
@@ -27,11 +29,234 @@
     max-width: 1200px;
     margin: 60px auto 0;
     padding: 0 20px;
+    position: relative;
+}
+
+/* 代表メッセージセクション */
+.president-message-section {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+.president-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+.message-text {
+    padding-right: 20px;
+}
+
+.message-heading {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 4.2px;
+    margin: 0 0 30px 0;
+}
+
+.message-body {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 4.14px;
+    margin-bottom: 40px;
+}
+
+.message-body p {
+    margin: 0 0 20px 0;
+}
+
+.message-body p:last-child {
+    margin-bottom: 0;
+}
+
+.president-name {
+    color: #333;
+    font-family: "BIZ UDGothic";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 4.4px;
+    text-align: right;
+    margin: 0;
+}
+
+/* 左側のシェイプ */
+.left-red-shape1 {
+    position: absolute;
+    top: 600px;
+    left: 40px;
+    z-index: 1;
+}
+
+.left-blue-shape1 {
+    position: absolute;
+    top: 680px;
+    left: 0px;
+    z-index: 0;
+}
+
+.left-pink-shape1 {
+    position: absolute;
+    bottom: 20%;
+    left: -50px;
+    z-index: 0;
+}
+
+
+
+/* 右側のシェイプ */
+.right-red-shape1 {
+    position: absolute;
+    top: 55px;
+    right: 80px;
+    z-index: 2;
+}
+
+.right-blue-shape1 {
+    position: absolute;
+    top: 192px;
+    right: 20px;
+    z-index: 2;
+}
+
+.right-blue-shape2 {
+    position: absolute;
+    bottom: 30%;
+    right: -20px;
+    z-index: 0;
+}
+
+.right-red-shape2 {
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    z-index: 0;
+}
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1200px) {
+    /* 右側のシェイプ */
+.right-red-shape1 {
+    width: 160px;
+    height: 160px;
+    top: 6%;
+}
+
+.right-blue-shape1 {
+    width: 100px;
+        height: 100px;
+        top: 11%;
+}
+
+.right-blue-shape2 {
+    width: 200px;
+    height: 200px;
+}
+
+.right-red-shape2 {
+    width: 200px;
+    height: 200px;
+}
+    .left-pink-shape1 {
+        width: 200px;
+    height: 200px;
+    top: 91%;
+    }
+    
+    .left-blue-shape2 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .right-blue-shape2 {
+        width: 200px;
+        height: 200px;
+    }
+    .left-red-shape1 {
+        position: absolute;
+        top: 373px;
+        left: 40px;
+        width: 11%;
+        z-index: 1;
+    }
+    .left-blue-shape1 {
+        position: absolute;
+        top: 22%;
+        left: 0px;
+        z-index: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    /* 右側のシェイプ */
+.right-red-shape1 {
+    width: 160px;
+    height: 160px;
+    top: 6%;
+}
+
+.right-blue-shape1 {
+    width: 100px;
+        height: 100px;
+        top: 11%;
+}
+
+.right-blue-shape2 {
+    width: 200px;
+    height: 200px;
+}
+
+.right-red-shape2 {
+    width: 200px;
+    height: 200px;
+}
+    .left-pink-shape1 {
+        width: 200px;
+    height: 200px;
+    top: 91%;
+    }
+    
+    .left-blue-shape2 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .right-blue-shape2 {
+        width: 200px;
+        height: 200px;
+    }
+    .left-red-shape1 {
+        position: absolute;
+        top: 15%;
+        left: -2%;
+        width: 11%;
+        z-index: 1;
+    }
+    .left-blue-shape1 {
+        position: absolute;
+        top: 45%;
+        left: 0%;
+        z-index: 0;
+    }
 }
 
 @media (max-width: 767px) {
     .message-main .page-header {
-        padding: 40px 15px 0;
+        padding: 40px 40px 0;
     }
     
     .message-image {
@@ -40,6 +265,70 @@
     
     .message-content {
         margin-top: 40px;
-        padding: 0 15px;
+        padding: 0 40px;
+    }
+    
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 850px) {
+    .president-message-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .president-image {
+        max-width: 40%;
+        margin: 0;
+    }
+
+    .message-text {
+        padding-right: 0;
+    }
+
+    .message-heading {
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 3.6px;
+    }
+
+    .message-body {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 3.68px;
+    }
+
+    .president-name {
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 3.96px;
+    }
+}
+
+@media (max-width: 480px) {
+    .president-message-section {
+        gap: 20px;
+    }
+
+    .president-image {
+        max-width: 40%;
+    }
+
+    .message-heading {
+        font-size: 20px;
+        line-height: 34px;
+        letter-spacing: 3px;
+    }
+
+    .message-body {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 3.22px;
+    }
+
+    .president-name {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 3.52px;
     }
 }

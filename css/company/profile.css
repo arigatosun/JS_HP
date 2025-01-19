@@ -3,6 +3,8 @@
     margin: 0 auto;
     padding: 0;
     background-color: #F2F2F2;
+    position: relative; /* 追加 */
+    overflow-x: hidden; /* 追加 */
 }
 
 .profile-main .page-header {
@@ -24,8 +26,10 @@
 
 .profile-content {
     max-width: 1200px;
-    margin: 60px auto 0;
+    margin: 150px auto 0;
     padding: 0 40px; /* 左右の余白を増やす */
+    position: relative;
+    z-index: 2;
 }
 
 .company-info-grid {
@@ -140,8 +144,119 @@
     border-radius: 14px;
 }
 
+/* 左側のシェイプ */
+.left-blue-shape1 {
+    position: absolute;
+    top: 14%;
+    left: 6%;
+    z-index: 2;
+}
+
+.left-red-shape1 {
+    position: absolute;
+    top: 16%;
+    left: 0%;
+    z-index: 1;
+}
+
+.left-pink-shape1 {
+    position: absolute;
+    bottom: 48%;
+    left: 0;
+    z-index: 0;
+}
+
+.left-blue-shape2 {
+    position: absolute;
+    bottom: 0%;
+    width: 39%;
+    left: 0;
+    z-index: 0;
+}
+
+/* 右側のシェイプ */
+.right-red-shape1 {
+    position: absolute;
+    top: 55px;
+    width: 10%;
+    right: 80px;
+    z-index: 2;
+}
+
+.right-blue-shape1 {
+    position: absolute;
+    top: 192px;
+    width: 7%;
+    right: 20px;
+    z-index: 2;
+}
+
+.right-blue-shape2 {
+    position: absolute;
+    bottom: 48%;
+    right: 0;
+    z-index: 0;
+}
+
+.right-red-shape2 {
+    position: absolute;
+    bottom: 46%;
+    right: 0%;
+    z-index: 0;
+
+}
+
+.right-blue-shape3 {
+    position: absolute;
+    bottom: 10%;
+    right: 12%;
+    z-index: 0;
+}
+
 /* 1200px以下のブレークポイント */
 @media (max-width: 1200px) {
+    .right-red-shape1 {
+        width: 160px;
+        height: 160px;
+        top: 3%;
+        left: 83%;
+    }
+
+    .right-blue-shape1 {
+        width: 100px;
+        height: 100px;
+        top: 7%;
+    }
+
+    
+    .right-red-shape2,
+    .right-blue-shape3,
+    .left-pink-shape1,
+    .left-blue-shape2 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-blue-shape2 {
+        top: 22%;
+        width: 48%;
+    }
+
+    .right-red-shape2{
+        top: 40%;
+        width: 8%;
+    }
+
+    .left-red-shape1 {
+        top: 373px;
+        left: 40px;
+        width: 11%;
+    }
+
+    .left-blue-shape1 {
+        top: 22%;
+        left: 0;
+    }
     .info-title {
         font-size: 16px;
         line-height: 28px;
@@ -155,6 +270,27 @@
     }
 }
 
+
+@media screen and (max-width: 1000px) {
+    .left-red-shape1 {
+        top: 15%;
+        left: -2%;
+    }
+
+    .left-blue-shape1 {
+        top: 59%;
+        left: 0;
+    }
+    .left-pink-shape1 {
+        position: absolute;
+        bottom: 56%;
+        left: 0;
+        z-index: 0;
+    }
+    .right-blue-shape3{
+        left: 80%;
+    }
+}
 /* タブレット向けのブレークポイント */
 @media (max-width: 850px) {
     .office-container {
@@ -213,7 +349,7 @@
 }
 
 /* スマートフォン向けのブレークポイント */
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .office-container {
         padding: 15px;
     }
@@ -246,5 +382,42 @@
         font-size: 13px;
         line-height: 24px;
         letter-spacing: 2.86px;
+    }
+    .left-blue-shape1 {
+        top: 12%;
+        left: 0;
+        width: 20%;
+    }
+    .left-red-shape1 {
+        top: 8%;
+        left: 0px;
+        width: 20%;
+    }
+    .left-pink-shape1 {
+        position: absolute;
+        bottom: 69%;
+        left: 0;
+        z-index: 0;
+        width: 12%;
+    }
+    .right-red-shape1 {
+        width: 74px;
+        height: 88px;
+        top: 3%;
+        left: 91%;
+    }
+    .right-blue-shape1 {
+        width: 63px;
+        height: 48px;
+        top: 5%;
+        left: 87%;
+    }
+    .right-blue-shape2 {
+        top: 32%;
+        width: 64%;
+    }
+    .right-red-shape2 {
+        top: 40%;
+        width: 15%;
     }
 }

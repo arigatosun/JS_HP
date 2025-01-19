@@ -24,11 +24,13 @@ body {
   width: 100%;
   position: relative;
   z-index: 1;
+  height: auto;
 }
 
 .company-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -44,6 +46,7 @@ body {
   max-width: 1350px;
   margin: 0 auto;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .custom-menu-container {
@@ -63,7 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  height: 307px; /* 代表挨拶カードと同じ高さ */
+  height: 307px;
 }
 
 /* ボタン共通スタイル */
@@ -101,7 +104,7 @@ body {
 .profile-button,
 .mission-button {
   flex: 1;
-  height: calc((410px - 25px) / 2); /* 全体の高さからgapを引いて2分割 */
+  height: calc((307px - 25px) / 2);
 }
 
 /* ボタンコンテンツ部分 */
@@ -159,7 +162,7 @@ body {
 }
 
 /* リンクボタン（採用情報・お問い合わせ） */
-.company-main .link-buttons {
+.link-buttons {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -168,59 +171,59 @@ body {
   margin-top: 100px;
 }
 
-.company-main .link-buttons-container {
+.link-buttons-container {
   display: flex;
   justify-content: center;
   width: 100%;
   max-width: 100%;
 }
 
-.company-main .link-button {
+.link-button {
   width: 50%;
   height: 450px;
   position: relative;
   overflow: hidden;
 }
 
-.company-main .link-button img {
+.link-button img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.company-main .link-button .move-icon {
+.link-button .move-icon {
   position: absolute;
   transition: transform 0.3s ease;
 }
 
-.company-main .recruit-button .move-icon {
+.recruit-button .move-icon {
   bottom: 80px;
   right: 80px;
   width: 270px;
   height: 32px;
 }
 
-.company-main .contact-button .move-icon {
+.contact-button .move-icon {
   bottom: 85px;
   right: 80px;
   width: 400px;
   height: 32px;
 }
 
-.company-main .recruit-button:hover .move-icon,
-.company-main .contact-button:hover .move-icon {
+.recruit-button:hover .move-icon,
+.contact-button:hover .move-icon {
   transform: translateX(20px);
 }
 
-.company-main .link-button-content {
+.link-button-content {
   position: absolute;
   top: 80px;
   left: 90px;
   z-index: 1;
 }
 
-.company-main .link-button-title {
+.link-button-title {
   color: #333;
   font-family: "BIZ UDGothic";
   font-size: 32px;
@@ -229,7 +232,7 @@ body {
   margin-bottom: 10px;
 }
 
-.company-main .link-button-subtitle {
+.link-button-subtitle {
   color: #333;
   font-family: "BIZ UDGothic";
   font-size: 16px;
@@ -237,31 +240,52 @@ body {
   letter-spacing: 2.4px;
 }
 
-.company-main .contact-button .link-button-title,
-.company-main .contact-button .link-button-subtitle {
+.contact-button .link-button-title,
+.contact-button .link-button-subtitle {
   color: #FFF;
 }
 
+
+
 /* レスポンシブ対応 */
 @media screen and (max-width: 1200px) {
+  .link-buttons {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 0;
+    margin-top: 0px;
+  }
+  .company-image {
+    height: 800px;
+  }
+
   .custom-menu {
     position: relative;
+    top: -650px;
     transform: none;
-    top: -100px;
-    margin-bottom: -100px;
+    padding: 0 20px;
+    margin-bottom: -500px;
   }
 
   .custom-menu-container {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    max-width: 610px;
+    margin: 0 auto;
   }
 
   .menu-left,
   .menu-right {
     width: 100%;
-    max-width: 610px;
+    max-width: none;
     height: auto;
+  }
+
+  .menu-button {
+    max-width: 100%;
   }
 
   .profile-button,
@@ -269,31 +293,39 @@ body {
     height: 100px;
   }
 
-  .company-main .link-button-content {
+  .link-button-content {
     top: 60px;
     left: 60px;
   }
 
-  .company-main .contact-button .move-icon {
+  .contact-button .move-icon {
     bottom: 85px;
     right: 45px;
     width: 300px;
     height: 24px;
   }
 
-  .company-main .recruit-button .move-icon {
+  .recruit-button .move-icon {
     bottom: 80px;
     right: 50px;
     width: 204px;
     height: 24px;
   }
+  .profile-button .button-content, .mission-button .button-content {
+    height: 100%;
+    padding: 50px 25px;
+}
 }
 
 @media screen and (max-width: 767px) {
+  .company-image {
+    height: 700px;
+  }
+
   .custom-menu {
-    padding: 0 20px;
-    top: -50px;
-    margin-bottom: -50px;
+    top: -600px;
+    margin-bottom: -450px;
+    padding: 0 15px;
   }
 
   .profile-button,
@@ -306,41 +338,41 @@ body {
   }
 
   .button-title {
-    font-size: 14.004px;
-    line-height: 21.006px;
-    letter-spacing: 1.961px;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1.96px;
   }
 
   .button-subtitle {
-    font-size: 10.892px;
-    line-height: 21.006px;
-    letter-spacing: 1.525px;
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: 1.5px;
   }
 
-  .company-main .link-button-content {
+  .link-button-content {
     top: 40px;
     left: 40px;
   }
 
-  .company-main .link-button-title {
+  .link-button-title {
     font-size: 28px;
     letter-spacing: 4px;
   }
 
-  .company-main .link-button-subtitle {
+  .link-button-subtitle {
     font-size: 14px;
     letter-spacing: 2px;
   }
 
-  .company-main .link-button {
+  .link-button {
     height: 300px;
   }
 
-  .company-main .link-buttons-container {
+  .link-buttons-container {
     flex-direction: column;
   }
 
-  .company-main .link-button {
+  .link-button {
     width: 100%;
   }
 
@@ -350,9 +382,14 @@ body {
 }
 
 @media screen and (max-width: 575px) {
+  .company-image {
+    height: 600px;
+  }
+
   .custom-menu {
-    padding: 0 15px;
-    margin: 30px auto;
+    top: -520px;
+    margin-bottom: -400px;
+    padding: 0 10px;
   }
 
   .button-content {
@@ -368,36 +405,36 @@ body {
     height: 20px;
   }
 
-  .company-main .recruit-button .move-icon {
+  .recruit-button .move-icon {
     bottom: 23px;
     right: 50px;
     width: 204px;
     height: 24px;
   }
 
-  .company-main .contact-button .move-icon {
+  .contact-button .move-icon {
     bottom: 23px;
     right: 27px;
     width: 300px;
     height: 24px;
   }
 
-  .company-main .link-button-content {
+  .link-button-content {
     top: 30px;
     left: 30px;
   }
 
-  .company-main .link-button-title {
+  .link-button-title {
     font-size: 24px;
     letter-spacing: 3.6px;
   }
 
-  .company-main .link-button-subtitle {
+  .link-button-subtitle {
     font-size: 12px;
     letter-spacing: 1.8px;
   }
 
-  .company-main .link-button {
+  .link-button {
     height: 200px;
   }
 }
